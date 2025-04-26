@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>The-Vibe-Check-Guy</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Gp
+  * Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
+  * Updated: Aug 15 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <style>
+    .header {
+      box-shadow: 3px 1px 3px #c9c9c9;
+
+
+    }
+
+    /* Navmenu - Desktop */
+    @media (max-width: 1199px) {
+      .mobile-nav-toggle {
+        color: black;
+        font-size: 28px;
+        line-height: 0;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: color 0.3s;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .navmenu {
+        padding: 0;
+      }
+
+      .navmenu ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        list-style: none;
+        align-items: center;
+      }
+
+      .navmenu li {
+        position: relative;
+      }
+
+      .navmenu a,
+      .navmenu a:focus {
+        color: #212529;
+        padding: 18px 15px;
+        font-size: 16px;
+        font-family: var(--nav-font);
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        white-space: nowrap;
+        transition: 0.3s;
+      }
+
+      .navmenu a i,
+      .navmenu a:focus i {
+        font-size: 12px;
+        line-height: 0;
+        margin-left: 5px;
+        transition: 0.3s;
+      }
+
+      .navmenu li:last-child a {
+        padding-right: 0;
+      }
+
+      .navmenu li:hover>a,
+      .navmenu .active,
+      .navmenu .active:focus {
+        color: var(--nav-hover-color);
+      }
+
+      .navmenu .dropdown ul {
+        margin: 0;
+        padding: 10px 0;
+        background: var(--nav-dropdown-background-color);
+        display: block;
+        position: absolute;
+        visibility: hidden;
+        left: 14px;
+        top: 130%;
+        opacity: 0;
+        transition: 0.3s;
+        border-radius: 0;
+        z-index: 99;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .navmenu .dropdown ul li {
+        min-width: 200px;
+      }
+
+      .navmenu .dropdown ul a {
+        padding: 10px 20px;
+        font-size: 15px;
+        text-transform: none;
+        color: var(--nav-dropdown-color);
+      }
+
+      .navmenu .dropdown ul a i {
+        font-size: 12px;
+      }
+
+      .navmenu .dropdown ul a:hover,
+      .navmenu .dropdown ul .active:hover,
+      .navmenu .dropdown ul li:hover>a {
+        background-color: var(--nav-dropdown-hover-color);
+      }
+
+      .navmenu .dropdown:hover>ul {
+        opacity: 1;
+        top: 100%;
+        visibility: visible;
+      }
+
+      .navmenu .dropdown .dropdown ul {
+        top: 0;
+        left: -90%;
+        visibility: hidden;
+      }
+
+      .navmenu .dropdown .dropdown:hover>ul {
+        opacity: 1;
+        top: 0;
+        left: -100%;
+        visibility: visible;
+      }
+    }
+
+
+    .intro-section {
+      background: url('./assets/img/about/abou-bg.png') no-repeat top right;
+      background-size: contain;
+      padding: 0px 20px;
+    }
+
+    .signature {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 2rem;
+      color: #ccc;
+      margin-top: 100px;
+    }
+
+    .cert-image {
+      max-width: 100%;
+      border-radius: 8px;
+
+    }
+
+    .pt-130 {
+      padding-top: 130px;
+    }
+
+    .video-container {
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      height: 400px;
+      background-image: url('./assets//img/about/Contents.png');
+      /* 🔁 Replace with your image path */
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    .video-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .play-button {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.7);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+
+    .play-button::before {
+      content: '▶';
+      font-size: 24px;
+      color: #000;
+      margin-left: 2px;
+    }
+
+    .video-title {
+      font-size: 2rem;
+      font-weight: 300;
+    }
+
+    .video-title em {
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .year-tab {
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      font-weight: 500;
+      color: #333;
+      border-bottom: 2px solid transparent;
+    }
+
+    .year-tab.active {
+      color: orange;
+      border-color: orange;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.4s ease;
+    }
+
+    .swiper-slide:hover img {
+      transform: rotate(-3deg) scale(1.05);
+    }
+
+
+
+
+    .adventure-section {
+      background: url('./assets/img/about/bg-abput-2.png') no-repeat center;
+      background-size: cover;
+      background-blend-mode: lighten;
+      position: relative;
+      height: 360px;
+      background-color: #f9f9f9;
+      padding: 60px 0;
+      text-align: center;
+      position: relative;
+
+    }
+
+    .adventure-section h1 {
+      font-size: 36px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .adventure-section h1 span {
+      color: #f97316;
+    }
+
+    .adventure-section p {
+      color: #555;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .contact-btn {
+      background-color: #f97316;
+      color: white;
+      padding: 15px 40px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      transition: background-color 0.3s;
+    }
+
+    .contact-btn:hover {
+      background-color: #e76309;
+    }
+
+    .world-map {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: url('your-world-map-image.png');
+      /* Use the map image */
+      background-size: cover;
+      opacity: 0.2;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center w-100">
+    <div
+      class="h-mobile container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <img src="assets/img/logo.png" alt="">
+
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home<br></a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="#team">Shop</a></li>
+          <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li> -->
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+      <span class="d-flex gap-4">
+        <img class="cursor-pointer" src="assets/img/about/call.png" alt="call">
+        <img class="cursor-pointer" src="assets/img/about/Cart1.png" alt="cart">
+      </span>
+      <!-- <a class="btn-getstarted" href="index.html#about">Get Started</a> -->
+
+    </div>
+  </header>
+
+  <main class="main-about">
+    <section class="intro-section">
+      <div class="container">
+        <div class="row">
+          <!-- Text Content -->
+          <div class="col-md-6 mb-4 pt-130">
+            <h4 class="text-warning f-44 mb-3">Let me be your Travel Buddy</h4>
+            <p class="mb-3">
+              Myself, Suraj Ahuja, wandering has been in my nature since childhood; the indoors never held my interest.
+              I admit, lazy for school, but fits for picnics – that’s been me since childhood, a clear sign of my inner
+              explorer.
+            </p>
+            <p>
+              That childhood spark ignited a lifelong passion for travel, and here’s how it unfolded when I was
+              independent.
+            </p>
+            <div class="signature">
+              <img src="assets/img/about/SurajAhuja.png" alt="" srcset="" style="max-width: 590px;width: 100%;">
+            </div>
+          </div>
+          <!-- Image Content -->
+          <div class="col-md-6 text-center">
+            <img src="assets/img/about/about-banner.png" alt="Suraj Ahuja" class="cert-image">
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="container my-5">
+      <div id="videoBox" class="video-container">
+        <div class="video-overlay"></div>
+        <div class="video-content">
+          <img src="assets/img/about/PlayButton.png" onclick="playVideo()" class="mb-2">
+          <h2 class="video-title text-white mb-3">Our <em>journey</em> in pictures</h2>
+          <p class="mb-0 f-14" style="font-weight:400">See what makes each experience with our trips exceptional</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function playVideo() {
+        const videoBox = document.getElementById('videoBox');
+        videoBox.innerHTML = `
+            <div class="ratio ratio-16x9">
+              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" 
+                title="Journey Video" frameborder="0" allowfullscreen allow="autoplay">
+              </iframe>
+            </div>
+          `;
+      }
+    </script>
+
+
+
+    <div class="container py-5">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold">From First Trek to Endless Exploration</h2>
+        <p class="text-muted">A journey of passion and transformation—from a first solo trek to exploring majestic
+          landscapes...</p>
+      </div>
+
+      <!-- Year Tabs -->
+      <div class="d-flex justify-content-center mb-4 flex-wrap" id="yearTabs">
+        <div class="year-tab active" data-year="2018">2018</div>
+        <div class="year-tab" data-year="2019">2019</div>
+        <div class="year-tab" data-year="2020">2020</div>
+        <div class="year-tab" data-year="2021">2021</div>
+        <div class="year-tab" data-year="2022">2022</div>
+        <div class="year-tab" data-year="2023">2023</div>
+        <div class="year-tab" data-year="2024">2024</div>
+        <div class="year-tab" data-year="2025">2025</div>
+      </div>
+
+      <!-- Content Section -->
+      <div id="yearContent">
+        <!-- 2018 Content -->
+        <div class="row  year-panel" data-year="2018">
+          <div class="col-md-6">
+            <!-- Swiper -->
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="assets/img/about/All.png" alt="Trek 1"></div>
+                <div class="swiper-slide"><img src="assets/img/about/All.png" alt="Trek 2"></div>
+                <div class="swiper-slide"><img src="assets/img/about/All.png" alt="Trek 3"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <p class="text-orange fw-bold f-44">2018</p>
+            <p class="fw-semibold">Trail to Triumph</p>
+            <p class="text-muted">2018 got real! My first solo adventure—a wild night trek up Harishchandragad. In the
+              dark, chasing a sunrise from one of the toughest spots in the Western Ghats.</p>
+
+            <p class="text-muted">Surprise—I was a natural! Trek leaders pulled me into every weekend trek, and within
+              six months, I wasn’t just following, I was leading, conquering every peak and fort in the Sahyadris!</p>
+            <div class="d-flex justify-content-start gap-3 mt-4">
+              <button class="custom-swiper-button swiper-button-prev-custom btn btn-warning rounded-circle"
+                style="width:40px;height:40px">
+                <i class="bi bi-chevron-left text-white"></i>
+              </button>
+              <button class="custom-swiper-button filled swiper-button-next-custom btn btn-warning rounded-circle"
+                style="width:40px;height:40px">
+                <i class="bi bi-chevron-right text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Future Year Panels (Hidden Initially) -->
+
+        <div id="yearContent1">
+          <!-- 2018 Content -->
+          <div class="row  year-panel d-none" data-year="2019">
+            <div class="col-md-6">
+              <!-- Swiper -->
+              <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="assets/img/about/All.png" alt="Trek 1"></div>
+                  <div class="swiper-slide"><img src="assets/img/about/All.png" alt="Trek 2"></div>
+                  <div class="swiper-slide"><img src="assets/img/about/All.png" alt="Trek 3"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <p class="text-orange fw-bold f-44">2019</p>
+              <p class="fw-semibold">Hooked on Himalayan Magic</p>
+              <p class="text-muted">2019 hit, and suddenly, Maharashtra's mountains weren't enough! I started dreaming
+                of the Himalayas. So, I packed my bags and headed to Uttarakhand for my first solo trip outside my
+                state. Twenty-one days of celebrating the New Year in Haridwar, Rishikesh, Mussoorie, and Uttarkashi?
+                Life-changing! My first Himalayan trek started near Uttarkashi, and guess what? We got stuck in a
+                snowstorm, and it was my first-time seeing snowfall! Didn't make it to the top, but man, that freezing,
+                magical moment is when I knew, I was hooked on travel!</p>
+
+
+              <div class="d-flex justify-content-start gap-3 mt-4">
+                <button class="custom-swiper-button swiper-button-prev-custom btn btn-warning rounded-circle"
+                  style="width:40px;height:40px">
+                  <i class="bi bi-chevron-left text-white"></i>
+                </button>
+                <button class="custom-swiper-button filled swiper-button-next-custom btn btn-warning rounded-circle"
+                  style="width:40px;height:40px">
+                  <i class="bi bi-chevron-right text-white"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+
+          <div id="yearContent2">
+            <!-- 2018 Content -->
+            <div class="row  year-panel d-none" data-year="2020">
+              <div class="col-md-6">
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="assets/img/about/All.png" alt="Trek 1"></div>
+                    <div class="swiper-slide"><img src="assets/img/about/All.png" alt="Trek 2"></div>
+                    <div class="swiper-slide"><img src="assets/img/about/All.png" alt="Trek 3"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <p class="text-orange fw-bold f-44">2020</p>
+                <p class="fw-semibold">Riding Through Lockdown</p>
+                <p class="text-muted">2020, the year the world hit pause – except for me! Lockdown blues? Not a chance.
+                  Mumbai was a ghost town, but I saw opportunity! Hopped on my trusty bike – the only thing the cops
+                  weren't stopping – and explored the beautiful city like never before. Empty streets, clean air, just
+                  me and my wheels. It was my secret weapon against lockdown craziness, keeping my mind and body happy
+                  and fit!</p>
+
+
+                <div class="d-flex justify-content-start gap-3 mt-4">
+                  <button class="custom-swiper-button swiper-button-prev-custom btn btn-warning rounded-circle"
+                    style="width:40px;height:40px;background-color: #f59e0b;">
+                    <i class="bi bi-chevron-left text-white"></i>
+                  </button>
+                  <button class="custom-swiper-button filled swiper-button-next-custom btn btn-warning rounded-circle"
+                    style="width:40px;height:40px;background-color: #f59e0b;">
+                    <i class="bi bi-chevron-right text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add more year-panel divs for other years -->
+          </div>
+
+          <div id="yearContent3">
+            <!-- 2018 Content -->
+            <div class="row  year-panel d-none" data-year="2021">
+              <div class="col-md-6">
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="assets/img/about/All.png" alt="Trek 1"></div>
+                    <div class="swiper-slide"><img src="assets/img/about/All.png" alt="Trek 2"></div>
+                    <div class="swiper-slide"><img src="assets/img/about/All.png" alt="Trek 3"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <p class="text-orange fw-bold f-44">2021</p>
+                <p class="fw-semibold">Nine Months of Discovery</p>
+                <p class="text-muted">2021 was a game-changer! October hit, and I just… left. No looking back! First
+                  stop: Auroville, planting trees for a month – total mind-opener. Then, bam! The mountains called me
+                  from a beach, and I was off to Uttarakhand. Six months later, I’d soaked up everything – from the
+                  Kumaon region to Garhwal, even the Char Dham Yatra, a truly spiritual Himalayan experience. It was
+                  like unlocking secrets to the mountains. And guess what? That six-month trip just morphed into three
+                  more months exploring Himachal Pradesh. A mind blown year indead!</p>
+
+
+                <div class="d-flex justify-content-start gap-3 mt-4">
+                  <button class="custom-swiper-button swiper-button-prev-custom btn btn-warning rounded-circle"
+                    style="width:40px;height:40px;background-color: #f59e0b;">
+                    <i class="bi bi-chevron-left text-white"></i>
+                  </button>
+                  <button class="custom-swiper-button filled swiper-button-next-custom btn btn-warning rounded-circle"
+                    style="width:40px;height:40px;background-color: #f59e0b;">
+                    <i class="bi bi-chevron-right text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add more year-panel divs for other years -->
+          </div>
+
+
+          <div id="yearContent4">
+            <!-- 2018 Content -->
+            <div class="row  year-panel d-none" data-year="2022">
+              <div class="col-md-6">
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="assets/img/about/All.png" alt="Trek 1"></div>
+                    <div class="swiper-slide"><img src="assets/img/about/All.png" alt="Trek 2"></div>
+                    <div class="swiper-slide"><img src="assets/img/about/All.png" alt="Trek 3"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <p class="text-orange fw-bold f-44">2022</p>
+                <p class="fw-semibold">Riding India: A Year of Adventure</p>
+                <p class="text-muted">2022 my world just expanded. September rolled around, and I bought a Royal Enfield
+                  Himalayan – my ticket to places I'd only dreamed of. The first ride on it was thousand kilometers to
+                  Ajaypur, smack in the heart of India, Chandrapur, Maharashtra a place known for coal mines and wild
+                  stories! 
+                  Then, winter hit, and I was off to chill in South India, hopping down the west coast to Kanyakumari.
+                  Goa, Gokarna, Hampi, you name it – weeks of pure fun, meeting fellow travelers from all over the
+                  world, hearing their India stories. 
+                  By March, I was practically melting near the equator, so I switched gears and hit the cool hills of
+                  the Western Ghats; Munnar, Kodaikanal, Ooty – three months of pure riding bliss, beautiful lush green!
+                  It was a year of crazy adventures and discovering hidden gems everywhere I went!</p>
+
+
+                <div class="d-flex justify-content-start gap-3 mt-4">
+                  <button class="custom-swiper-button swiper-button-prev-custom btn btn-warning rounded-circle"
+                    style="width:40px;height:40px;background-color: #f59e0b;">
+                    <i class="bi bi-chevron-left text-white"></i>
+                  </button>
+                  <button class="custom-swiper-button filled swiper-button-next-custom btn btn-warning rounded-circle"
+                    style="width:40px;height:40px;background-color: #f59e0b;">
+                    <i class="bi bi-chevron-right text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add more year-panel divs for other years -->
+          </div>
+
+
+          <div id="yearContent5">
+            <!-- 2018 Content -->
+            <div class="row  year-panel d-none" data-year="2023">
+              <div class="col-md-6">
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="assets/img/about/All.png" alt="Trek 1"></div>
+                    <div class="swiper-slide"><img src="assets/img/about/All.png" alt="Trek 2"></div>
+                    <div class="swiper-slide"><img src="assets/img/about/All.png" alt="Trek 3"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <p class="text-orange fw-bold f-44">2023</p>
+                <p class="fw-semibold">Temple Trek on Two Wheels</p>
+                <p class="text-muted">Winter 2023 hit, and I got this crazy idea, ride across India! Not just any ride,
+                  though – a temple trek on wheels! I mapped out a route hitting all the big, ancient temples like
+                  Somnath, Dwarka, Mahakaleshwar, Jagannath Puri, Tirupati Balaji… you name it. 
+                  To my surprise, it turns out, nobody had ever done a temple ride this epic! So, yeah, I ended up in
+                  the India Book of Records, snagging a title, medal, and certificate for covering the most kilometers
+                  on a motorcycle visiting India's famous temples. Pretty cool, right?</p>
+
+
+                <div class="d-flex justify-content-start gap-3 mt-4">
+                  <button class="custom-swiper-button swiper-button-prev-custom btn btn-warning rounded-circle"
+                    style="width:40px;height:40px;background-color: #f59e0b;">
+                    <i class="bi bi-chevron-left text-white"></i>
+                  </button>
+                  <button class="custom-swiper-button filled swiper-button-next-custom btn btn-warning rounded-circle"
+                    style="width:40px;height:40px;background-color: #f59e0b;">
+                    <i class="bi bi-chevron-right text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add more year-panel divs for other years -->
+          </div>
+
+
+          <div id="yearContent6">
+            <!-- 2018 Content -->
+            <div class="row  year-panel d-none" data-year="2024">
+              <div class="col-md-6">
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="assets/img/about/All.png" alt="Trek 1"></div>
+                    <div class="swiper-slide"><img src="assets/img/about/All.png" alt="Trek 2"></div>
+                    <div class="swiper-slide"><img src="assets/img/about/All.png" alt="Trek 3"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <p class="text-orange fw-bold f-44">2024</p>
+                <p class="fw-semibold">India Circuit: Solo Conquest</p>
+                <p class="text-muted">2024 was my year to go BIG! My mission was to conquer the Himalayas on my bike.
+                  So, I left Mumbai in April's heat, hitting Rishikesh in just four days. Ganges vibes, spiritual highs
+                  in Uttarkashi, and another epic Char Dham Yatra – pure magic! Then, in June, I stumbled upon a hidden
+                  mountain route from Mussoorie to Tirthan Valley – seriously, the most breathtaking ride ever. 
+                  July for me was Ladakh time! Umlingla Pass, the 'Pilgrimage of Riders,' 19,024 feet up, the Highest
+                  Motorable Road Of The World – talk about mind-blowing! That's when I decided to do the India Circuit
+                  Solo Ride. 
+                  August 15th, Independence Day, I set off from Siachen Base Camp, the northernmost point, heading for
+                  Dwarka, the westernmost tip, Kanyakumari, the southernmost tip of India and Kaho, the first village of
+                  India in the east. Sixty-six days, 14,163 kilometers, and I nailed it! Back to Siachen in -7°C –
+                  that's some seriously courageous, isn’t it ;)
+                  This ride wasn't just a trip; it was me quenching my thirst to explore every single corner of India. I
+                  faced floods, storms, landslides and tough terrain, but the spirit and support I found in the kindness
+                  of people everywhere made it all possible</p>
+
+
+                <div class="d-flex justify-content-start gap-3 mt-4">
+                  <button class="custom-swiper-button swiper-button-prev-custom btn btn-warning rounded-circle"
+                    style="width:40px;height:40px;background-color: #f59e0b;">
+                    <i class="bi bi-chevron-left text-white"></i>
+                  </button>
+                  <button class="custom-swiper-button filled swiper-button-next-custom btn btn-warning rounded-circle"
+                    style="width:40px;height:40px;background-color: #f59e0b;">
+                    <i class="bi bi-chevron-right text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add more year-panel divs for other years -->
+          </div>
+
+
+          <div id="yearContent7">
+            <!-- 2018 Content -->
+            <div class="row  year-panel d-none" data-year="2025">
+              <div class="col-md-6">
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="assets/img/about/All.png" alt="Trek 1"></div>
+                    <div class="swiper-slide"><img src="assets/img/about/All.png" alt="Trek 2"></div>
+                    <div class="swiper-slide"><img src="assets/img/about/All.png" alt="Trek 3"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <p class="text-orange fw-bold f-44">2025</p>
+                <p class="fw-semibold">TVCG: Your India Adventure Awaits</p>
+                <p class="text-muted">2025 is YOUR year to experience India like never before, and I'm here to make it
+                  happen! After years of exploring every corner of this incredible country and connecting with hundreds
+                  of travelers from around the globe, I get it. I understand your needs, your desires, and yes, even the
+                  challenges you might face. That's why TVCG isn't just a travel service; it's about crafting
+                  experiences that become lifelong memories. We prioritize your safety, fuel your thirst for adventure,
+                  and set the perfect vibe for your Indian journey. So, are you ready to ditch the ordinary and embrace
+                  the extraordinary? Let's chat! Book a date and time slot for a one-hour conversation, and together,
+                  we'll design the adventure of a lifetime. Because, remember, Life is Travel, Travel is Love!"</p>
+
+
+                <div class="d-flex justify-content-start gap-3 mt-4">
+                  <button class="custom-swiper-button swiper-button-prev-custom btn btn-warning rounded-circle"
+                    style="width:40px;height:40px;background-color: #f59e0b;">
+                    <i class="bi bi-chevron-left text-white"></i>
+                  </button>
+                  <button class="custom-swiper-button filled swiper-button-next-custom btn btn-warning rounded-circle"
+                    style="width:40px;height:40px;background-color: #f59e0b;">
+                    <i class="bi bi-chevron-right text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add more year-panel divs for other years -->
+          </div>
+
+
+        </div>
+        <script>
+          // Swiper Init
+          document.addEventListener("DOMContentLoaded", function () {
+            const swiper = new Swiper(".mySwiper", {
+              slidesPerView: 1,
+              spaceBetween: 10,
+              loop: true,
+              navigation: false,
+              navigation: {
+                nextEl: ".swiper-button-next-custom",
+                prevEl: ".swiper-button-prev-custom"
+              }
+            });
+
+            // Tab Click Behavior
+            document.querySelectorAll('.year-tab').forEach(tab => {
+              tab.addEventListener('click', function () {
+                // Remove active class from all tabs
+                document.querySelectorAll('.year-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+
+                const year = this.getAttribute('data-year');
+
+                // Hide all panels and show the one that matches the year
+                document.querySelectorAll('.year-panel').forEach(panel => {
+                  if (panel.getAttribute('data-year') === year) {
+                    panel.classList.remove('d-none');
+                    panel.classList.add('row');
+                  } else {
+                    panel.classList.add('d-none');
+                    panel.classList.remove('row');
+                  }
+                });
+              });
+            });
+
+          });
+        </script>
+
+
+  </main>
+  <div class="adventure-section">
+    <div class="world-map"></div> <!-- World map background -->
+    <h1 class="f-44">Start My Adventure - Explore <span>India</span> Now!</h1>
+    <p>Contact us today to start planning your dream trip with The Vibe Check Guy!</p>
+    <a href="#contact" class="contact-btn bg-white text-orange" style="border:1px solid orange">Contact Now &rarr;</a>
+  </div>
+
+
+
+  <!-- Section Start -->
+  <section class="pt-50">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Left Column -->
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <p class="text-orange fw-semibold">The features will become Past Trips</p>
+          <h2 class="fw-bold">Explore India with<br>The Vibe Check Guy</h2>
+          <p class="text-muted">Witnessing the thrill of adventure, happy miles and the satisfaction of a journey
+            well-traveled.</p>
+          <img src="assets/img/home/Group.png" alt="Illustration" class="img-fluid mt-4" />
+        </div>
+
+        <!-- Right Column -->
+        <div class="col-lg-6">
+          <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-sm-6" style="margin-top:125px">
+              <div class="trip-card p-3 rounded-4 shadow-sm ">
+                <div class="image-wrapper mb-4 rounded-4 overflow-hidden">
+                  <img src="assets/img/home/ex-1.png" class="img-fluid w-100 zoom-on-hover" alt="Trip 1" />
+                </div>
+                <h6 class="fw-bold mb-3">Riding Marshal</h6>
+                <p class="text-muted mb-3">Leading group rides with safety and precision.</p>
+              </div>
+              <div class="trip-card p-3 rounded-4 shadow-sm ">
+                <div class="image-wrapper mb-4 rounded-4 overflow-hidden">
+                  <img src="assets/img/home/ex-2.png" class="img-fluid w-100 zoom-on-hover" alt="Trip 3" />
+                </div>
+                <h6 class="fw-bold mb-3">Your Travel Buddy</h6>
+                <p class="text-muted mb-3">Your travel buddy for safe and memorable journeys.</p>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-sm-6">
+              <div class="trip-card p-3 rounded-4 shadow-sm ">
+                <div class="image-wrapper mb-4 rounded-4 overflow-hidden">
+                  <img src="assets/img/home/ex-3.png" class="img-fluid w-100 zoom-on-hover" alt="Trip 2" />
+                </div>
+                <h6 class="fw-bold mb-3">For Festive Trip</h6>
+                <p class="text-muted mb-3">Guiding festive trips with joy, safety, and care.</p>
+              </div>
+              <div class="trip-card p-3 rounded-4 shadow-sm ">
+                <div class="image-wrapper mb-4 rounded-4 overflow-hidden">
+                  <img src="assets/img/home/ex-4.png" class="img-fluid w-100 zoom-on-hover" alt="Trip 4" />
+                </div>
+                <h6 class="fw-bold mb-3">Your Travel Caption</h6>
+                <p class="text-muted mb-3">Your travel caption for unforgettable adventures.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section End -->
+
+
+  <footer class="footer pt-5 pb-3 mt-5" style="background-color:#f9f9f9">
+    <div class="container">
+      <div class="row">
+        <!-- Logo & Description -->
+        <div class="col-md-6 mb-4 mb-md-0 d-flex gap-2">
+          <img src="assets/img/logo.png" alt="Logo" class="mb-3" style="width: 110px;height: 110px;">
+          <p class="text-muted f-14" style="line-height: 169.2%;padding-left:10px;">
+            Through immersive travel, we bridge cultural gaps, reveal India's spiritual core, and craft personalized
+            experiences, because we believe life is a journey of love and discovery.
+          </p>
+        </div>
+
+        <!-- Information Links -->
+        <div class="col-md-3 mb-4 mb-md-0">
+          <div class="row">
+            <div class="col-md-6 custom-width-50">
+              <h6 class="fw-bold mb-3">Information</h6>
+              <ul class="list-unstyled small text-muted">
+                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Disclaimer</a></li>
+                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Registration</a></li>
+                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Cancellation Policy</a></li>
+                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Terms & Conditions</a></li>
+                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Payment Policy</a></li>
+                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">FAQs</a></li>
+              </ul>
+            </div>
+            <div class="col-md-6 custom-width-50">
+              <h6 class="fw-bold mb-3">Links</h6>
+              <ul class="list-unstyled small text-muted">
+                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">About Us</a></li>
+                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Services</a></li>
+                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Contact Us</a></li>
+                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Gallery</a></li>
+                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Shop</a></li>
+                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Blog</a></li>
+              </ul>
+            </div>
+            </row>
+          </div>
+        </div>
+
+
+        <!-- Contact -->
+        <div class="col-md-3">
+          <h6 class="fw-bold mb-3">Contact Us</h6>
+          <p class=" mb-1" class="text-common f-14"><i class="bi bi-telephone-fill text-warning me-2"></i>+91 88503
+            50018</p>
+          <p class=" mb-3" class="text-common f-14"><i
+              class="bi bi-envelope-fill text-warning me-2"></i>info@thevibecheckguy.co.in</p>
+          <div class="d-flex gap-2">
+            <a href="#" class="btn btn-dark btn-sm rounded-circle"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="btn btn-dark btn-sm rounded-circle"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="btn btn-dark btn-sm rounded-circle"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="btn btn-dark btn-sm rounded-circle"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="mt-4 pt-3 border-top small text-muted">
+        Copyright © 2025 The Vibe Check Guy
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

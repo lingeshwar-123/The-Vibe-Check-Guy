@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>The-Vibe-Check-Guy</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Gp
+  * Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
+  * Updated: Aug 15 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <style>
+    .header {
+      box-shadow: 3px 1px 3px #c9c9c9;
+
+
+    }
+
+    /* Navmenu - Desktop */
+    @media (max-width: 1199px) {
+      .mobile-nav-toggle {
+        color: black;
+        font-size: 28px;
+        line-height: 0;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: color 0.3s;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .navmenu {
+        padding: 0;
+      }
+
+      .navmenu ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        list-style: none;
+        align-items: center;
+      }
+
+      .navmenu li {
+        position: relative;
+      }
+
+      .navmenu a,
+      .navmenu a:focus {
+        color: #212529;
+        padding: 18px 15px;
+        font-size: 16px;
+        font-family: var(--nav-font);
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        white-space: nowrap;
+        transition: 0.3s;
+      }
+
+      .navmenu a i,
+      .navmenu a:focus i {
+        font-size: 12px;
+        line-height: 0;
+        margin-left: 5px;
+        transition: 0.3s;
+      }
+
+      .navmenu li:last-child a {
+        padding-right: 0;
+      }
+
+      .navmenu li:hover>a,
+      .navmenu .active,
+      .navmenu .active:focus {
+        color: var(--nav-hover-color);
+      }
+
+      .navmenu .dropdown ul {
+        margin: 0;
+        padding: 10px 0;
+        background: var(--nav-dropdown-background-color);
+        display: block;
+        position: absolute;
+        visibility: hidden;
+        left: 14px;
+        top: 130%;
+        opacity: 0;
+        transition: 0.3s;
+        border-radius: 0;
+        z-index: 99;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .navmenu .dropdown ul li {
+        min-width: 200px;
+      }
+
+      .navmenu .dropdown ul a {
+        padding: 10px 20px;
+        font-size: 15px;
+        text-transform: none;
+        color: var(--nav-dropdown-color);
+      }
+
+      .navmenu .dropdown ul a i {
+        font-size: 12px;
+      }
+
+      .navmenu .dropdown ul a:hover,
+      .navmenu .dropdown ul .active:hover,
+      .navmenu .dropdown ul li:hover>a {
+        background-color: var(--nav-dropdown-hover-color);
+      }
+
+      .navmenu .dropdown:hover>ul {
+        opacity: 1;
+        top: 100%;
+        visibility: visible;
+      }
+
+      .navmenu .dropdown .dropdown ul {
+        top: 0;
+        left: -90%;
+        visibility: hidden;
+      }
+
+      .navmenu .dropdown .dropdown:hover>ul {
+        opacity: 1;
+        top: 0;
+        left: -100%;
+        visibility: visible;
+      }
+    }
+
+
+    .intro-section {
+      background: url('./assets/img/service/service-bg.png') no-repeat top right;
+      background-size: cover;
+      padding: 0px 20px;
+    }
+
+
+    .check {
+      color: green;
+      font-weight: bold;
+    }
+
+    .cross {
+      color: red;
+      font-weight: bold;
+    }
+
+    .on-call {
+      color: orange;
+      font-weight: bold;
+    }
+
+    .service-table span.heading {
+      border-bottom: none;
+      padding-left: 10px;
+      padding-right: 10px;
+      display: block;
+      color: #212529;
+      font-weight: 500;
+      font-size: 20px;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+
+    .service-table span {
+      color: #000000A3;
+      font-size: 15px;
+      border-bottom: 1px solid #d8d8d8;
+      padding-bottom: 8px;
+      display: block;
+      padding-left: 14px;
+
+    }
+
+    .table thead th {
+      background-color: #fff;
+      border: none;
+    }
+
+    .table thead th {
+      /*  background-color: #ebebeb !important; */
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    tbody,
+    td,
+    tfoot,
+    th,
+    thead,
+    tr {
+      border-color: inherit;
+      border-style: none;
+      border-width: 0;
+
+    }
+
+    .table tbody td {
+      text-align: center;
+      vertical-align: middle;
+      background-color: #f6f6f6 !important;
+      border: none;
+      padding-top: 0;
+    }
+
+    .travel-consultant {
+      background-color: #d0e7f9;
+      font-weight: bold;
+    }
+
+    .travel-buddy {
+      background-color: #d2f4e8;
+      font-weight: bold;
+    }
+
+    .travel-agent {
+      background-color: #fde2b9;
+      font-weight: bold;
+    }
+
+    .pt-6 {
+      padding-top: 4rem !important;
+    }
+
+
+    .section-icon {
+      font-size: 2.5rem;
+
+      padding: 1rem;
+      border-radius: 50%;
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: #5CB2E4;
+    }
+
+    .section-heading {
+      font-weight: 500;
+      margin-bottom: 1rem;
+      font-size: 28px;
+    }
+
+    .orange-icon {
+
+      color: #ff9800;
+    }
+
+    .green-icon {
+
+      color: #4caf50;
+    }
+
+    .divider {
+      width: 2px;
+      height: 40px;
+      background-color: #ddd;
+      margin: 2rem auto;
+    }
+
+    .custom-padding {
+      padding-top: 4rem !important;
+      padding-bottom: 4rem !important;
+    }
+
+    .w-full-l {
+
+      position: absolute;
+      left: 0;
+    }
+
+    .w-full-r {
+
+      position: absolute;
+      right: 0;
+    }
+
+    .w-500 {
+      width: 500px;
+    }
+
+    @media(max-width:768px) {
+      .w-full-l {
+        width: 100%;
+        position: static;
+        left: 0;
+      }
+
+      .w-full-r {
+        width: 100%;
+        position: static;
+        right: 0;
+      }
+
+      /* .service-table{
+    table-layout: fixed !important;
+  } */
+      .w-500 {
+        width: 300px;
+      }
+
+      .service-table span.heading {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center w-100">
+    <div
+      class="h-mobile container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <img src="assets/img/logo.png" alt="">
+
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home<br></a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="service.html" class="active">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="#team">Shop</a></li>
+          <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li> -->
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+      <span class="d-flex gap-4">
+        <img class="cursor-pointer" src="assets/img/about/call.png" alt="call">
+        <img class="cursor-pointer" src="assets/img/about/Cart1.png" alt="cart">
+      </span>
+      <!-- <a class="btn-getstarted" href="index.html#about">Get Started</a> -->
+
+    </div>
+  </header>
+
+  <main class="main-about">
+    <section class="intro-section">
+      <div class="container">
+        <div class="row">
+          <!-- Text Content -->
+          <div class="col-md-12 mb-4 pt-6 text-center" style="margin-bottom: 81px !important;">
+            <h4 class="f-44 mb-4">Your India Journey, Tailored Your Way</h4>
+            <p class="mb-4">
+              Your journey through India should be as unique as you are. That's why we offer a range of services to
+              personalize your travel experience. Choose your trip with our unique service tiers: Travel Consultant,
+              Travel Buddy, or Travel Agent. From on-call guidance to full itinerary planning and bookings, we adapt to
+              your travel style, ensuring a seamless and unforgettable Indian experience.
+            </p>
+
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div style="background-color: #F4F4F4CC;">
+      <div class="container mb-5">
+        <div class="table-responsive" style="position: relative;top: -62px;">
+
+          <table class="table table-bordered align-middle service-table">
+            <tr>
+              <th> <span class="heading text-start w-500" style="background-color: #EBEBEB;">Service Offered</span></th>
+              <th class="travel-consultant"> <span class="heading" style="background-color: #5CB2E480;">Travel
+                  Consultant</span></th>
+              <th class="travel-buddy"> <span class="heading" style="background-color: #0D9A4880;">Travel Buddy</span>
+              </th>
+              <th class="travel-agent"> <span class="heading" style="background-color: #F89B1C80;">Travel Agent</span>
+              </th>
+            </tr>
+            <tbody>
+              <tr>
+                <td class="text-start  w-500"><span style="padding-top: 12px;">&#x2022; On-call session about traveling
+                    in India</span></td>
+                <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
+                      style="transform: rotate(270deg);"></span></td>
+                <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
+                      style="transform: rotate(270deg);"></span></td>
+                <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
+                      style="transform: rotate(270deg);"></span></td>
+              </tr>
+              <td class="text-start  w-500"><span style="padding-top: 12px;">&#x2022; On-call session about traveling in
+                  India</span></td>
+              <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
+                    style="transform: rotate(270deg);"></span></td>
+              <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
+                    style="transform: rotate(270deg);"></span></td>
+              <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
+                    style="transform: rotate(270deg);"></span></td>
+              </tr>
+              <tr>
+                <td class="text-start  w-500"><span>&#x2022; will book all your commutes</span> </td>
+                <td><span style="padding-top: 0px;"><img src="assets/img/service/close.png"></span></td>
+                <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
+                      style="transform: rotate(270deg);"></span></td>
+                <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
+                      style="transform: rotate(270deg);"></span></td>
+              </tr>
+              <tr>
+                <td class="text-start  w-500"><span>&#x2022; I will book all your stays</span></td>
+                <td><span style="padding-top: 0px;"><img src="assets/img/service/close.png"></span></td>
+                <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
+                      style="transform: rotate(270deg);"></span></td>
+                <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
+                      style="transform: rotate(270deg);"></span></td>
+              </tr>
+              <tr>
+                <td class="text-start  w-500"><span>&#x2022; I will be your Indian travel companion</span></td>
+                <td><span style="padding-top: 0px;"><img src="assets/img/service/close.png"></span></span></td>
+                <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
+                      style="transform: rotate(270deg);"></span></td>
+                <td><span style="padding-top: 12px;"><img src="assets/img/service/Call.png" style="position: relative;
+    top: -5px;"></span></td>
+              </tr>
+              <tr>
+                <td class="text-start  w-500"><span>&#x2022; I will bridge the cultural gap</span></td>
+                <td><span style="padding-top: 0px;"><img src="assets/img/service/close.png"></span></span></td>
+                <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
+                      style="transform: rotate(270deg);"></span></td>
+                <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
+                      style="transform: rotate(270deg);"></span></td>
+              </tr>
+              <tr>
+                <td class="text-start  w-500"><span>&#x2022; I will bridge the language gap (Hindi ↔ English)</span>
+                </td>
+                <td><span style="padding-top: 0px;"><img src="assets/img/service/close.png"></span></span></td>
+                <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
+                      style="transform: rotate(270deg);"></span></td>
+                <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
+                      style="transform: rotate(270deg);"></span></td>
+              </tr>
+              <tr>
+                <td class="text-start  w-500"><span>&#x2022; I will be there for you</span></td>
+                <td><span style="padding-top: 0px;"><img src="assets/img/service/right.png"
+                      style="transform: rotate(270deg);"></span></td>
+                <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
+                      style="transform: rotate(270deg);"></span></td>
+                <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
+                      style="transform: rotate(270deg);"></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="container text-center custom-padding position-relative">
+
+      <!-- Travel Consultant -->
+      <div class="mb-5">
+        <div class="section-icon">
+          <img src="assets/img/service/icon-1.png" alt="" srcset="">
+        </div>
+        <h3 class="section-heading text-primary">Your Travel Consultant</h3>
+        <p class="mx-auto" style="max-width: 800px;width: 100%;" style="color:#00000099">
+          Let's craft your dream trip to India together. As your personal Travel Consultant, I'll take the time to truly
+          understand your travel style, interests, and budget. Whether you're seeking spiritual enlightenment, thrilling
+          adventures, or cultural immersion on just a rickshaw trip, sharing my own experiences and passion for India,
+          I'll design a customized itinerary that captures the magic of India and reflects your unique travel
+          aspirations for an unforgettable journey.
+        </p>
+        <img src="assets/img/service/bg-1.png" class="w-full-l">
+      </div>
+
+      <div class="divider" style="background-color: #F99C1C;"></div>
+
+      <!-- Travel Buddy -->
+      <div class="mb-5">
+        <div class="section-icon orange-icon">
+          <img src="assets/img/service/icon-2.png" alt="" srcset="">
+        </div>
+        <h3 class="section-heading text-warning">Your Travel Buddy</h3>
+        <p class="mx-auto" style="max-width: 800px;width: 100%;" style="color:#00000099">
+          Discover the real India like a local with a dedicated Travel Buddy. I'll accompany you, offering expert
+          guidance and ensuring your comfort and safety every step of the way, allowing you to relax and immerse
+          yourself in the wonders of India without stress. I'll share my own experienced firsthand insights and someone
+          deeply familiar with the local nuances. I'll help you navigate everything from bustling markets to ancient
+          traditions. I'll bridge the cultural and language gaps (Hindi ↔ English) to enrich your journey and connect
+          with authentic local spirit and traditions, creating a truly enriching and unforgettable travel experience.
+          <br><br>
+          My goal is to help you fall in love with India just as I have, creating memories that will last a lifetime.
+        </p>
+        <img src="assets/img/service/bg-2.png" class="w-full-r">
+
+        <div class="divider" style="background-color: #0D9A48;"></div>
+
+        <!-- Travel Agent -->
+        <div class="mb-5">
+          <div class="section-icon green-icon">
+            <img src="assets/img/service/icon-3.png" alt="" srcset="">
+          </div>
+          <h3 class="section-heading text-success">Your Travel Agent</h3>
+          <p class="mx-auto" style="max-width: 800px;" style="color:#00000099">
+            Your Indian Journey, Handled with Care. I believe in providing comprehensive service, from planning your
+            ideal customized itinerary to managing every booking detail. I'll secure your transportations and
+            accommodations, ensuring a comfortable and convenient travel experience. As your dedicated travel sound on
+            seamless trip experience, I'll be available on call to offer support and assistance whenever you need it.
+            Consider me your personal travel concierge.
+          </p>
+          <img src="assets/img/service/bg-3.png" class="w-full-l">
+        </div>
+        <div class="divider" style="background-color: #F99C1C;"></div>
+        <!-- Travel Buddy -->
+        <div class="mb-5">
+          <div class="section-icon orange-icon">
+            <img src="assets/img/service/icon-4.png" alt="" srcset="">
+          </div>
+          <h3 class="section-heading text-warning">Your Riding Marshal</h3>
+          <p class="mx-auto" style="max-width: 800px;" style="color:#00000099">
+            I have had the privilege of exploring India’s diverse landscapes, from the rugged terrains of the Himalayas
+            to the arid expanses of the Desert. With years of experience riding solo across the country and leading
+            groups through some of the most challenging routes, I ensure that your riding journey is nothing short of
+            spectacular—safely and with a deep sense of adventure. I focus on creating a safe, enjoyable experience for
+            the group, where every rider can push their limits while knowing they are in expert hands.
+
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+    <footer class="footer pt-5 pb-3 mt-5" style="background-color:#f9f9f9">
+      <div class="container">
+        <div class="row">
+          <!-- Logo & Description -->
+          <div class="col-md-6 mb-4 mb-md-0 d-flex gap-2">
+            <img src="assets/img/logo.png" alt="Logo" class="mb-3" style="width: 110px;height: 110px;">
+            <p class="text-muted f-14" style="line-height: 169.2%;padding-left:10px;">
+              Through immersive travel, we bridge cultural gaps, reveal India's spiritual core, and craft personalized
+              experiences, because we believe life is a journey of love and discovery.
+            </p>
+          </div>
+
+          <!-- Information Links -->
+          <div class="col-md-3 mb-4 mb-md-0">
+            <div class="row">
+              <div class="col-md-6 custom-width-50">
+                <h6 class="fw-bold mb-3">Information</h6>
+                <ul class="list-unstyled small text-muted">
+                  <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Disclaimer</a></li>
+                  <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Registration</a></li>
+                  <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Cancellation Policy</a></li>
+                  <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Terms & Conditions</a></li>
+                  <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Payment Policy</a></li>
+                  <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">FAQs</a></li>
+                </ul>
+              </div>
+              <div class="col-md-6 custom-width-50">
+                <h6 class="fw-bold mb-3">Links</h6>
+                <ul class="list-unstyled small text-muted">
+                  <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">About Us</a></li>
+                  <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Services</a></li>
+                  <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Contact Us</a></li>
+                  <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Gallery</a></li>
+                  <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Shop</a></li>
+                  <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Blog</a></li>
+                </ul>
+              </div>
+              </row>
+            </div>
+          </div>
+
+
+          <!-- Contact -->
+          <div class="col-md-3">
+            <h6 class="fw-bold mb-3">Contact Us</h6>
+            <p class=" mb-1" class="text-common f-14"><i class="bi bi-telephone-fill text-warning me-2"></i>+91 88503
+              50018</p>
+            <p class=" mb-3" class="text-common f-14"><i
+                class="bi bi-envelope-fill text-warning me-2"></i>info@thevibecheckguy.co.in</p>
+            <div class="d-flex gap-2">
+              <a href="#" class="btn btn-dark btn-sm rounded-circle"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="btn btn-dark btn-sm rounded-circle"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="btn btn-dark btn-sm rounded-circle"><i class="bi bi-linkedin"></i></a>
+              <a href="#" class="btn btn-dark btn-sm rounded-circle"><i class="bi bi-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="mt-4 pt-3 border-top small text-muted">
+          Copyright © 2025 The Vibe Check Guy
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>The-Vibe-Check-Guy</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Gp
+  * Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
+  * Updated: Aug 15 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <style>
+    .header{
+    box-shadow: 3px 1px 3px #c9c9c9;
+
+
+    }
+     /* Navmenu - Desktop */
+     @media (max-width: 1199px){
+      .mobile-nav-toggle {
+    color: black;
+    font-size: 28px;
+    line-height: 0;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+}}
+@media (min-width: 1200px) {
+  .navmenu {
+    padding: 0;
+  }
+
+  .navmenu ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+
+  .navmenu li {
+    position: relative;
+  }
+
+  .navmenu a,
+  .navmenu a:focus {
+    color: #212529;
+    padding: 18px 15px;
+    font-size: 16px;
+    font-family: var(--nav-font);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+
+  .navmenu a i,
+  .navmenu a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+    transition: 0.3s;
+  }
+
+  .navmenu li:last-child a {
+    padding-right: 0;
+  }
+
+  .navmenu li:hover>a,
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: var(--nav-hover-color);
+  }
+
+  .navmenu .dropdown ul {
+    margin: 0;
+    padding: 10px 0;
+    background: var(--nav-dropdown-background-color);
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    left: 14px;
+    top: 130%;
+    opacity: 0;
+    transition: 0.3s;
+    border-radius: 0;
+    z-index: 99;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .navmenu .dropdown ul li {
+    min-width: 200px;
+  }
+
+  .navmenu .dropdown ul a {
+    padding: 10px 20px;
+    font-size: 15px;
+    text-transform: none;
+    color: var(--nav-dropdown-color);
+  }
+
+  .navmenu .dropdown ul a i {
+    font-size: 12px;
+  }
+
+  .navmenu .dropdown ul a:hover,
+  .navmenu .dropdown ul .active:hover,
+  .navmenu .dropdown ul li:hover>a {
+    background-color: var(--nav-dropdown-hover-color);
+  }
+
+  .navmenu .dropdown:hover>ul {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+  }
+
+  .navmenu .dropdown .dropdown ul {
+    top: 0;
+    left: -90%;
+    visibility: hidden;
+  }
+
+  .navmenu .dropdown .dropdown:hover>ul {
+    opacity: 1;
+    top: 0;
+    left: -100%;
+    visibility: visible;
+  }
+}
+
+
+.intro-section {
+    background: url('./assets/img/about/abou-bg.png') no-repeat top right;
+     background-size: contain;  
+        padding: 0px 20px;
+      }
+      .signature {
+        font-family: 'Brush Script MT', cursive;
+        font-size: 2rem;
+        color: #ccc;
+        margin-top: 100px;
+      }
+      .cert-image {
+        max-width: 100%;
+        border-radius: 8px;
+       
+      }
+      .pt-130{
+        padding-top: 130px;
+      }
+
+
+      .custom-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.custom-pagination .page-item .page-link {
+  border: none;
+  color: #555;
+  background-color: transparent;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+}
+
+.custom-pagination .page-item.active .page-link {
+  color: #f39c12; /* orange highlight for active */
+  font-weight: bold;
+  background-color: transparent;
+}
+
+.custom-pagination .page-item .page-link:hover {
+  color: #f39c12;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+      @media (max-width: 768px) {
+      .blog-container .img-contr {
+    padding-left: 0;
+    width: 100%;
+}
+.f-38 {
+    font-size: 28px;
+}
+.blog-container .text-contr {
+    width: 100%;
+}
+  }
+
+ 
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center w-100">
+    <div class="h-mobile container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <img src="assets/img/logo.png" alt="">
+      
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home<br></a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="#team">Shop</a></li>
+          <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li> -->
+          <li><a href="blog.html" class="active">Blog</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+       <span class="d-flex gap-4">
+         <img class="cursor-pointer" src="assets/img/about/call.png" alt="call">
+         <img class="cursor-pointer" src="assets/img/about/Cart1.png" alt="cart">
+       </span>
+      <!-- <a class="btn-getstarted" href="index.html#about">Get Started</a> -->
+
+    </div>
+  </header>
+
+  <main class="main-about">
+    <section class="intro-section">
+        <div class="container">
+          <div class="text-center py-5">
+            <h1 class="f-44 mb-3">Vibe Check Guy Blog – Ride, Explore, Experience!</h1>
+            <p>Discover epic rides, travel tips, and adventure stories – your go-to blog for all things biking and exploration!</p>
+          </div>
+          <div class="blog-container mb-5">
+            <div class="row">
+              <!-- Text Content -->
+              <div class="col-md-6 text-contr">
+                <div class="tag mb-4">Mar 2025</div>
+                <h4 class="f-38 mb-3">India Circuit Solo Ride - 14,163 kilometers in 66 days</h4>
+                <p class="mb-3">
+                  Lead your group through India's most breathtaking landscapes with a marshal whose passion for riding, has experience and knows the terrain intimately, ensuring a safe, exhilarating, and unforgettable riding adventure.
+                </p>
+              </div>
+              <!-- Image Content -->
+              <div class="col-md-6 text-center img-contr">
+                <img src="assets/img/blog/blog-1.png" alt="Suraj Ahuja" class="cert-image">
+              </div>
+            </div>
+            <div class="icon-contr">
+              <img src="assets/img/blog/arrow.png" alt="Arrow">
+            </div>
+          </div>
+
+          <div class="blog-container mb-5">
+            <div class="row">
+              <!-- Text Content -->
+              <div class="col-md-6 text-contr">
+                <div class="tag mb-4">Mar 2025</div>
+                <h4 class="f-38 mb-3">India Circuit Solo Ride - 14,163 kilometers in 66 days</h4>
+                <p class="mb-3">
+                  Lead your group through India's most breathtaking landscapes with a marshal whose passion for riding, has experience and knows the terrain intimately, ensuring a safe, exhilarating, and unforgettable riding adventure.
+                </p>
+              </div>
+              <!-- Image Content -->
+              <div class="col-md-6 text-center img-contr">
+                <img src="assets/img/blog/blog-2.png" alt="Suraj Ahuja" class="cert-image">
+              </div>
+            </div>
+            <div class="icon-contr">
+              <img src="assets/img/blog/arrow.png" alt="Arrow">
+            </div>
+          </div>
+          <div class="blog-container mb-5">
+            <div class="row">
+              <!-- Text Content -->
+              <div class="col-md-6 text-contr">
+                <div class="tag mb-4">Mar 2025</div>
+                <h4 class="f-38 mb-3">India Circuit Solo Ride - 14,163 kilometers in 66 days</h4>
+                <p class="mb-3">
+                  Lead your group through India's most breathtaking landscapes with a marshal whose passion for riding, has experience and knows the terrain intimately, ensuring a safe, exhilarating, and unforgettable riding adventure.
+                </p>
+              </div>
+              <!-- Image Content -->
+              <div class="col-md-6 text-center img-contr">
+                <img src="assets/img/blog/blog-3.png" alt="Suraj Ahuja" class="cert-image">
+              </div>
+            </div>
+            <div class="icon-contr">
+              <img src="assets/img/blog/arrow.png" alt="Arrow">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <nav aria-label="Page navigation example">
+        <ul class="pagination custom-pagination">
+          <li class="page-item"><a class="page-link" href="#">First</a></li>
+          <li class="page-item"><a class="page-link" href="#"><img src="assets/img/blog/left.png" alt="" ></a></li>
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">4</a></li>
+          <li class="page-item"><a class="page-link" href="#"><img src="assets/img/blog/right.png" alt="" ></a></li>
+          <li class="page-item"><a class="page-link" href="#">Last</a></li>
+        </ul>
+      </nav>
+      
+  </main>
+
+  <footer class="footer pt-5 pb-3 mt-5" style="background-color:#f9f9f9">
+    <div class="container">
+      <div class="row">
+        <!-- Logo & Description -->
+        <div class="col-md-4 mb-4 mb-md-0 d-flex gap-2">
+          <img src="assets/img/logo.png" alt="Logo" class="mb-3" style="width: 110px;height: 110px;">
+          <p class="text-muted f-14" style="line-height: 169.2%;padding-left:10px;">
+            Through immersive travel, we bridge cultural gaps, reveal India's spiritual core, and craft personalized experiences, because we believe life is a journey of love and discovery.
+          </p>
+        </div>
+  
+        <!-- Information Links -->
+        <div class="col-md-4 mb-4 mb-md-0">
+          <div class="row">
+            <div class="col-md-6 custom-width-50">
+              <h6 class="fw-bold mb-3">Information</h6>
+              <ul class="list-unstyled small text-muted">
+                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Disclaimer</a></li>
+                <li><a href="#"  class="text-common f-14" style="line-height: 169.2%;">Registration</a></li>
+                <li><a href="#"  class="text-common f-14" style="line-height: 169.2%;">Cancellation Policy</a></li>
+                <li><a href="#"  class="text-common f-14" style="line-height: 169.2%;">Terms & Conditions</a></li>
+                <li><a href="#"  class="text-common f-14" style="line-height: 169.2%;">Payment Policy</a></li>
+                <li><a href="#"  class="text-common f-14" style="line-height: 169.2%;">FAQs</a></li>
+              </ul>
+            </div>
+            <div class="col-md-6 custom-width-50">
+              <h6 class="fw-bold mb-3">Links</h6>
+              <ul class="list-unstyled small text-muted">
+                <li><a href="#"  class="text-common f-14" style="line-height: 169.2%;">About Us</a></li>
+                <li><a href="#"  class="text-common f-14" style="line-height: 169.2%;">Services</a></li>
+                <li><a href="#"  class="text-common f-14" style="line-height: 169.2%;">Contact Us</a></li>
+                <li><a href="#"  class="text-common f-14" style="line-height: 169.2%;">Gallery</a></li>
+                <li><a href="#"  class="text-common f-14" style="line-height: 169.2%;">Shop</a></li>
+                <li><a href="#"  class="text-common f-14" style="line-height: 169.2%;">Blog</a></li>
+              </ul>
+            </div>
+          </row>     
+        </div> 
+      </div> 
+   
+  
+        <!-- Contact -->
+        <div class="col-md-4">
+          <h6 class="fw-bold mb-3">Contact Us</h6>
+          <p class=" mb-1"  class="text-common f-14"><i class="bi bi-telephone-fill text-warning me-2"></i>+91 88503 50018</p>
+          <p class=" mb-3"  class="text-common f-14"><i class="bi bi-envelope-fill text-warning me-2"></i>info@thevibecheckguy.co.in</p>
+          <div class="d-flex gap-2">
+            <a href="#" class="btn btn-dark btn-sm rounded-circle"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="btn btn-dark btn-sm rounded-circle"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="btn btn-dark btn-sm rounded-circle"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="btn btn-dark btn-sm rounded-circle"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Footer Bottom -->
+      <div class="mt-4 pt-3 border-top small text-muted">
+        Copyright © 2025 The Vibe Check Guy
+      </div>
+    </div>
+  </footer>
+  
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
