@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>The-Vibe-Check-Guy</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Gp
+  * Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
+  * Updated: Aug 15 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <style>
+    .header {
+      box-shadow: 3px 1px 3px #c9c9c9;
+
+
+    }
+
+    /* Navmenu - Desktop */
+    @media (max-width: 1199px) {
+      .mobile-nav-toggle {
+        color: black;
+        font-size: 28px;
+        line-height: 0;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: color 0.3s;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .navmenu {
+        padding: 0;
+      }
+
+      .navmenu ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        list-style: none;
+        align-items: center;
+      }
+
+      .navmenu li {
+        position: relative;
+      }
+
+      .navmenu a,
+      .navmenu a:focus {
+        color: #212529;
+        padding: 18px 15px;
+        font-size: 16px;
+        font-family: var(--nav-font);
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        white-space: nowrap;
+        transition: 0.3s;
+      }
+
+      .navmenu a i,
+      .navmenu a:focus i {
+        font-size: 12px;
+        line-height: 0;
+        margin-left: 5px;
+        transition: 0.3s;
+      }
+
+      .navmenu li:last-child a {
+        padding-right: 0;
+      }
+
+      .navmenu li:hover>a,
+      .navmenu .active,
+      .navmenu .active:focus {
+        color: var(--nav-hover-color);
+      }
+
+      .navmenu .dropdown ul {
+        margin: 0;
+        padding: 10px 0;
+        background: var(--nav-dropdown-background-color);
+        display: block;
+        position: absolute;
+        visibility: hidden;
+        left: 14px;
+        top: 130%;
+        opacity: 0;
+        transition: 0.3s;
+        border-radius: 0;
+        z-index: 99;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .navmenu .dropdown ul li {
+        min-width: 200px;
+      }
+
+      .navmenu .dropdown ul a {
+        padding: 10px 20px;
+        font-size: 15px;
+        text-transform: none;
+        color: var(--nav-dropdown-color);
+      }
+
+      .navmenu .dropdown ul a i {
+        font-size: 12px;
+      }
+
+      .navmenu .dropdown ul a:hover,
+      .navmenu .dropdown ul .active:hover,
+      .navmenu .dropdown ul li:hover>a {
+        background-color: var(--nav-dropdown-hover-color);
+      }
+
+      .navmenu .dropdown:hover>ul {
+        opacity: 1;
+        top: 100%;
+        visibility: visible;
+      }
+
+      .navmenu .dropdown .dropdown ul {
+        top: 0;
+        left: -90%;
+        visibility: hidden;
+      }
+
+      .navmenu .dropdown .dropdown:hover>ul {
+        opacity: 1;
+        top: 0;
+        left: -100%;
+        visibility: visible;
+      }
+    }
+
+
+    .intro-section {
+      background: url('./assets/img/service/service-bg.png') no-repeat top right;
+      background-size: contain;
+      padding: 0px 20px;
+    }
+
+    .pt-6 {
+      padding-top: 4rem !important;
+    }
+
+    .contact-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      margin-top: 40px;
+      padding: 40px 0;
+    }
+
+    .contact-info {
+      margin-bottom: 30px;
+      margin-top: 200px;
+    }
+
+    .contact-info h5 {
+      margin-top: 20px;
+      font-weight: 600;
+    }
+
+    .form-container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container label {
+      color: #69686B;
+    }
+
+    .form-container .input-Control {
+      background-color: #E2E2E3;
+      height: 50px;
+    }
+
+    .pd-120 {
+      padding-right: 120px;
+    }
+
+
+
+    .nav-pills .nav-link {
+      border-radius: 0;
+      color: #00000099;
+      font-weight: 500;
+    }
+
+    .nav-pills .nav-link.active {
+      /* border-left: 3px solid #fbb03b; */
+      color: #F99C1C;
+      background: transparent;
+    }
+
+    .contact .nav-pills .nav-link.active:after {
+      content: '';
+      height: 1px;
+      width: 130px;
+      position: absolute;
+      background-color: #F99C1C;
+      margin-top: 11px;
+      margin-left: 21px;
+    }
+
+    .accordion-button::after {
+      flex-shrink: 0;
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    .accordion-button {
+      color: #000;
+      background-color: #fff;
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    .accordion-button:not(.collapsed) {
+      color: #000;
+      background-color: #fff;
+      font-weight: 600;
+    }
+
+    .accordion-button:focus {
+      box-shadow: none;
+    }
+
+    .contact-page .accordion-button::after {
+      flex-shrink: 0;
+      width: 1.25rem;
+      height: 1.25rem;
+      left: 12px;
+      position: absolute;
+    }
+
+    .contact-page .accordion-button,
+    .contact-page .accordion-body {
+      padding-left: 50px;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+      background-image: url('./assets/img/Icons/minus.png');
+      top: 9px;
+    }
+
+    .accordion-button::after {
+      background-image: url('./assets/img/Icons/plus.png');
+    }
+
+    .accordion-item {
+      border-right: 0px solid !important;
+      border-left: 0px solid !important;
+    }
+
+    @media(max-width:768px) {    
+      .pd-120 {
+    padding-right: 15px;
+      }
+      .p-0{
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center w-100">
+    <div
+      class="h-mobile container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <img src="assets/img/logo.png" alt="">
+
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home<br></a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="#team">Shop</a></li>
+          <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li> -->
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html" class="active">Contact Us</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+      <span class="d-flex gap-4">
+        <img class="cursor-pointer" src="assets/img/about/call.png" alt="call">
+        <img class="cursor-pointer" src="assets/img/about/Cart1.png" alt="cart">
+      </span>
+      <!-- <a class="btn-getstarted" href="index.html#about">Get Started</a> -->
+
+    </div>
+  </header>
+
+  <main class="main-about contact-page">
+    <section class="intro-section">
+      <div class="container">
+        <div class="row">
+          <!-- Text Content -->
+          <div class="col-md-12 mb-4 pt-6">
+
+            <section class="contact-section">
+              <div class="container">
+                <div class="row g-5">
+                  <!-- Left side (Contact Info) -->
+                  <div class="col-lg-6 pd-120">
+                    <h2 class="f-44" style="font-weight: 600;">Become Part <br> of the Change</h2>
+                    <p class="mt-3 mb-4">Got questions or just want to visit? Reach out to us – we’d love to hear from
+                      you!</p>
+
+                    <div class="contact-info">
+                      <h5><i class="bi bi-geo-alt-fill text-warning"></i> Address</h5>
+                      <p>Haryana, India</p>
+                      <hr />
+
+                      <h5><i class="bi bi-envelope-fill text-warning"></i> Email</h5>
+                      <p>info@theblockways.in</p>
+                      <hr />
+
+                      <h5><i class="bi bi-telephone-fill text-warning"></i> Telephone</h5>
+                      <p>+91 86005 58606</p>
+                    </div>
+                  </div>
+
+                  <!-- Right side (Form) -->
+                  <div class="col-lg-6 p-0">
+                    <div class="form-container">
+                      <form>
+                        <div class="mb-3">
+                          <label class="form-label">Full Name</label>
+                          <input type="text" class="form-control input-Control" placeholder="Enter your full name">
+                        </div>
+
+                        <div class="mb-3">
+                          <label class="form-label">Valid Email ID</label>
+                          <input type="email" class="form-control input-Control" placeholder="Enter your email address">
+                        </div>
+
+                        <div class="mb-3">
+                          <label class="form-label">Country</label>
+                          <select class="form-select input-Control">
+                            <option selected>Select your country</option>
+                            <option>India</option>
+                            <option>USA</option>
+                            <option>UK</option>
+                            <!-- Add more countries -->
+                          </select>
+                        </div>
+
+                        <div class="mb-3">
+                          <label class="form-label">Type of Services</label>
+                          <select class="form-select input-Control">
+                            <option selected>Select Services</option>
+                            <option>Service 1</option>
+                            <option>Service 2</option>
+                            <option>Service 3</option>
+                          </select>
+                        </div>
+
+                        <div class="mb-3">
+                          <label class="form-label">Message/Query</label>
+                          <textarea class="form-control" rows="4" placeholder="Write your message"
+                            style="background-color: #E2E2E3;"></textarea>
+                        </div>
+
+                        <div class="form-check mb-3">
+                          <input class="form-check-input" type="checkbox" id="termsCheck">
+                          <label class="form-check-label" for="termsCheck">
+                            I accept the Terms
+                          </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-dark" style="padding: 15px 20px;">Submit</button>
+                      </form>
+                    </div>
+                    <div class="d-flex align-items-center mt-4 justify-content-end">
+                      <span class="me-3 fw-semibold">Let's connect:</span>
+
+                      <a href="#"
+                        class="btn btn-light rounded-circle me-2 d-flex align-items-center justify-content-center"
+                        style="width: 40px; height: 40px;">
+                        <i class="bi bi-facebook"></i>
+                      </a>
+
+                      <a href="#"
+                        class="btn btn-light rounded-circle me-2 d-flex align-items-center justify-content-center"
+                        style="width: 40px; height: 40px;">
+                        <i class="bi bi-instagram"></i>
+                      </a>
+
+                      <a href="#"
+                        class="btn btn-light rounded-circle me-2 d-flex align-items-center justify-content-center"
+                        style="width: 40px; height: 40px;">
+                        <i class="bi bi-linkedin"></i>
+                      </a>
+
+                      <a href="#" class="btn btn-light rounded-circle d-flex align-items-center justify-content-center"
+                        style="width: 40px; height: 40px;">
+                        <i class="bi bi-youtube"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="container py-5 contact">
+      <h2 class="mb-3 f-44">FAQs</h2>
+      <p class="mb-5 gc-comon">Got questions? We've got answers! Check out our frequently asked questions below. If you
+        don’t see your question here, feel free to reach out!</p>
+
+      <div class="row">
+        <!-- Left Side: Table of Contents -->
+        <div class="col-md-3 mb-4">
+          <h5 class="mb-3">Table of content</h5>
+          <ul class="nav flex-column nav-pills" id="faq-tabs" role="tablist">
+            <li class="nav-item">
+              <button class="nav-link active" id="general-tab" data-bs-toggle="pill" data-bs-target="#general"
+                type="button" role="tab">General</button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link" id="services-tab" data-bs-toggle="pill" data-bs-target="#services" type="button"
+                role="tab">Services</button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link" id="aboutus-tab" data-bs-toggle="pill" data-bs-target="#aboutus" type="button"
+                role="tab">About us</button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link" id="reporting-tab" data-bs-toggle="pill" data-bs-target="#reporting"
+                type="button" role="tab">Reporting event</button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right Side: Accordion Content -->
+        <div class="col-md-9">
+          <div class="tab-content" id="faq-tabContent">
+
+            <!-- General Tab -->
+            <div class="tab-pane fade show active" id="general" role="tabpanel">
+              <div class="accordion" id="accordionGeneral">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne">
+                      What does LOREM mean?
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionGeneral">
+                    <div class="accordion-body gc-comon">
+                      Lorem ipsum dolor sit amet, consectetur adipisici elit…’ (complete text) is dummy text that is not meant to mean anything. It is used as a placeholder in magazine layouts, for example, in order to give an impression...
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwo">
+                      Where can I subscribe to your newsletter?
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionGeneral">
+                    <div class="accordion-body">
+                      You can subscribe via the newsletter signup form on our homepage.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseThree">
+                      Where can I edit my billing and shipping address?
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionGeneral">
+                    <div class="accordion-body">
+                      You can edit your billing and shipping address in your account settings.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseFour">
+                      Can I order a free sample copy of a magazine?
+                    </button>
+                  </h2>
+                  <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionGeneral">
+                    <div class="accordion-body">
+                      Yes, free sample copies are available for selected magazines.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseFive">
+                      Can I change the displayed currency?
+                    </button>
+                  </h2>
+                  <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionGeneral">
+                    <div class="accordion-body">
+                      Yes, you can change the displayed currency in your account preferences.
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Other Tabs (Empty for Now) -->
+            <div class="tab-pane fade" id="services" role="tabpanel">
+              <p>No FAQs under Services yet.</p>
+            </div>
+            <div class="tab-pane fade" id="aboutus" role="tabpanel">
+              <p>No FAQs under About us yet.</p>
+            </div>
+            <div class="tab-pane fade" id="reporting" role="tabpanel">
+              <p>No FAQs under Reporting event yet.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer pt-5 pb-3 mt-5" style="background-color:#f9f9f9">
+    <div class="container">
+      <div class="row">
+        <!-- Logo & Description -->
+        <div class="col-md-6 mb-4 mb-md-0 d-flex gap-2">
+          <img src="assets/img/logo.png" alt="Logo" class="mb-3" style="width: 110px;height: 110px;">
+          <p class="text-muted f-14" style="line-height: 169.2%;padding-left:10px;">
+            Through immersive travel, we bridge cultural gaps, reveal India's spiritual core, and craft personalized
+            experiences, because we believe life is a journey of love and discovery.
+          </p>
+        </div>
+
+        <!-- Information Links -->
+        <div class="col-md-3 mb-4 mb-md-0">
+          <div class="row">
+            <div class="col-md-6 custom-width-50">
+              <h6 class="fw-bold mb-3">Information</h6>
+              <ul class="list-unstyled small text-muted">
+                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Disclaimer</a></li>
+                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Registration</a></li>
+                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Cancellation Policy</a></li>
+                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Terms & Conditions</a></li>
+                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Payment Policy</a></li>
+                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">FAQs</a></li>
+              </ul>
+            </div>
+            <div class="col-md-6 custom-width-50">
+              <h6 class="fw-bold mb-3">Links</h6>
+              <ul class="list-unstyled small text-muted">
+                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">About Us</a></li>
+                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Services</a></li>
+                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Contact Us</a></li>
+                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Gallery</a></li>
+                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Shop</a></li>
+                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Blog</a></li>
+              </ul>
+            </div>
+            </row>
+          </div>
+        </div>
+
+
+        <!-- Contact -->
+        <div class="col-md-3">
+          <h6 class="fw-bold mb-3">Contact Us</h6>
+          <p class=" mb-1" class="text-common f-14"><i class="bi bi-telephone-fill text-warning me-2"></i>+91 88503
+            50018</p>
+          <p class=" mb-3" class="text-common f-14"><i
+              class="bi bi-envelope-fill text-warning me-2"></i>info@thevibecheckguy.co.in</p>
+          <div class="d-flex gap-2">
+            <a href="#" class="btn btn-dark btn-sm rounded-circle"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="btn btn-dark btn-sm rounded-circle"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="btn btn-dark btn-sm rounded-circle"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="btn btn-dark btn-sm rounded-circle"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="mt-4 pt-3 border-top small text-muted">
+        Copyright © 2025 The Vibe Check Guy
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

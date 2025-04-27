@@ -166,32 +166,76 @@
       background: url('./assets/img/service/service-bg.png') no-repeat top right;
       background-size: cover;
       padding: 0px 20px;
+      height: 120px;
     }
 
     .pt-6 {
       padding-top: 4rem !important;
     }
 
-    .gallery-img {
-      width: 100%;
-      height: auto;
-      border-radius: 1rem;
-      object-fit: cover;
-      display: block;
+
+    .pd-120 {
+      padding-right: 120px;
     }
 
-    .masonry {
-   
+    .nav-pills .nav-link {
+      border-radius: 0;
+      color: #00000099;
+      font-weight: 500;
     }
 
-    .masonry-item {
-      break-inside: avoid;
-      margin-bottom: 1rem;
+    .nav-pills .nav-link.active {
+      /* border-left: 3px solid #fbb03b; */
+      color: #F99C1C;
+      background: transparent;
     }
 
-    @media(max-width:768px) {
-      .mb-15{
-        margin-bottom: 18px;
+
+    .circle-badge {
+      width: 80px;
+      height: 80px;
+      background-color: #FFA500; /* Orange color */
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      right: 10%;
+      top: 20%;
+      transform: translate(50%, -50%);
+      font-size: 14px;
+      text-align: center;
+      font-weight: bold;
+      writing-mode: vertical-rl;
+      rotate: -45deg;
+    }
+    .offer-text {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .highlight {
+      color: #FFA500; /* Orange */
+    }
+    .image-container {
+      position: relative;
+    }
+    .submit-btn {
+      background-color: #000;
+      color: #fff;
+      border: none;
+      padding: 8px 20px;
+    }
+    .submit-btn:hover {
+      background-color: #333;
+    }
+    
+
+    @media(max-width:768px) {    
+      .pd-120 {
+    padding-right: 15px;
+      }
+      .p-0{
+        padding: 0;
       }
     }
   </style>
@@ -214,8 +258,8 @@
         <ul>
           <li><a href="index.html">Home<br></a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="service.html" >Services</a></li>
-          <li><a href="gallery.html" class="active">Gallery</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
           <li><a href="#team">Shop</a></li>
           <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
@@ -235,7 +279,7 @@
             </ul>
           </li> -->
           <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="contact.html" class="active">Contact Us</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -248,138 +292,43 @@
     </div>
   </header>
 
-  <main class="main-about">
+  <main class="main-about contact-page">
     <section class="intro-section">
       <div class="container">
-        <div class="row">
-          <!-- Text Content -->
-          <div class="col-md-12 mb-4 pt-6 text-center">
-            <h4 class="f-44 mb-4">Vibe Check Gallery Best Moments Captured</h4>
-            <p class="mb-4">
-              A journey of passion and transformation—from a first solo trek to exploring majestic landscapes, unlocking
-              new experiences, and embracing the spirit of adventure.
-            </p>
-
-
-          </div>
-
-        </div>
+       
       </div>
     </section>
-    <div class="container pt-4">
-      <div class="masonry">
-        <div class="row">
-          <div class="col-md-8">
-            <img src="assets/img/masonry-gallery/g-1.png" alt="Image 1" class="gallery-img mb-4">
-            <div class="row">
-              <div class="col-md-6">
-                <img src="assets/img/masonry-gallery/ex-3.png" alt="Image 1" class="gallery-img mb-15">
-
-              </div>
-              <div class="col-md-6">
-                <img src="assets/img/masonry-gallery/ex-1.png" alt="Image 1" class="gallery-img mb-15">
-
-              </div>
-
-            </div>
-
-          </div>
-          <div class="col-md-4">
-            <img src="assets/img/masonry-gallery/m-2.png" alt="Image 1" class="gallery-img mb-15">
-
-          </div>
-
-        </div>
-
-
-
-      </div>
-    </div>
-  </main>
-
-  <section class="pt-7 pb-5 mt-5">
-    <div class="container  position-relative " style="padding-top: 125px;">
-      <img src="assets/img/home/bike-bottom.png" class="position-absolute end-0 top-0" style="max-height: 140px;"
-        alt="bike" />
+    <section class="container py-5">
       <div class="row align-items-center">
-        <!-- LEFT COLUMN: Text and Arrows -->
-        <div class="col-lg-5">
-          <h3 class="fw-bold f-44">What people say <span class="text-warning">about us.</span></h3>
-          <p class="text-muted small mb-4 f-16">Our Clients send us bunch of smiles with our services and we love
-            them.</p>
-          <div class="d-flex align-items-center gap-2">
-            <button
-              class="swiper-button-prev-testimonial btn btn-light border rounded-circle p-2 d-flex align-items-center justify-content-center"
-              style="width: 40px; height: 40px;">
-              <i class="bi bi-chevron-left"></i>
-            </button>
-            <button
-              class="swiper-button-next-testimonial btn btn-warning rounded-circle p-2 d-flex align-items-center justify-content-center"
-              style="width: 40px; height: 40px;">
-              <i class="bi bi-chevron-right text-white"></i>
-            </button>
+        
+        <!-- Left Column -->
+        <div class="col-md-6 mb-4 pd-120">
+          <p class="mb-3">
+            Upgrade your shoe game without breaking the bank. Whether you're into sporty vibes, casual comfort, or bold streetwear looks, this sale has something for everyone. But hurry — these deals won’t last forever, and sizes are selling out fast!
+          </p>
+          <button class="submit-btn mb-4 rounded">Submit</button>
+    
+          <div class="offer-text">
+            Limited Time Offer<br>
+            <span class="highlight">– Up to <strong>50% Off!</strong></span>
           </div>
         </div>
-
-        <!-- RIGHT COLUMN: Testimonial Slider -->
-        <div class="col-lg-7 position-relative">
-
-
-          <div class="swiper testimonialslider">
-            <div class="swiper-wrapper">
-              <!-- Testimonial Card -->
-              <div class="swiper-slide">
-                <div class="bg-white shadow-sm rounded p-4" style="max-width: 480px;">
-                  <div class="d-flex align-items-center mb-3">
-                    <img src="assets/img/home/Avtar.png" class="rounded-circle me-3" alt="Avatar" style="width: 68px">
-
-                  </div>
-                  <p class="mb-3 text-common" style="padding-left: 70px;">“A fantastic travel experience—safe, smooth,
-                    and unforgettable! Highly recommend for anyone seeking adventure with peace of mind.”</p>
-                  <div style="padding-left: 70px;">
-                    <h6 class="mb-0 fw-bold">Mike Taylor</h6>
-                    <small class="text-common">Lahore, Pakistan</small>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="bg-white shadow-sm rounded p-4" style="max-width: 480px;">
-                  <div class="d-flex align-items-center mb-3">
-                    <img src="assets/img/home/Avtar.png" class="rounded-circle me-3" alt="Avatar" style="width: 68px">
-
-                  </div>
-                  <p class="mb-3 text-common" style="padding-left: 70px;">“A fantastic travel experience—safe, smooth,
-                    and unforgettable! Highly recommend for anyone seeking adventure with peace of mind.”</p>
-                  <div style="padding-left: 70px;">
-                    <h6 class="mb-0 fw-bold">Mike Taylor</h6>
-                    <small class="text-common">Lahore, Pakistan</small>
-                  </div>
-                </div>
-              </div>
-
-
-              <!-- Add more swiper-slide items as needed -->
-            </div>
+    
+        <!-- Right Column -->
+        <div class="col-md-6 image-container text-center">
+          <img src="https://via.placeholder.com/300x400" alt="Model" class="img-fluid rounded">
+    
+          <div class="circle-badge">
+            Click <br> Shop
           </div>
         </div>
+    
       </div>
-    </div>
-  </section>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      new Swiper('.testimonialslider', {
-        slidesPerView: 1,
-        loop: true,
-        navigation: {
-          nextEl: '.swiper-button-next-testimonial',
-          prevEl: '.swiper-button-prev-testimonial'
-        }
-      });
-    });
-  </script>
+    </section>
 
 
+ 
+  </main>
   <footer class="footer pt-5 pb-3 mt-5" style="background-color:#f9f9f9">
     <div class="container">
       <div class="row">
@@ -455,13 +404,7 @@
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
