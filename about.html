@@ -183,6 +183,11 @@
 
     .pt-130 {
       padding-top: 130px;
+    }  .divider {
+      width: 2px;
+      height: 40px;
+      background-color: #ddd;
+      margin: 2rem auto 1rem;
     }
 
     .video-container {
@@ -439,9 +444,10 @@
         <p class="text-muted">A journey of passion and transformation—from a first solo trek to exploring majestic
           landscapes...</p>
       </div>
-
+      <div class="divider"></div>
+      <hr/>
       <!-- Year Tabs -->
-      <div class="d-flex justify-content-center mb-4 flex-wrap" id="yearTabs">
+      <div class="d-flex justify-content-around mb-4 flex-wrap" id="yearTabs">
         <div class="year-tab active" data-year="2018">2018</div>
         <div class="year-tab" data-year="2019">2019</div>
         <div class="year-tab" data-year="2020">2020</div>
@@ -894,13 +900,95 @@
   </section>
   <!-- Section End -->
 
+<section class="pt-7 pb-5">
+      <div class="container  position-relative " style="padding-top: 125px;">
+        <img src="assets/img/home/bike-bottom.png" class="position-absolute end-0 top-0" style="max-height: 140px;"
+          alt="bike" />
+        <div class="row align-items-center">
+          <!-- LEFT COLUMN: Text and Arrows -->
+          <div class="col-lg-5">
+            <h3 class="fw-bold f-44">What people say <span class="text-warning">about us.</span></h3>
+            <p class="text-muted small mb-4 f-16">Our Clients send us bunch of smiles with our services and we love
+              them.</p>
+            <div class="d-flex align-items-center gap-2">
+              <button
+                class="swiper-button-prev-testimonial btn btn-light border rounded-circle p-2 d-flex align-items-center justify-content-center"
+                style="width: 40px; height: 40px;">
+                <i class="bi bi-chevron-left"></i>
+              </button>
+              <button
+                class="swiper-button-next-testimonial btn btn-warning rounded-circle p-2 d-flex align-items-center justify-content-center"
+                style="width: 40px; height: 40px;">
+                <i class="bi bi-chevron-right text-white"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: Testimonial Slider -->
+          <div class="col-lg-7 position-relative">
+
+
+            <div class="swiper testimonialslider">
+              <div class="swiper-wrapper">
+                <!-- Testimonial Card -->
+                <div class="swiper-slide">
+                  <div class="bg-white shadow-sm rounded p-4" style="max-width: 480px;">
+                    <div class="d-flex align-items-center mb-3">
+                      <img src="assets/img/home/Avtar.png" class="rounded-circle me-3" alt="Avatar" style="width: 68px">
+
+                    </div>
+                    <p class="mb-3 text-common" style="padding-left: 70px;">“A fantastic travel experience—safe, smooth,
+                      and unforgettable! Highly recommend for anyone seeking adventure with peace of mind.”</p>
+                    <div style="padding-left: 70px;">
+                      <h6 class="mb-0 fw-bold">Mike Taylor</h6>
+                      <small class="text-common">Lahore, Pakistan</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="bg-white shadow-sm rounded p-4" style="max-width: 480px;">
+                    <div class="d-flex align-items-center mb-3">
+                      <img src="assets/img/home/Avtar.png" class="rounded-circle me-3" alt="Avatar" style="width: 68px">
+
+                    </div>
+                    <p class="mb-3 text-common" style="padding-left: 70px;">“A fantastic travel experience—safe, smooth,
+                      and unforgettable! Highly recommend for anyone seeking adventure with peace of mind.”</p>
+                    <div style="padding-left: 70px;">
+                      <h6 class="mb-0 fw-bold">Mike Taylor</h6>
+                      <small class="text-common">Lahore, Pakistan</small>
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- Add more swiper-slide items as needed -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        new Swiper('.testimonialslider', {
+          slidesPerView: 1,
+          loop: true,
+          navigation: {
+            nextEl: '.swiper-button-next-testimonial',
+            prevEl: '.swiper-button-prev-testimonial'
+          }
+        });
+      });
+    </script>
 
   <footer class="footer pt-5 pb-3 mt-5" style="background-color:#f9f9f9">
     <div class="container">
       <div class="row">
         <!-- Logo & Description -->
         <div class="col-md-6 mb-4 mb-md-0 d-flex gap-2">
-          <img src="assets/img/logo.png" alt="Logo" class="mb-3" style="width: 110px;height: 110px;">
+
+         <a href="index.html">  <img src="assets/img/logo.png" alt="Logo" class="mb-3" style="width: 110px;height: 110px;"></a>
           <p class="text-muted f-14" style="line-height: 169.2%;padding-left:10px;">
             Through immersive travel, we bridge cultural gaps, reveal India's spiritual core, and craft personalized
             experiences, because we believe life is a journey of love and discovery.
@@ -913,24 +1001,23 @@
             <div class="col-md-6 custom-width-50">
               <h6 class="fw-bold mb-3">Information</h6>
               <ul class="list-unstyled small text-muted">
-                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Disclaimer</a></li>
                 <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Registration</a></li>
-                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Cancellation Policy</a></li>
-                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Terms & Conditions</a></li>
-                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Payment Policy</a></li>
+                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Disclaimer</a></li>
                 <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">FAQs</a></li>
+                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Cancellation Policy </a></li>
+                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Payment Policy</a></li>
+                <li><a href="#" class="text-common f-14" style="line-height: 169.2%;">Terms & Conditions </a></li>
               </ul>
             </div>
             <div class="col-md-6 custom-width-50">
               <h6 class="fw-bold mb-3">Links</h6>
               <ul class="list-unstyled small text-muted">
-                <li><a href="about.html" class="text-common f-14" style="line-height: 169.2%;" class="active">About
-                    Us</a></li>
+                <li><a href="about.html" class="text-common f-14" style="line-height: 169.2%;">About Us</a></li>
                 <li><a href="service.html" class="text-common f-14" style="line-height: 169.2%;">Services</a></li>
-                <li><a href="contact.html" class="text-common f-14" style="line-height: 169.2%;">Contact Us</a></li>
                 <li><a href="gallery.html" class="text-common f-14" style="line-height: 169.2%;">Gallery</a></li>
-                <li><a href="shop.html" class="text-common f-14" style="line-height: 169.2%;">Shop</a></li>
-                <li><a href="blog.html" class="text-common f-14" style="line-height: 169.2%;">Blog</a></li>
+                <li><a href="shop.html" class="text-common f-14" style="line-height: 169.2%;">Shop </a></li>
+                <li><a href="blog.html" class="text-common f-14" style="line-height: 169.2%;">Blog </a></li>
+                <li><a href="contact.html" class="text-common f-14" style="line-height: 169.2%;">Contact Us</a></li>
               </ul>
             </div>
             </row>
