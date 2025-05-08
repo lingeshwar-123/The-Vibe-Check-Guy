@@ -316,7 +316,8 @@
     }
 
     .contact-btn:hover {
-      background-color: #e76309;
+      background-color: #e76309 !important;
+      color: #fff !important;
     }
 
     .world-map {
@@ -335,6 +336,8 @@
       .mr-minus-130{
       margin-right: -130px;
     }
+
+   
 }
   
   </style>
@@ -355,7 +358,7 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html">Home<br></a></li>
+          <!-- <li><a href="index.html">Home<br></a></li> -->
           <li><a href="about.html" class="active">About Us</a></li>
           <li><a href="service.html">Services</a></li>
           <li><a href="gallery.html">Gallery</a></li>
@@ -853,16 +856,16 @@
     <div class="container">
       <div class="row align-items-center">
         <!-- Left Column -->
-        <div class="col-lg-6 mb-4 mb-lg-0">
-          <p class="text-orange fw-semibold">The features will become Past Trips</p>
-          <h2 class="fw-bold">Explore India with<br>The Vibe Check Guy</h2>
+        <div class="col-lg-6 mb-4 mb-lg-0 pl-30">
+          <p class="text-orange fw-semibold f-18 ls-2">The features will become Past Trips</p>
+          <h2 class="main-heading f-44">Explore India with<br>The Vibe Check Guy</h2>
           <p class="text-muted">Witnessing the thrill of adventure, happy miles and the satisfaction of a journey
             well-traveled.</p>
           <img src="assets/img/home/Group.png" alt="Illustration" class="img-fluid mt-4" />
         </div>
 
         <!-- Right Column -->
-        <div class="col-lg-6">
+        <div class="col-lg-6 pr-30">
           <div class="row g-4">
             <!-- Card 1 -->
             <div class="col-sm-6" style="margin-top:125px">
@@ -906,74 +909,78 @@
   </section>
   <!-- Section End -->
 
-<section class="pt-7 pb-5">
-      <div class="container  position-relative " style="padding-top: 125px;">
-        <img src="assets/img/home/bike-bottom.png" class="position-absolute end-0 top-0" style="max-height: 140px;"
-          alt="bike" />
-        <div class="row align-items-center">
-          <!-- LEFT COLUMN: Text and Arrows -->
-          <div class="col-lg-5">
-            <h3 class="fw-bold f-44">What people say <span class="text-warning">about us.</span></h3>
-            <p class="text-muted small mb-4 f-16">Our Clients send us bunch of smiles with our services and we love
-              them.</p>
-            <div class="d-flex align-items-center gap-2">
-              <button
-                class="swiper-button-prev-testimonial btn btn-light border rounded-circle p-2 d-flex align-items-center justify-content-center"
-                style="width: 40px; height: 40px;">
-                <i class="bi bi-chevron-left"></i>
-              </button>
-              <button
-                class="swiper-button-next-testimonial btn btn-warning rounded-circle p-2 d-flex align-items-center justify-content-center"
-                style="width: 40px; height: 40px;">
-                <i class="bi bi-chevron-right text-white"></i>
-              </button>
-            </div>
+  <section class="pt-7 pb-5">
+    <div class="container  position-relative " style="padding-top: 125px;">
+      <img src="assets/img/home/bike-bottom.png" class="position-absolute end-0 top-0" style="max-height: 140px;"
+        alt="bike" />
+      <div class="row align-items-center">
+        <!-- LEFT COLUMN: Text and Arrows -->
+        <div class="col-lg-5">
+          <h3 class="main-heading f-44">What people say <span class="text-warning">about us.</span></h3>
+          <p class="text-muted small mb-4 f-16">Our Clients send us bunch of smiles with our services and we love
+            them.</p>
+          <div class="d-flex align-items-center gap-2">
+            <button
+              class="swiper-button-prev-testimonial btn btn-light border rounded-circle p-2 d-flex align-items-center justify-content-center"
+              style="width: 40px; height: 40px;">
+              <i class="bi bi-chevron-left"></i>
+            </button>
+            <button
+              class="swiper-button-next-testimonial btn btn-warning rounded-circle p-2 d-flex align-items-center justify-content-center"
+              style="width: 40px; height: 40px;">
+              <i class="bi bi-chevron-right text-white"></i>
+            </button>
           </div>
+        </div>
 
-          <!-- RIGHT COLUMN: Testimonial Slider -->
-          <div class="col-lg-7 position-relative">
+        <!-- RIGHT COLUMN: Testimonial Slider -->
+        <div class="col-lg-7 position-relative">
 
 
-            <div class="swiper testimonialslider">
-              <div class="swiper-wrapper">
-                <!-- Testimonial Card -->
-                <div class="swiper-slide">
-                  <div class="bg-white shadow-sm rounded p-4" style="max-width: 480px;">
-                    <div class="d-flex align-items-center mb-3">
-                      <img src="assets/img/home/Avtar.png" class="rounded-circle me-3" alt="Avatar" style="width: 68px">
+          <div class="swiper testimonialslider">
+            <div class="swiper-wrapper">
+              <!-- Testimonial Card -->
+              <div class="swiper-slide pl-50">
+                <div class="bg-white  rounded p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="assets/img/home/Avtar.png" class="rounded-circle me-3" alt="Avatar" style="width: 68px">
 
-                    </div>
-                    <p class="mb-3 text-common" style="padding-left: 70px;">“A fantastic travel experience—safe, smooth,
-                      and unforgettable! Highly recommend for anyone seeking adventure with peace of mind.”</p>
-                    <div style="padding-left: 70px;">
-                      <h6 class="mb-0 fw-bold">Mike Taylor</h6>
-                      <small class="text-common">Lahore, Pakistan</small>
-                    </div>
+                  </div>
+                  <div class="shadow-sm p-3">
+                  <p class="mb-3 text-common" style="padding-left: 70px;">“A fantastic travel experience—safe, smooth,
+                    and <br>unforgettable! Highly recommend for anyone <br>seeking adventure with peace of mind.”</p>
+                  <div style="padding-left: 70px;">
+                    <h6 class="mb-0 fw-bold">Mike Taylor</h6>
+                    <small class="text-common">Lahore, Pakistan</small>
+                  </div>
                   </div>
                 </div>
-                <div class="swiper-slide">
-                  <div class="bg-white shadow-sm rounded p-4" style="max-width: 480px;">
-                    <div class="d-flex align-items-center mb-3">
-                      <img src="assets/img/home/Avtar.png" class="rounded-circle me-3" alt="Avatar" style="width: 68px">
-
-                    </div>
-                    <p class="mb-3 text-common" style="padding-left: 70px;">“A fantastic travel experience—safe, smooth,
-                      and unforgettable! Highly recommend for anyone seeking adventure with peace of mind.”</p>
-                    <div style="padding-left: 70px;">
-                      <h6 class="mb-0 fw-bold">Mike Taylor</h6>
-                      <small class="text-common">Lahore, Pakistan</small>
-                    </div>
-                  </div>
-                </div>
-
-
-                <!-- Add more swiper-slide items as needed -->
               </div>
+              <div class="swiper-slide pl-50">
+                <div class="bg-white  rounded p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="assets/img/home/Avtar.png" class="rounded-circle me-3" alt="Avatar" style="width: 68px">
+
+                  </div>
+                  <div class="shadow-sm p-3">
+                    <p class="mb-3 text-common" style="padding-left: 70px;">“A fantastic travel experience—safe, smooth,
+                      and <br>unforgettable! Highly recommend for anyone <br>seeking adventure with peace of mind.”</p>
+                  <div style="padding-left: 70px;">
+                    <h6 class="mb-0 fw-bold">Mike Taylor</h6>
+                    <small class="text-common">Lahore, Pakistan</small>
+                  </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- Add more swiper-slide items as needed -->
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {

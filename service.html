@@ -196,6 +196,7 @@
       border-top-right-radius: 12px;
       padding-top: 8px;
       padding-bottom: 8px;
+      text-align: center;
     }
 
     .service-table span {
@@ -312,7 +313,13 @@
     .w-500 {
       width: 500px;
     }
-
+    @media(min-width:768px) {
+      .px-80{
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+    }
+   
     @media(max-width:768px) {
       .w-full-l {
         width: 100%;
@@ -355,7 +362,7 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html">Home<br></a></li>
+          <!-- <li><a href="index.html">Home<br></a></li> -->
           <li><a href="about.html">About Us</a></li>
           <li><a href="service.html" class="active">Services</a></li>
           <li><a href="gallery.html">Gallery</a></li>
@@ -392,11 +399,16 @@
   </header>
 
   <main class="main-about">
-    <section class="intro-section">
+    <section class="intro-section position-relative">
       <div class="container">
-        <div class="row">
+        <div class="row ">
+          <img src="assets/img/service/person.png" alt="" style="width: 100%;
+          position: absolute;
+          right: 0;
+          top:50px;
+          max-width: 220px;">
           <!-- Text Content -->
-          <div class="col-md-12 mb-4 pt-6 text-center" style="margin-bottom: 81px !important;">
+          <div class="col-md-12 mb-4 pt-6 text-center px-80">
             <h4 class="f-44 mb-4">Your India Journey, Tailored Your Way</h4>
             <p class="mb-4">
               Your journey through India should be as unique as you are. That's why we offer a range of services to
@@ -412,8 +424,8 @@
       </div>
     </section>
 
-    <div style="background-color: #F4F4F4CC;">
-      <div class="container mb-5">
+    <div style="background-color: #F4F4F4CC;margin-top: 70px;">
+      <div class="container">
         <div class="table-responsive" style="position: relative;top: -62px;">
 
           <table class="table table-bordered align-middle service-table">
@@ -437,63 +449,55 @@
                 <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
                       style="transform: rotate(270deg);"></span></td>
               </tr>
-              <td class="text-start  w-500"><span style="padding-top: 12px;">&#x2022; On-call session about traveling in
-                  India</span></td>
-              <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
-                    style="transform: rotate(270deg);"></span></td>
-              <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
-                    style="transform: rotate(270deg);"></span></td>
-              <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
-                    style="transform: rotate(270deg);"></span></td>
-              </tr>
+             
               <tr>
                 <td class="text-start  w-500"><span>&#x2022; will book all your commutes</span> </td>
                 <td><span style="padding-top: 0px;"><img src="assets/img/service/close.png"></span></td>
-                <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
+                <td><span ><img src="assets/img/service/right.png"
                       style="transform: rotate(270deg);"></span></td>
-                <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
+                <td><span ><img src="assets/img/service/right.png"
                       style="transform: rotate(270deg);"></span></td>
               </tr>
               <tr>
                 <td class="text-start  w-500"><span>&#x2022; I will book all your stays</span></td>
                 <td><span style="padding-top: 0px;"><img src="assets/img/service/close.png"></span></td>
-                <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
+                <td><span ><img src="assets/img/service/right.png"
                       style="transform: rotate(270deg);"></span></td>
-                <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
+                <td><span ><img src="assets/img/service/right.png"
                       style="transform: rotate(270deg);"></span></td>
               </tr>
               <tr>
                 <td class="text-start  w-500"><span>&#x2022; I will be your Indian travel companion</span></td>
                 <td><span style="padding-top: 0px;"><img src="assets/img/service/close.png"></span></span></td>
-                <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
+                <td><span ><img src="assets/img/service/right.png"
                       style="transform: rotate(270deg);"></span></td>
-                <td><span style="padding-top: 12px;"><img src="assets/img/service/Call.png" style="position: relative;
+                <td><span ><img src="assets/img/service/Call.png" style="position: relative;
     top: -5px;"></span></td>
               </tr>
               <tr>
                 <td class="text-start  w-500"><span>&#x2022; I will bridge the cultural gap</span></td>
                 <td><span style="padding-top: 0px;"><img src="assets/img/service/close.png"></span></span></td>
-                <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
+                <td><span ><img src="assets/img/service/right.png"
                       style="transform: rotate(270deg);"></span></td>
-                <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
+                <td><span ><img src="assets/img/service/right.png"
                       style="transform: rotate(270deg);"></span></td>
               </tr>
               <tr>
                 <td class="text-start  w-500"><span>&#x2022; I will bridge the language gap (Hindi ↔ English)</span>
                 </td>
                 <td><span style="padding-top: 0px;"><img src="assets/img/service/close.png"></span></span></td>
-                <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
+                <td><span ><img src="assets/img/service/right.png"
                       style="transform: rotate(270deg);"></span></td>
-                <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
+                <td><span ><img src="assets/img/service/right.png"
                       style="transform: rotate(270deg);"></span></td>
               </tr>
               <tr>
                 <td class="text-start  w-500"><span>&#x2022; I will be there for you</span></td>
                 <td><span style="padding-top: 0px;"><img src="assets/img/service/right.png"
                       style="transform: rotate(270deg);"></span></td>
-                <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
+                <td><span ><img src="assets/img/service/right.png"
                       style="transform: rotate(270deg);"></span></td>
-                <td><span style="padding-top: 12px;"><img src="assets/img/service/right.png"
+                <td><span ><img src="assets/img/service/right.png"
                       style="transform: rotate(270deg);"></span></td>
               </tr>
             </tbody>
@@ -501,14 +505,17 @@
         </div>
       </div>
     </div>
-    <div class="container text-center custom-padding position-relative">
+    <div class="bg-white" style="    height: 100px;
+    position: relative;
+    top: -87px;margin-bottom:-80px"></div>
+    <div class="container text-center custom-padding position-relative" style="padding-top: 0rem !important;">
 
       <!-- Travel Consultant -->
       <div class="mb-5">
         <div class="section-icon">
           <img src="assets/img/service/icon-1.png" alt="" srcset="">
         </div>
-        <h3 class="section-heading text-primary">Your Travel Consultant</h3>
+        <h3 class="section-heading" style="color: #5CB2E4;">Your Travel Consultant</h3>
         <p class="mx-auto" style="max-width: 800px;width: 100%;" style="color:#00000099">
           Let's craft your dream trip to India together. As your personal Travel Consultant, I'll take the time to truly
           understand your travel style, interests, and budget. Whether you're seeking spiritual enlightenment, thrilling
@@ -569,13 +576,101 @@
             groups through some of the most challenging routes, I ensure that your riding journey is nothing short of
             spectacular—safely and with a deep sense of adventure. I focus on creating a safe, enjoyable experience for
             the group, where every rider can push their limits while knowing they are in expert hands.
-
+            <br/>
+            <br/>
+            
+            Ready to conquer the road? Let’s ride!
           </p>
 
         </div>
 
       </div>
     </div>
+    <section class="pt-7 pb-5">
+      <div class="container  position-relative " style="padding-top: 125px;">
+        <img src="assets/img/home/bike-bottom.png" class="position-absolute end-0 top-0" style="max-height: 140px;"
+          alt="bike" />
+        <div class="row align-items-center">
+          <!-- LEFT COLUMN: Text and Arrows -->
+          <div class="col-lg-5">
+            <h3 class="main-heading f-44">What people say <span class="text-warning">about us.</span></h3>
+            <p class="text-muted small mb-4 f-16">Our Clients send us bunch of smiles with our services and we love
+              them.</p>
+            <div class="d-flex align-items-center gap-2">
+              <button
+                class="swiper-button-prev-testimonial btn btn-light border rounded-circle p-2 d-flex align-items-center justify-content-center"
+                style="width: 40px; height: 40px;">
+                <i class="bi bi-chevron-left"></i>
+              </button>
+              <button
+                class="swiper-button-next-testimonial btn btn-warning rounded-circle p-2 d-flex align-items-center justify-content-center"
+                style="width: 40px; height: 40px;">
+                <i class="bi bi-chevron-right text-white"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: Testimonial Slider -->
+          <div class="col-lg-7 position-relative">
+
+
+            <div class="swiper testimonialslider">
+              <div class="swiper-wrapper">
+                <!-- Testimonial Card -->
+                <div class="swiper-slide pl-50">
+                  <div class="bg-white  rounded p-4">
+                    <div class="d-flex align-items-center mb-3">
+                      <img src="assets/img/home/Avtar.png" class="rounded-circle me-3" alt="Avatar" style="width: 68px">
+
+                    </div>
+                    <div class="shadow-sm p-3">
+                    <p class="mb-3 text-common" style="padding-left: 70px;">“A fantastic travel experience—safe, smooth,
+                      and <br>unforgettable! Highly recommend for anyone <br>seeking adventure with peace of mind.”</p>
+                    <div style="padding-left: 70px;">
+                      <h6 class="mb-0 fw-bold">Mike Taylor</h6>
+                      <small class="text-common">Lahore, Pakistan</small>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide pl-50">
+                  <div class="bg-white  rounded p-4">
+                    <div class="d-flex align-items-center mb-3">
+                      <img src="assets/img/home/Avtar.png" class="rounded-circle me-3" alt="Avatar" style="width: 68px">
+
+                    </div>
+                    <div class="shadow-sm p-3">
+                      <p class="mb-3 text-common" style="padding-left: 70px;">“A fantastic travel experience—safe, smooth,
+                        and <br>unforgettable! Highly recommend for anyone <br>seeking adventure with peace of mind.”</p>
+                    <div style="padding-left: 70px;">
+                      <h6 class="mb-0 fw-bold">Mike Taylor</h6>
+                      <small class="text-common">Lahore, Pakistan</small>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- Add more swiper-slide items as needed -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        new Swiper('.testimonialslider', {
+          slidesPerView: 1,
+          loop: true,
+          navigation: {
+            nextEl: '.swiper-button-next-testimonial',
+            prevEl: '.swiper-button-prev-testimonial'
+          }
+        });
+      });
+    </script>
     <footer class="footer pt-5 pb-3 mt-5" style="background-color:#f9f9f9">
       <div class="container">
         <div class="row">

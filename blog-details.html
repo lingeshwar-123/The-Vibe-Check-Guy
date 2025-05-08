@@ -163,7 +163,7 @@
 
 
     .intro-section {
-      background: url('./assets/img/service/service-bg.png') no-repeat top right;
+      background: url('./assets/img/masonry-gallery/gallery.png') no-repeat top right;
       background-size: cover;
       padding: 0px 20px;
     }
@@ -241,7 +241,12 @@
       max-width: 350px;
       width: 100%;
     }
-
+    @media(min-width:768px) {
+      .px-80{
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+    }
     @media(max-width:768px) {
       .d-block-m {
         display: block !important;
@@ -265,7 +270,7 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html">Home<br></a></li>
+          <!-- <li><a href="index.html">Home<br></a></li> -->
           <li><a href="about.html">About Us</a></li>
           <li><a href="service.html">Services</a></li>
           <li><a href="gallery.html">Gallery</a></li>
@@ -306,8 +311,8 @@
       <div class="container">
         <div class="row">
           <!-- Text Content -->
-          <div class="col-md-12 mb-4 pt-6 text-center">
-            <h4 class="f-44 mb-4">India Circuit Solo Ride - 14,163
+          <div class="col-md-12 mb-4 pt-6 text-center px-80">
+            <h4 class="f-44 mb-4">India Circuit Solo Ride - 14,163<br/>
               kilometers in 66 days</h4>
             <p class="mb-4">
               Discover epic rides, travel tips, and adventure stories – your go-to blog for all things biking and

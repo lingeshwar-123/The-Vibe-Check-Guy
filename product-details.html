@@ -166,7 +166,7 @@
       background: url('./assets/img/service/service-bg.png') no-repeat top right;
       background-size: cover;
       padding: 0px 20px;
-      height: 120px;
+      height: 150px;
     }
 
     .pt-6 {
@@ -413,7 +413,7 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html">Home<br></a></li>
+          <!-- <li><a href="index.html">Home<br></a></li> -->
           <li><a href="about.html">About Us</a></li>
           <li><a href="service.html">Services</a></li>
           <li><a href="gallery.html">Gallery</a></li>
@@ -456,7 +456,8 @@
       </div>
     </section>
 
-    <div class="container py-5">
+    <div class="container py-5" style="    position: relative;
+    top: -120px;">
       <div class="row">
 
         <!-- Left: Main Product Image -->
@@ -472,7 +473,7 @@
             <div class="rating-stars me-2">
               &#9733; &#9733; &#9733; &#9733; &#9734;
             </div>
-            <small class="text-muted" style="font-size: 10px;">1,423 reviews</small>
+            <small class="text-muted" style="font-size: 14px;">1,423 reviews</small>
           </div>
 
           <h5 class="text-orange mb-4 f-28">₹899</h5>
@@ -484,6 +485,7 @@
             <img src="assets/img/shop/sm-2.png" class="thumbnail-image me-2" onclick="changeImage(this)">
             <img src="assets/img/shop/sm-3.png" class="thumbnail-image me-2" onclick="changeImage(this)">
             <img src="assets/img/shop/sm-2.png" class="thumbnail-image me-2" onclick="changeImage(this)">
+            
           </div>
 
           <!-- Sizes -->
@@ -497,6 +499,11 @@
               <span class="size-btn">IN 40</span>
               <span class="size-btn">IN 42</span>
             </div>
+            <div class="mt-5" style="opacity: .4;">            
+              <span class="size-btn">IN 43</span>
+              <span class="size-btn">IN 44</span>
+              <span class="size-btn">IN 45</span>
+            </div>
           </div>
 
           <!-- Accordion for Stores and Description -->
@@ -504,7 +511,7 @@
 
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                <button style="font-size: 24px !important;" class="accordion-button collapsed f-24" type="button" data-bs-toggle="collapse"
                   data-bs-target="#collapseOne">
                   Stores
                 </button>
@@ -518,7 +525,7 @@
 
             <div class="accordion-item mt-2">
               <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                <button style="font-size: 24px !important;" class="accordion-button collapsed f-24" type="button" data-bs-toggle="collapse"
                   data-bs-target="#collapseTwo">
                   Description
                 </button>
