@@ -36,8 +36,9 @@
 }
 
 .text-common{
-  color: #333333 !important;
+  color: #333333D9 !important;
   font-size: 16px;
+  line-height: 28px;
 }
 .text-default{
   color: var(--default-color);
@@ -68,6 +69,12 @@
 .f-28{
   font-size: 28px;
 }
+.f-20{
+  font-size: 20px;
+}
+.f-16{
+  font-size: 16px;
+}
 /* Smooth scroll */
 :root {
   scroll-behavior: smooth;
@@ -75,6 +82,10 @@
 
 .gc-comon{
 color: #00000099;
+}
+.section-padding{
+  padding-bottom: 100px !important;
+    padding-top: 100px !important;
 }
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
@@ -212,6 +223,19 @@ width: 110px;
 .header .btn-getstarted:focus:hover {
   color: var(--default-color);
   background: var(--accent-color);
+}
+
+.banner-content{
+  position: absolute;
+  top:60%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+ 
+}
+.banner-content p{
+  font-size: 60px !important;
+  font-weight: 600;
+  line-height: 60px;
 }
 
 @media (max-width: 1200px) {
@@ -711,6 +735,9 @@ width: 110px;
 .pd-130{
   padding-right:130px;
 }
+.pd-80{
+  padding-right:70px;
+}
 
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
@@ -919,6 +946,12 @@ section,
   .hero p {
     font-size: 18px;
   }
+  .banner-content p
+ {
+    font-size: 20px !important;
+    font-weight: 600;
+    line-height: 15px;
+}
 }
 
 /*--------------------------------------------------------------
@@ -971,12 +1004,12 @@ section,
 .find-link::after {
   content: '';
   display: block;
-  width: 100%;
+  width: 115%;
   height: 2px;
-  background: white;
+  background: #ffffff80;
   position: absolute;
   bottom: -5px;
-  left: 0;
+  left: -10px;
   transition: transform 0.3s ease;
   transform-origin: left;
   transform: scaleX(1);
@@ -996,7 +1029,9 @@ section,
   transform: translateX(3px);
 } */
 
-
+.pd-60{
+ padding-right: 60px;
+}
 /* third section */
 .section-wrapper {
   background: url('../img/home/map-bg.png') no-repeat top right;
@@ -1013,7 +1048,7 @@ section,
 
 .main-heading {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--nav-dropdown-color);
 }
 
@@ -1055,7 +1090,7 @@ section,
   width: 100%;
   border-radius: 0.5rem;
   position: absolute;
-  top: -356px;
+  top: -224px;
   right: 0;
 }
 .crosss-heading{
@@ -1080,7 +1115,7 @@ section,
   height: 250px;
   z-index: 99;
   left: -88px;
-  top: 60px;
+  top: 200px;
 }
 
 .arrow-icon {
@@ -1178,6 +1213,9 @@ textPath {
 }
 .f-44{
   font-size: 44px;
+}
+.ls-2{
+  letter-spacing: 2px;
 }
 .icon-card{
   height: 66px;
@@ -1345,6 +1383,23 @@ textPath {
 .card-margin{
   position: relative;
   top: 60px;
+}
+.fw-semibold {
+  font-weight: 500 !important;
+}
+@media screen and (min-width: 800px) {
+  .pl-50{
+   padding-left: 50px;
+  }
+  .pl-30{
+    padding-left: 30px;
+  }
+  .pr-30{
+    padding-right: 30px;
+  }
+  .mr-50{
+    margin-right: -50px;
+  }
 }
 @media screen and (max-width: 768px) {
   [data-aos-delay] {
