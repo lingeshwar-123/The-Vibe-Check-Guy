@@ -162,11 +162,17 @@
     }
 
 
-    .intro-section {
+    .intro-section{
+      position: relative;
+    }
+    .intro-section:before {
+      content: "";
+      position: absolute;
       background: url('./assets/img/service/service-bg.png') no-repeat top right;
       background-size: cover;
       padding: 0px 20px;
-      height: 160px;
+      height: 150px;
+      width: 100%;
     }
 
     .pt-6 {
@@ -398,13 +404,8 @@
   </header>
 
   <main class="main-about contact-page">
-    <section class="intro-section">
-      <div class="container">
-
-      </div>
-    </section>
-    <section class="container py-5" style="    position: relative;
-    top: -120px;
+    <section class="intro-section" style="height:auto">
+    <div class=" container py-5" style="    position: relative;
     background-color: transparent;">
       <div class="row align-items-center">
 
@@ -452,6 +453,7 @@
         </div>
 
       </div>
+    </div>
     </section>
 
     <div class="container py-5">
@@ -620,7 +622,7 @@
     <div class="container">
       <div class="row">
         <!-- Logo & Description -->
-        <div class="col-md-5 mb-4 mb-md-0 d-flex gap-2">
+        <div class="col-md-5 mb-4 mb-md-0 d-flex gap-2 footer-about">
          <a href="index.html">  <img src="assets/img/logo.png" alt="Logo" class="mb-3" style="width: 110px;height: 110px;"></a>
           <p class="text-muted f-16" style="line-height: 169.2%;padding-left:10px;">
             Through immersive travel, we bridge cultural gaps, reveal India's spiritual core, and craft personalized
