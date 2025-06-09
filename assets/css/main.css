@@ -960,7 +960,7 @@ section,
  {
     font-size: 20px !important;
     font-weight: 600;
-    line-height: 15px;
+    line-height: 20px;
 }
 }
 
@@ -1417,7 +1417,7 @@ textPath {
   }
   /* mobile responsive */
   .hero-silder .swiper-slide .banner-image {
-    height: 250px;
+    height: 250px !important;
   }
   .header .logo img {
     width: 45px !important;
