@@ -1470,6 +1470,12 @@ textPath {
   .pl-0-m{
      padding-left: 15px!important;
   }
+  .intro-section
+
+ {
+  
+    padding: 0!important;
+}
   .section-padding {
     padding-bottom: 0px !important;
     padding-top: 50px !important;
