@@ -37,6 +37,9 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
   <style>
+        .main-about {
+    padding-top: 0px;
+}
     .header {
       box-shadow: 3px 1px 3px #c9c9c9;
 
@@ -553,10 +556,10 @@
       }
     </script>
 
-    <div class="container py-5">
-
+    <div class="container py-5 pdm-0">
+<div class="ho-scroll">
       <!-- Tabs -->
-      <ul class="nav nav-tabs mb-4" id="productTabs" role="tablist">
+      <ul class="nav nav-tabs mb-4 ho-scroll-inside-570" id="productTabs" role="tablist">
         <li class="nav-item" role="presentation">
           <button class="nav-link active" id="newtrend-tab" data-bs-toggle="tab" data-bs-target="#newtrend"
             type="button" role="tab">New Trend</button>
@@ -582,6 +585,7 @@
             role="tab">Kids</button>
         </li>
       </ul>
+      </div>
 
       <!-- Tabs Content -->
       <div class="tab-content" id="productTabsContent">
@@ -786,7 +790,16 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
+<script>
+  window.addEventListener('scroll', function () {
+  const header = document.getElementById('header');
+  if (window.scrollY > 100) {
+    header.classList.add('sticky');
+  } else {
+    header.classList.remove('sticky');
+  }
+});
+</script>
 </body>
 
 </html>

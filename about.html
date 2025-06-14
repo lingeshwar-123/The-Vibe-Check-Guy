@@ -347,7 +347,7 @@
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center w-100">
+  <header id="header" class="header d-flex align-items-center w-100 position-absolute">
     <div
       class="h-mobile container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
@@ -459,7 +459,8 @@
       <div class="divider"></div>
       <hr/>
       <!-- Year Tabs -->
-      <div class="d-flex justify-content-around mb-4 flex-wrap" id="yearTabs">
+       <div class="ho-scroll">
+      <div class="d-flex justify-content-around mb-4 flex-wrap ho-scroll-inside" id="yearTabs">
         <div class="year-tab active" data-year="2018">2018</div>
         <div class="year-tab" data-year="2019">2019</div>
         <div class="year-tab" data-year="2020">2020</div>
@@ -469,6 +470,7 @@
         <div class="year-tab" data-year="2024">2024</div>
         <div class="year-tab" data-year="2025">2025</div>
          <div class="year-tab" data-year="2026">2026</div>
+      </div>
       </div>
 
       <!-- Content Section -->
@@ -1121,7 +1123,16 @@ A journey of passion and transformation—from a first solo trek to exploring ma
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
+<script>
+  window.addEventListener('scroll', function () {
+  const header = document.getElementById('header');
+  if (window.scrollY > 100) {
+    header.classList.add('sticky');
+  } else {
+    header.classList.remove('sticky');
+  }
+});
+</script>
 </body>
 
 </html>

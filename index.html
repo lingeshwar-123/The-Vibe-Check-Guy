@@ -38,11 +38,22 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <style>
+    #header.sticky {
+  background-color: #858585;
+  z-index: 9999;
+}
+  </style>
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        #map { height: 800px; width: 100%; }
+    </style>
 </head>
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center position-absolute w-100">
+  <header id="header" class="header d-flex align-items-center w-100 position-absolute">
     <div
       class="h-mobile container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
@@ -248,7 +259,8 @@
     </section>
 
     <section style="margin-top: -15px">
-      <img src="assets/img/home/Map.png" alt="map" class="w-100">
+       <div id="map"></div>
+      <!-- <img src="assets/img/home/Map.png" alt="map" class="w-100"> -->
     </section>
     <div class="bg-common">
       <section class="section-wrapper">
@@ -540,9 +552,9 @@
     </div>
 
 
-    <div class="container section-padding text-center">
-     <img src="assets/img/home/TripEnjoy.png" alt="" srcset="" style="position: absolute;left: 0;" class="m-hide">
-      <div style="">
+    <div class="container section-padding text-center position-relative">
+     <img src="assets/img/home/TripEnjoy.png" alt="" srcset="" style="position: absolute;left: -7%;" class="m-hide">
+      <div>
         <p class="text-orange fw-semibold f-18 ls-2">Explore INDIA</p>
         <h2 class=" mb-3 f-44 main-heading">
           Upcoming Trips with Us<br>
@@ -869,7 +881,7 @@
                     <div class="shadow-sm p-3">
                     <p class="mb-3 text-common" style="padding-left: 70px;">“A fantastic travel experience—safe, smooth,
                       and <br>unforgettable! Highly recommend for anyone <br>seeking adventure with peace of mind.”</p>
-                    <div style="padding-left: 70px;">
+                    <div class="pl-0-m" style="padding-left: 70px;">
                       <h6 class="mb-0 fw-bold">Mike Taylor</h6>
                       <small class="text-common">Lahore, Pakistan</small>
                     </div>
@@ -885,7 +897,7 @@
                     <div class="shadow-sm p-3">
                       <p class="mb-3 text-common" style="padding-left: 70px;">“A fantastic travel experience—safe, smooth,
                         and <br>unforgettable! Highly recommend for anyone <br>seeking adventure with peace of mind.”</p>
-                    <div style="padding-left: 70px;">
+                    <div class="pl-0-m" style="padding-left: 70px;">
                       <h6 class="mb-0 fw-bold">Mike Taylor</h6>
                       <small class="text-common">Lahore, Pakistan</small>
                     </div>
@@ -1006,7 +1018,174 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+<script>
+  window.addEventListener('scroll', function () {
+  const header = document.getElementById('header');
+  if (window.scrollY > 100) {
+    header.classList.add('sticky');
+  } else {
+    header.classList.remove('sticky');
+  }
+});
+</script>
 
+
+    <script>
+        var map = L.map('map', {
+            center: [22.3511, 78.6677],  // Center of India
+            zoom: 5,
+            minZoom: 5,  
+            maxBounds: [[6, 68], [36, 98]] // Restrict view to India's boundary
+        });
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        // State markers
+var stateCapitals = [
+    {
+        name: "Bihar",
+        lat: 25.0961,
+        lon: 85.3131,
+        description: `<b>Season Time:</b> October - March<br><b>Best Months:</b> November - February<br>
+                      Explore the spiritual roots and ancient history of India's heartland.`
+    },
+    {
+        name: "West Bengal",
+        lat: 22.9868,
+        lon: 87.8550,
+        description: `<b>Season Time:</b> October - March<br><b>Best Months:</b> November - January<br>
+                      From the cultural pulse of Kolkata to the serene hills of Darjeeling and the wild Sundarbans.`
+    },
+    {
+        name: "Jharkhand",
+        lat: 23.6102,
+        lon: 85.2799,
+        description: `<b>Season Time:</b> October - March<br><b>Best Months:</b> November - February<br>
+                      A land of waterfalls, tribal heritage, and untamed forests.`
+    }
+];
+
+// City markers with descriptions
+var cityMarkers = {
+    "Bihar": [
+        {
+            name: "Patna",
+            lat: 25.5941,
+            lon: 85.1376,
+            description: "Walk through the ancient capital of emperors and scholars, where the mighty Ganges flows past grand relics like Golghar and Patna Sahib Gurudwara, and taste the legacy of Bihar in the city’s famous Litti chokha."
+        },
+        {
+            name: "Gaya",
+            lat: 24.7969,
+            lon: 85.0002,
+            description: "Stand beneath the sacred Bodhi Tree in Bodh Gaya, where Buddha attained enlightenment, offer prayers at the majestic Mahabodhi Temple, and feel the energy of devotion along the ancient Vishnupad Temple’s footprint of Lord Vishnu."
+        }
+    ],
+    "West Bengal": [
+        {
+            name: "Kolkata",
+            lat: 22.5726,
+            lon: 88.3639,
+            description: "Walk through colonial-era streets, ride a vintage tram, relish mouthwatering Bengali sweets, and witness the grandeur of the Howrah Bridge and Victoria Memorial."
+        },
+        {
+            name: "Darjeeling",
+            lat: 27.0360,
+            lon: 88.2627,
+            description: "Sip world-famous Darjeeling tea amidst misty plantations, take a joyride on the UNESCO-listed Toy Train, and watch Mt. Kanchenjunga from Tiger Hill at sunrise."
+        },
+        {
+            name: "Siliguri",
+            lat: 26.7271,
+            lon: 88.3953,
+            description: "The Gateway to the Northeast. Ride through lush tea gardens, explore bustling markets, and take in the panoramic views of the Himalayas."
+        },
+        {
+            name: "Gangasagar",
+            lat: 21.6574,
+            lon: 88.0520,
+            description: "Experience spiritual serenity at the confluence of the Ganges and the Bay of Bengal, home to the vibrant Gangasagar Mela."
+        },
+        {
+            name: "Sundarbans",
+            lat: 21.9497,
+            lon: 89.1833,
+            description: "Cruise through the world’s largest mangrove forest, spot the elusive Royal Bengal Tiger, and witness a unique mangrove ecosystem."
+        }
+    ],
+    "Jharkhand": [
+        {
+            name: "Ranchi",
+            lat: 23.3441,
+            lon: 85.3096,
+            description: "Chase waterfalls like Hundru and Dassam, trek through lush forests, and visit the spiritual Pahari Mandir."
+        },
+        {
+            name: "Deogarh",
+            lat: 24.4824,
+            lon: 86.7003,
+            description: "Walk through Baidyanath Dham, one of India’s holiest Jyotirlingas, and explore nearby waterfalls and rugged temples."
+        },
+        {
+            name: "Patratu",
+            lat: 23.6682,
+            lon: 85.2799,
+            description: "Drive through the scenic Patratu Valley, cruise on the pristine lake, and enjoy this hidden gem of Jharkhand."
+        },
+        {
+            name: "Betla National Park",
+            lat: 23.8400,
+            lon: 84.1900,
+            description: "Explore one of India’s oldest tiger reserves, with dense forests, ancient forts, and thrilling safaris."
+        }
+    ]
+};
+
+
+        var stateMarkers = {};  
+        var cityLayer = L.layerGroup();  
+        var activeState = null;  
+
+        function addStateMarkers() {
+            stateCapitals.forEach(state => {
+                var marker = L.marker([state.lat, state.lon]).addTo(map)
+                    .bindPopup(`<b>${state.name}</b><br>${state.description || ""}`)
+                    .on('click', function() {
+                        if (activeState === state.name) return; 
+                        activeState = state.name;
+                        map.setView([state.lat, state.lon], 8);
+                        showCityMarkers(state.name);
+                    });
+
+                stateMarkers[state.name] = marker;
+            });
+        }
+
+        function showCityMarkers(stateName) {
+            cityLayer.clearLayers();
+            if (cityMarkers[stateName]) {
+                cityMarkers[stateName].forEach(city => {
+                    var marker = L.marker([city.lat, city.lon])
+                        .bindPopup(`<b>${city.name}</b><br>${city.description || "No description available."}`);
+                    cityLayer.addLayer(marker);
+                });
+                map.addLayer(cityLayer);
+            }
+        }
+
+        map.on('zoomend', function() {
+            if (map.getZoom() < 7) {
+                cityLayer.clearLayers();
+                activeState = null;
+            }
+        });
+
+        addStateMarkers();
+
+    </script>
 </body>
 
 </html>
