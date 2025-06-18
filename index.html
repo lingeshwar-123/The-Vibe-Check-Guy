@@ -47,7 +47,7 @@
      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <style>
-        #map { height: 800px; width: 100%; }
+        #map { height: 500px; width: 100%; }
     </style>
 </head>
 
@@ -161,7 +161,7 @@
               </div>
 
             </div>
-            <div class="swiper-slide">
+            <!-- <div class="swiper-slide">
               <div class="banner-content">
                 <p>Travel <span>india</span>, Like a <span>local</p>
                 </div><img src="assets/img/home/Banner-2.png" class="img-fluid banner-image" alt="Travel India" style="height:600px">
@@ -177,11 +177,11 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
                 <div class="swiper-slide">
               <div class="banner-content">   
                 <p> Where Every <span>Trail Leads</span> to a New Story<span></p>
-                </div><img src="assets/img/home/VCG-Where-Every Trail.jpg" class="img-fluid banner-image" alt="Where Every Trail" style="height:600px">
+                </div><img src="assets/img/home/VCG-Where-Every Trail.jpeg" class="img-fluid banner-image" alt="Where Every Trail" style="height:600px">
               <div class="text-center" style=" margin-top: -30px;">
                 <div class="container">
                   <div class="position-relative" style="top:-32px">
@@ -199,7 +199,7 @@
                     <div class="swiper-slide">
               <div class="banner-content">   
                 <p>  Crafting Your <span> Perfect India Journey.</span>Expertly Planned!<span></p>
-                </div><img src="assets/img/home/VCG-CraftingYourPerfect.jpg" class="img-fluid banner-image" alt="Crafting Your Perfect" style="height:600px">
+                </div><img src="assets/img/home/VCG-CraftingYourPerfect.jpeg" class="img-fluid banner-image" alt="Crafting Your Perfect" style="height:600px">
               <div class="text-center" style=" margin-top: -30px;">
                 <div class="container">
                   <div class="position-relative" style="top:-32px">
@@ -217,7 +217,7 @@
                  <div class="swiper-slide">
               <div class="banner-content">      
                 <p> Your Way, Your Budget, Your Dates.<span>Your India Adventure,</span>Handcrafted for You! <span></p>
-                </div><img src="assets/img/home/VGwoman-traveler.jpg" class="img-fluid banner-image" alt="woman traveler" style="height:600px">
+                </div><img src="assets/img/home/VGwoman-traveler.jpeg" class="img-fluid banner-image" alt="woman traveler" style="height:600px">
               <div class="text-center" style=" margin-top: -30px;">
                 <div class="container">
                   <div class="position-relative" style="top:-32px">
@@ -235,7 +235,7 @@
               <div class="swiper-slide">
               <div class="banner-content">  
                 <p> Your<span> Your India Travel, </span>Seamlessly Managed      <span></p>
-                </div><img src="assets/img/home/VCG-woman-exploring.jpg" class="img-fluid banner-image" alt="woman exploring" style="height:600px">
+                </div><img src="assets/img/home/VCG-woman-exploring.jpeg" class="img-fluid banner-image" alt="woman exploring" style="height:600px">
               <div class="text-center" style=" margin-top: -30px;">
                 <div class="container">
                   <div class="position-relative" style="top:-32px">
@@ -430,7 +430,15 @@
         </div>
       </div>
     </div>
-
+<script>
+  const preloadBackgroundImages = () => {
+    document.querySelectorAll('.swiper-slide').forEach(slide => {
+      const img = new Image();
+      const bg = slide.getAttribute('data-bg');
+      if (bg) img.src = bg;
+    });
+  };
+</script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
       //   const swiper = new Swiper(".mySwiper", {
@@ -479,8 +487,8 @@
     <!-- section 5 -->
 
 
-    <div class="container text-center section-padding">
-      <img src="assets/img/home/TripEnjoy.png" alt="" srcset="" class="img-small">
+    <div class="container text-center section-padding position-relative">
+      <img src="assets/img/home/TripEnjoy.png" alt="" srcset="" class="img-small" style="top:25px">
       <div class="pr-div" style="padding-right:110px">
         <p class="text-orange fw-semibold f-18 ls-2">The Vibe Check Guy</p>
         <h2 class=" mb-3 f-44 main-heading">
@@ -878,8 +886,8 @@
                       <img src="assets/img/home/Avtar.png" class="rounded-circle me-3" alt="Avatar" style="width: 68px">
 
                     </div>
-                    <div class="shadow-sm p-3">
-                    <p class="mb-3 text-common" style="padding-left: 70px;">“A fantastic travel experience—safe, smooth,
+                    <div class="shadow-sm p-3  pl-0">
+                    <p id="#pl-0" class="mb-3 text-common" style="padding-left: 70px;">“A fantastic travel experience—safe, smooth,
                       and <br>unforgettable! Highly recommend for anyone <br>seeking adventure with peace of mind.”</p>
                     <div class="pl-0-m" style="padding-left: 70px;">
                       <h6 class="mb-0 fw-bold">Mike Taylor</h6>
