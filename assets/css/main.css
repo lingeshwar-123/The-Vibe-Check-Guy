@@ -958,7 +958,7 @@ section,
   }
   .banner-content p
  {
-    font-size: 16px !important;
+    font-size: 13px !important;
     font-weight: 600;
     line-height: 20px;
 }
@@ -1084,7 +1084,7 @@ section,
 
 /* fourth section */
 .section-wrapper-cross{
-  background: url('../img/home/cross-bg.png') no-repeat center;
+  background: no-repeat center;
   background-size: cover;
   background-blend-mode: lighten;
   position: relative;
