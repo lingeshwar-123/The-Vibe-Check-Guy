@@ -116,7 +116,7 @@
               "loop": true,
               "speed": 1000,
               "autoplay": {
-                "delay": 40000
+                "delay": 20000
               },
               "slidesPerView": "auto",
               "pagination": {
@@ -1038,7 +1038,1640 @@
 </script>
 
 
+    <div id="map"></div>
+
     <script>
+        var map = L.map('map', {
+            center: [22.3511, 78.6677],  // Center of India
+            zoom: 5,
+            minZoom: 5,  
+            maxBounds: [[6, 68], [36, 98]] // Restrict view to India's boundary
+        });
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        // State markers
+var stateCapitals = [
+    {
+        name: "Ladakh",
+        lat: 33.9456407,
+        lon: 77.6568576,
+        description: `<b>Season Time:</b> April - September<br><b>Best Months:</b> August - September`
+    },
+    {
+        name: "Himachal Pradesh",
+        lat: 31.9292352,
+        lon: 77.1828462,
+        description: `<b>Season Time:</b> April - October<br><b>Best Months:</b> All year round`
+    },
+    {
+        name: "Uttarakhand",
+        lat: 30.0417376,
+        lon: 79.089691,
+        description: `<b>Season Time:</b> April - November<br><b>Best Months:</b> October - December`
+    },
+    {
+        name: "Jammu & Kashmir",
+        lat: 33.6649297,
+        lon: 75.1629584,
+        description: `<b>Season Time:</b> March - August<br><b>Best Months:</b> May - August`
+    },
+    {
+        name: "Punjab",
+        lat: 30.9293211,
+        lon: 75.5004841,
+        description: `<b>Season Time:</b> October - February<br><b>Best Months:</b> November - January`
+    },
+    {
+        name: "Haryana",
+        lat: 29,
+        lon: 76,
+        description: `<b>Season Time:</b> November - March<br><b>Best Months:</b> November - February`
+    },
+    {
+        name: "Uttar Pradesh",
+        lat: 27.1303344,
+        lon: 80.859666,
+        description: `<b>Season Time:</b> May - September<br><b>Best Months:</b> December - March`
+    },
+    {
+        name: "Rajasthan",
+        lat: 26.8105777,
+        lon: 73.7684549,
+        description: `<b>Season Time:</b> October - March<br><b>Best Months:</b> November - February`
+    },
+    {
+        name: "Madhya Pradesh",
+        lat: 23.8143419,
+        lon: 77.5340719,
+        description: `<b>Season Time:</b> October - March<br><b>Best Months:</b> November - February`
+    },
+    {
+        name: "Bihar",
+        lat: 25.6440845,
+        lon: 85.906508,
+        description: `<b>Season Time:</b> October - March<br><b>Best Months:</b> November - February`
+    },
+    {
+        name: "West Bengal",
+        lat: 22.9964948,
+        lon: 87.6855882,
+        description: `<b>Season Time:</b> October - April<br><b>Best Months:</b> November - March`
+    },
+    {
+        name: "Jharkhand",
+        lat: 23.4559809,
+        lon: 85.2557301,
+        description: `<b>Season Time:</b> October - February<br><b>Best Months:</b> December - February`
+    },
+    {
+        name: "Odisha",
+        lat: 20.5431241,
+        lon: 84.6897321,
+        description: `<b>Season Time:</b> November - February<br><b>Best Months:</b> December - February`
+    },
+    {
+        name: "Chhattisgarh",
+        lat: 21.6637359,
+        lon: 81.8406351,
+        description: `<b>Season Time:</b> October - March<br><b>Best Months:</b> December - March`
+    },
+    {
+        name: "Gujarat",
+        lat: 22.3850051,
+        lon: 71.745261,
+        description: `<b>Season Time:</b> October - February<br><b>Best Months:</b> November - February`
+    },
+    {
+        name: "Maharashtra",
+        lat: 18.9068356,
+        lon: 75.6741579,
+        description: `<b>Season Time:</b> September - March<br><b>Best Months:</b> October - February`
+    },
+    {
+        name: "Goa",
+        lat: 15.3004543,
+        lon: 74.0855134,
+        description: `<b>Season Time:</b> November - February<br><b>Best Months:</b> November - February`
+    },
+    {
+        name: "Karnataka",
+        lat: 14.5203896,
+        lon: 75.7223521,
+        description: `<b>Season Time:</b> October - April<br><b>Best Months:</b> October - February`
+    },
+    {
+        name: "Puducherry",
+        lat: 11.9340568,
+        lon: 79.8306447,
+        description: `<b>Season Time:</b> October - March<br><b>Best Months:</b> October - February`
+    },
+    {
+        name: "Kerala",
+        lat: 10.3528744,
+        lon: 76.5120396,
+        description: `<b>Season Time:</b> September - March<br><b>Best Months:</b> September - March`
+    },
+    {
+        name: "Tamil Nadu",
+        lat: 10.9094334,
+        lon: 78.3665347,
+        description: `<b>Season Time:</b> November - March<br><b>Best Months:</b> November - February`
+    },
+    {
+        name: "Andhra Pradesh",
+        lat: 15.9240905,
+        lon: 80.1863809,
+        description: `<b>Season Time:</b> October - February<br><b>Best Months:</b> November - February`
+    },
+    {
+        name: "Sikkim",
+        lat: 27.601029,
+        lon: 88.45413638680145,
+        description: `<b>Season Time:</b> March - June and September - November<br><b>Best Months:</b> March - May and October - November`
+    },
+    {
+        name: "Assam",
+        lat: 26.4073841,
+        lon: 93.2551303,
+        description: `<b>Season Time:</b> October - April<br><b>Best Months:</b> November - April`
+    },
+    {
+        name: "Arunachal Pradesh",
+        lat: 28.0937702,
+        lon: 94.5921326,
+        description: `<b>Season Time:</b> October - April<br><b>Best Months:</b> October - April`
+    },
+    {
+        name: "Meghalaya",
+        lat: 25.5379432,
+        lon: 91.2999102,
+        description: `<b>Season Time:</b> October - March<br><b>Best Months:</b> November - February`
+    },
+    {
+        name: "Nagaland",
+        lat: 26.1630556,
+        lon: 94.5884911,
+        description: `<b>Season Time:</b> October - May<br><b>Best Months:</b> October - March`
+    },
+    {
+        name: "Manipur",
+        lat: 24.7208818,
+        lon: 93.9229386,
+        description: `<b>Season Time:</b> October - March<br><b>Best Months:</b> November - February`
+    },
+    {
+        name: "Mizoram",
+        lat: 23.2146169,
+        lon: 92.8687612,
+        description: `<b>Season Time:</b> November - March<br><b>Best Months:</b> November - February`
+    },
+    {
+        name: "Andaman & Nicobar Islands",
+        lat: 12.61123865,
+        lon: 92.83165406414926,
+        description: `<b>Season Time:</b> October - May<br><b>Best Months:</b> November - March`
+    },
+    {
+        name: "Lakshadweep Islands",
+        lat: 10.3337313,
+        lon: 72.92053859204833,
+        description: `<b>Season Time:</b> September - May<br><b>Best Months:</b> October - May`
+    },
+];
+
+// City markers with descriptions
+var cityMarkers = {
+    "Ladakh": [
+        {
+            name: "Leh",
+            lat: 34.1642029,
+            lon: 77.5848133,
+            description: "Explore bustling markets, visit ancient monasteries, and embark on thrilling bike rides through high-altitude passes in Ladakh’s vibrant capital. A gateway to the best adventure you will ever experience."
+        },
+        {
+            name: "Pangong",
+            lat: 33.8268769,
+            lon: 78.48457491571787,
+            description: "Camp by the ever-changing blue waters, capture stunning reflections of the mountains, and watch the sky explode into a million stars at night. Gaze the Milky Way all night long."
+        },
+          {
+            name: "Hanle",
+            lat: 32.7714828,
+            lon: 78.9832056,
+            description: "Witness the magic of the cosmos at India’s highest observatory, spot rare wildlife, and experience the solitude of one of the most remote villages in India."
+        },
+        {
+            name: "Umling La",
+            lat: 32.689532,
+            lon: 79.2680392,
+            description: "Ride and conquer the highest motorable road on Earth, where the air is thin, but the thrill is limitless, and every turn is a triumph over nature’s extremes."
+        },
+        {
+            name: "Demchok",
+            lat: 32.7040811,
+            lon: 79.4467432,
+            description: "A forbidden land at the edge of India and China, where the mighty Indus whispers ancient stories, holding secrets of forgotten civilizations."
+        },
+          {
+            name: "Kargil",
+            lat: 34.5593048,
+            lon: 76.1255767,
+            description: "Pay homage at the Kargil War Memorial and get awestruck by the stunning green valleys steeped in history."
+        },
+        {
+            name: "Tsomoriri",
+            lat: 33.2153936,
+            lon: 78.3771614,
+            description: "A shimmering jewel hidden at 15,000 feet, where the mirror-like waters reflect dreams, legends, and the untamed spirit of Ladakh."
+        },
+        {
+            name: "Lamayuru",
+            lat: 34.2827066,
+            lon: 76.773959,
+            description: "A mystical ‘Moonland’ where ancient monasteries perch on cliffs, and landscapes whisper of a world beyond Earth’s imagination."
+        },
+          {
+            name: "Nubra Valley",
+            lat: 34.1194433,
+            lon: 77.8318789,
+            description: "A desert amidst snow-capped peaks, where double-humped camels march through golden dunes and adventure knows no bounds."
+        },
+        {
+            name: "Thang",
+            lat: 34.9261847,
+            lon: 76.7984354,
+            description: "Stand at India’s last civilian post, stare across the border into Pakistan, and hear gripping stories of life in the northernmost village of the country."
+        },
+        {
+            name: "Siachen Base Camp",
+            lat: 35.4339581,
+            lon: 77.0883677143076,
+            description: "The doorstep to the world’s highest battlefield, where soldiers stand tall against nature’s harshest trials, guarding the roof of the world."
+        },
+          {
+            name: "Zanskar Valley",
+            lat: 33.88823,
+            lon: 76.9717383,
+            description: "A rugged paradise carved by glaciers and rivers, where frozen waterfalls and ancient monasteries weave tales of resilience and adventure."
+        },
+         {
+            name: "Padum",
+            lat: 33.4691405,
+            lon: 76.8781759,
+            description: "Explore the heart of Zanskar, where Buddhist chants echo through timeless landscapes and untamed trails beckon the fearless."
+        },
+          {
+            name: "Puga Valley",
+            lat: 33.2281268,
+            lon: 78.2998024,
+            description: "A geothermal wonder where steam rises from the earth like a mystical spell, turning Ladakh’s cold desert into a land of fire and ice."
+        },
+        {
+            name: "Diskit",
+            lat: 34.5512277,
+            lon: 77.5506547,
+            description: "Marvel at Ladakh’s tallest Buddha statue, visit the centuries-old Diskit Monastery, and take in panoramic views of the Nubra Valley."
+        },
+        {
+            name: "Chilling Village",
+            lat: 32.982124999999996,
+            lon: 78.5955625,
+            description: "The cradle of Ladakh’s metal artisans, where frozen rivers become winter highways, leading thrill-seekers into the heart of the Himalayas."
+        },
+          {
+            name: "Suru Valley",
+            lat: 34.0832026,
+            lon: 76.0988716,
+            description: "A lush green wonderland amidst Ladakh’s barren landscapes, where glaciers feed vibrant fields, and adventure pulses through every rugged trail."
+        },
+    ],
+    "Himachal Pradesh": [
+        {
+            name: "Manali",
+            lat: 32.2454608,
+            lon: 77.1872926,
+            description: "A paradise where adventure meets serenity. Ski the slopes, trek the trails, or lose yourself in the charm of Old Manali’s rustic cafes."
+        },
+        {
+            name: "Jibhi",
+            lat: 31.5922834,
+            lon: 77.3526223,
+            description: "A secret haven of cedar-scented air, innumerable hikes, hidden waterfalls, lakes and wooden homestays where time slows down to nature’s rhythm."
+        },
+        {
+            name: "Tirthan Valley",
+            lat: 31.6945978,
+            lon: 77.5386715,
+            description: "Where crystal-clear rivers whisper through lush forests and seekers of untouched Himalayan beauty."
+        },
+        {
+            name: "Sainj Valley",
+            lat: 31.7708764,
+            lon: 77.3084876,
+            description: "A quiet retreat cradled in the Great Himalayan National Park, where meadows stretch wide, and adventure trails lead to the unknown."
+        },
+        {
+            name: "Shangarh",
+            lat: 31.7573115,
+            lon: 77.3770738,
+            description: "A mystical meadow kissed by golden sunsets, the green town of Shangarh is known for its temples, harrowing a rich history that is seen in their architecture. One of the most revered local shrines, the Shangchul Mahadev Temple, is located right in middle of the meadows of Shangarh."
+        },
+        {
+            name: "Solang Valley",
+            lat: 32.3160963,
+            lon: 77.1565572,
+            description: "Just 14 kilometers northwest of Manali, this adventure capital is renowned for its vast slopes of greenery and white blankets of snow during winters. One can experience paragliding over emerald slopes or ski down powdery trails or rev up their adrenaline on an ATV ride."
+        },
+        {
+            name: "Parvati Valley",
+            lat: 31.9255258,
+            lon: 77.1502575,
+            description: "A backpacker’s dreamland where Parvati river hums ancient secrets along with emitting energies of purity, and the hikes lead to psychedelic landscapes and mystic encounters."
+        },
+        {
+            name: "Kasol",
+            lat: 32.0104317,
+            lon: 77.3166036,
+            description: "The ‘Mini Israel of India,’ where the aroma of baked goods blends with pine forests, and riverside cafes tell stories of wandering souls."
+        },
+        {
+            name: "Kheerganga",
+            lat: 31.9948083,
+            lon: 77.5109358,
+            description: "A hike into the clouds, where natural hot springs soothe weary travelers under a sky painted with Himalayan magic."
+        },
+        {
+            name: "Manikaran",
+            lat: 32.0273214,
+            lon: 77.3464072,
+            description: "A sacred land where faith meets science. Steaming hot springs, ancient temples, and langars that feed both body and soul."
+        },
+        {
+            name: "Sissu",
+            lat: 32.4688515,
+            lon: 77.1323276,
+            description: "A picture-perfect hamlet on the Leh-Manali Highway, where waterfalls tumble down rugged cliffs, and the mountains guard forgotten legends."
+        },
+        {
+            name: "Kullu",
+            lat: 31.9578974,
+            lon: 77.1089232,
+            description: "The ‘Valley of Gods,’ where white water rapids call the wild at heart, and apple orchards bloom in eternal spring. This place is known among travellers for its Dussehra festival in October."
+        },
+        {
+            name: "Jispa",
+            lat: 32.6403733,
+            lon: 77.18785454210526,
+            description: "A high-altitude hideaway on the Manali Leh route, where the Chandra River sings lullabies to weary travelers under a million stars."
+        },
+        {
+            name: "Sarchu",
+            lat: 32.8155072,
+            lon: 77.5325542,
+            description: "The last outpost before Ladakh, where nomadic tents dot the barren land, and the air crackles with the thrill of the journey ahead to Leh."
+        },
+        {
+            name: "Dharamshala",
+            lat: 32.2143039,
+            lon: 76.3196717,
+            description: "The home of the Dalai Lama, where Tibetan prayer flags flutter in the wind, and snow-capped peaks guard tales of peace and resilience."
+        },
+        {
+            name: "Dharamkot",
+            lat: 30.9432095,
+            lon: 75.2327764,
+            description: "A spiritual escape above McLeodganj, where yogis, artists, and wanderers gather to find bliss in the simplest moments."
+        },
+        {
+            name: "Bir Billing",
+            lat: 32.0498293,
+            lon: 76.7373976,
+            description: "The paragliding capital of India and the highest paragliding destination of Asia. Where you soar with eagles over emerald valleys before touching down to sip chai tea in a Tibetan monastery."
+        },
+        {
+            name: "Chamba",
+            lat: 32.5565043,
+            lon: 76.1249971,
+            description: "A town lost in time, where ancient temples, royal palaces, and the mighty Ravi River weave a tale of forgotten kingdoms. Perhaps the loveliest valley of Himachal Pradesh, is a treasure trove of scenic attractions, sparkling streams, primeval lakes, meadows, dense alpine tree covers, rich wildlife and fertile valleys."
+        },
+        {
+            name: "Khajjiar",
+            lat: 32.5485701,
+            lon: 76.0597217,
+            description: "India’s very own ‘Mini Switzerland,’ where lush green meadows roll beneath towering Deodars. Khajjiar lies about 2,000 meters above sea level in the foothills of the Dhauladhar ranges in the Western Himalayas."
+        },
+        {
+            name: "McLeodganj",
+            lat: 32.2369266,
+            lon: 76.3247482,
+            description: "A vibrant mix of Tibetan culture and bohemian vibes, where monks chant, cafes buzz, and trails lead to breathtaking Himalayan vistas."
+        },
+        {
+            name: "Narkanda",
+            lat: 31.2547508,
+            lon: 77.4612694,
+            description: "A snow-laden retreat where apple orchards bloom in summer, and winter brings thrilling slopes for skiers and snowboarders alike."
+        },
+        {
+            name: "Shimla",
+            lat: 31.1041526,
+            lon: 77.1709729,
+            description: "The ‘Queen of Hills,’ where colonial charm meets Himalayan grandeur, and the toy train winds through misty pine-clad mountains."
+        },
+        {
+            name: "Palampur",
+            lat: 32.1095492,
+            lon: 76.5359534,
+            description: "The tea capital of North India, where emerald plantations stretch to the horizon, and the Dhauladhar peaks stand tall against the sky."
+        },
+        {
+            name: "Killar",
+            lat: 33.0804585,
+            lon: 76.4014977,
+            description: "The gateway to the deadly Sach Pass, where adrenaline rushes through narrow, rocky roads carved into the cliffs of the Pangi Valley. The most dangerous road of the world lies ahead."
+        },
+        {
+            name: "Spiti Valley",
+            lat: 32.368507,
+            lon: 78.08627749298995,
+            description: "This is where adventure meets solitude. A rugged Himalayan paradise, Spiti offers epic road trips, turquoise lakes, and starry nights in summer, while winter transforms it into a snow-cloaked wonderland of frozen rivers and remote monasteries."
+        },
+    ],
+     "Uttarakhand": [
+        {
+            name: "Haridwar",
+            lat: 29.9384473,
+            lon: 78.1452985,
+            description: "Witness the sacred Ganga Aarti as the river glows with a thousand diyas, and immerse yourself in a centuries-old spiritual tradition."
+        },
+        {
+            name: "Rishikesh",
+            lat: 30.1086537,
+            lon: 78.2916193,
+            description: "The ‘Yoga Capital of the World,’ where meditation meets adventure. Flow with the rapids of Ma Ganga, walk on air over Laxman Jhula, and reconnect with your soul in this spiritual town."
+        },
+          {
+            name: "Tehri",
+            lat: 30.40260205,
+            lon: 78.38835789037978,
+            description: "A lost kingdom reborn as an adventure hub. Sail on India’s highest-altitude dam reservoir against a majestic Himalayan backdrop."
+        },
+        {
+            name: "Uttarkashi",
+            lat: 30.7291049,
+            lon: 78.4403495,
+            description: "A gateway to the divine, where snow-capped peaks guard ancient temples, and the mighty Bhagirathi flows through the land of sages."
+        },
+        {
+            name: "Gangotri",
+            lat: 30.9943684,
+            lon: 78.9398699,
+            description: "Stand at the birthplace of the sacred Ganges, where glaciers whisper ancient hymns, and the air is pure enough to touch the divine."
+        },
+          {
+            name: "Rudraprayag",
+            lat: 30.28656,
+            lon: 78.98072,
+            description: "A mystical confluence where two sacred rivers Alaknanda and Mandakini unite, offering spiritual solace to numerous sadhus of India."
+        },
+        {
+            name: "Devprayag",
+            lat: 30.1461443,
+            lon: 78.5985849,
+            description: "Witness the breathtaking union of Alaknanda and Bhagirathi as they merge to form the sacred Ganges, a spectacle of nature’s raw power and spiritual significance."
+        },
+        {
+            name: "Yamunotri",
+            lat: 30.999972,
+            lon: 78.4628898,
+            description: "Trek through untouched landscapes to bathe in the steaming hot springs of Goddess Yamuna’s sacred seat. According to legend, the hot spring is generated by the boon given from a single ray of the Sun to Mother Yamuna by the Sun God."
+        },
+          {
+            name: "Sonprayag",
+            lat: 30.6317057,
+            lon: 78.9986617,
+            description: "A spiritual stopover on the way to Kedarnath, where the Mandakini and Basuki rivers converge, surrounded by Himalayan splendor."
+        },
+        {
+            name: "Kedarnath",
+            lat: 30.73518365,
+            lon: 79.06687266152392,
+            description: "Trek through mist-clad mountains to reach this ancient temple, which is dedicated to Lord Shiva and also acts as one the 12 Jyotirlingas of India. It is also the remotest temple of the ‘Chota Char Dham Yatra’ of Uttarakhand."
+        },
+        {
+            name: "Badrinath",
+            lat: 30.74468835,
+            lon: 79.49115836638902,
+            description: "Experience spiritual grandeur at 10,000 feet, where golden temple domes shimmer against the snow-laden peaks of the mighty Neelkanth. Dedicated to Lord Vishnu, Badrinath is one of the sites of the ‘Char Dham’ Pilgrimage of India"
+        },
+          {
+            name: "Joshimath",
+            lat: 30.5555752,
+            lon: 79.5612607,
+            description: "Ride Asia’s longest cable car to an alpine paradise, explore ancient temples, and set off on Himalayan expeditions into the unknown"
+        },
+         {
+            name: "Auli",
+            lat: 30.7255866,
+            lon: 77.8892469,
+            description: "Ski on world-class slopes, sip hot cocoa by the fire, and wake up to an uninterrupted panorama of the Nanda Devi range. Himalayan luxury at its finest."
+        },
+          {
+            name: "Harsil",
+            lat: 31.0369099,
+            lon: 78.7506484,
+            description: "Known for its cultivation of juiciest Apples, this hidden paradise of Swiss-like beauty, where glacial rivers, deodar forests, and charming villages make you want to stay forever."
+        },
+        {
+            name: "Chakrata",
+            lat: 30.7013248,
+            lon: 77.8703356,
+            description: "A secluded Himalayan retreat where gushing waterfalls, secret caves, and panoramic mountain views redefine the meaning of serenity."
+        },
+        {
+            name: "Mussoorie",
+            lat: 30.4569012,
+            lon: 78.0782906,
+            description: "Stroll through misty British-era promenades, sip fine Himalayan teas, and lose yourself in the romance of the ‘Queen of Hills’."
+        },
+          {
+            name: "Kanatal",
+            lat: 30.4153341,
+            lon: 78.3211899,
+            description: "Wake up to golden sunrises over endless meadows, with nothing but the whispers of pine trees and crisp mountain air to keep you company."
+        },
+        {
+            name: "Pauri",
+            lat: 30.1479882,
+            lon: 78.7759518,
+            description: "A quiet mountain town with cinematic views of 300 Himalayan peaks, where sunsets are painted in hues of gold, lavender, and fire."
+        },
+          {
+            name: "Haldwani",
+            lat: 29.2144809,
+            lon: 79.5279012,
+            description: "Your gateway to the Kumaon Himalayas, where bustling town vibes melt into forested trails, leading to the untouched wilderness beyond."
+        },
+        {
+            name: "Nainital",
+            lat: 29.2144809,
+            lon: 79.5279012,
+            description: "Sail across an emerald lake cradled by lush hills, sip mulled wine in a heritage lodge, and watch the twinkling lights of the hill town reflect on the water."
+        },
+        {
+            name: "Ranikhet",
+            lat: 29.3905295,
+            lon: 79.460869,
+            description: "A British-era hill station where rolling meadows meet pine-scented air, perfect for slow mornings and dreamy walks with the Himalayas as your backdrop."
+        },
+          {
+            name: "Almora",
+            lat: 29.3905295,
+            lon: 79.460869,
+            description: "A cultural gem and the capital of Kumaon region, home to Kasardevi temple whose high frequencies is globally known. Almora, being the capital, also consists of bustling bazaars, panoramic ridges and cozy cafes, creating the perfect Himalayan escape steeped in tradition."
+        },
+         {
+            name: "Kausani",
+            lat: 29.8539706,
+            lon: 79.5943657,
+            description: "Watch the first rays of sunlight kiss the snow-clad peaks of Nanda Devi while sipping freshly brewed Himalayan tea in the ‘Switzerland of India."
+        },
+          {
+            name: "Bageshwar",
+            lat: 29.837601,
+            lon: 79.771398,
+            description: "A riverside retreat where the sacred Saryu and Gomti merge, offering ancient temples, unexplored valleys, and the kind of peace money can’t buy."
+        },
+        {
+            name: "Munsiyari",
+            lat: 30.06546,
+            lon: 80.23453,
+            description: "Wake up to breathtaking views of the Panchachuli peaks, trek through Rhododendron forests, and feel like an explorer discovering the last frontier of the Himalayas and India."
+        },
+        {
+            name: "Pithoragarh",
+            lat: 29.585871,
+            lon: 80.215167,
+            description: "A land of hidden fortresses, alpine meadows, and untouched beauty, also known as ‘Mini Kashmir’. A district bordering India and Nepal, perfect for those who seek adventure off the beaten path."
+        },
+          {
+            name: "Jim Corbett",
+            lat: 29.5574752,
+            lon: 78.84249502753302,
+            description: "Step into Rudyard Kipling’s jungle, where Bengal tigers prowl, elephants roam freely, and luxury safaris take you deep into India’s untamed wild."
+        },
+    ],
+    "Jammu & Kashmir": [
+        {
+            name: "Srinagar",
+            lat: 34.0747444,
+            lon: 74.8204443,
+            description: "The largest city in the Indian administered union territory of Jammu & Kashmir bordering Pakistan with emotional and dramatic history for Indians. It lies along the banks of the Jhelum River, and the shores of Dal Lake and Anchar Lakes, between the Hari Parbat and Shankaracharya hills. Walk through Mughal gardens in bloom, get lost in centuries-old bazaars, and watch the sun dip behind snow-kissed mountains from a royal houseboat."
+        },
+        {
+            name: "Dal Lake",
+            lat: 34.11367785,
+            lon: 74.8699911038808,
+            description: "Experience the floating paradise in a shikara and wake up to the soft ripples of a lake kissed by the Himalayan breeze. This lake has centuries old history attached to it and today it is the most visited place in Kashmir by tourists."
+        },
+          {
+            name: "Doda",
+            lat: 33.1449112,
+            lon: 75.5473969,
+            description: "Venture into this rugged paradise, where the mighty Chenab carves its way through stunning landscapes, leading to ancient temples and hidden adventure trails."
+        },
+        {
+            name: "Vaishno Devi",
+            lat: 33.0301412,
+            lon: 74.94792922042402,
+            description: "Embark on a spiritual hike through cloud-kissed mountains, as faith and for the ultimate incarnation of the Goddesses guide you to the sacred shrine nestled in the Trikuta Hills."
+        },
+        {
+            name: "Amarnath Yatra",
+            lat: 34.215635,
+            lon: 75.5038297,
+            description: "A once-in-a-lifetime journey through treacherous mountain trails to witness the mystical ice Shiva Lingam inside a sacred Himalayan cave."
+        },
+          {
+            name: "Jammu",
+            lat: 32.7185614,
+            lon: 74.8580917,
+            description: "Stroll through the ‘City of Temples,’ where history, spirituality, and vibrant local markets create a gateway to the wonders of Jammu & Kashmir."
+        },
+        {
+            name: "Sonamarg",
+            lat: 34.302387,
+            lon: 75.2965551,
+            description: "Step into a fairytale landscape where golden meadows meet towering glaciers, ride ponies to the shimmering Thajiwas Glacier, and camp under a starlit sky with the Himalayas as your backdrop."
+        },
+        {
+            name: "Gulmarg",
+            lat: 34.04897,
+            lon: 74.39212,
+            description: "Ski down powder-soft Himalayan slopes, ride Asia’s highest gondola over endless pine forests, and sip Kahwa chai by a roaring fireplace in a cozy mountain lodge."
+        },
+          {
+            name: "Pulwama",
+            lat: 33.8756947,
+            lon: 74.9003129,
+            description: "Lose yourself in endless saffron fields and apple orchards, where the air is filled with the scent of blooming tulips and the echoes of folklore whisper through the valleys."
+        },
+        {
+            name: "Pahalgam",
+            lat: 34.0322048,
+            lon: 75.3226479,
+            description: "Follow the Lidder River through pine-clad valleys, raft over glacial waters, and wander into untouched meadows where nature paints its masterpiece every season."
+        },
+        {
+            name: "Patnitop",
+            lat: 33.09082,
+            lon: 75.32639,
+            description: "A hill station, located between Ramban Town and Udhampur city in the Udhampur district of Jammu and Kashmir. Breathe in the crisp mountain air as you glide through the sky while paragliding, trek through pine-scented trails, and chase golden sunsets from lush meadows draped in mist."
+        },
+    ],
+    "Punjab": [
+        {
+            name: "Amritsar",
+            lat: 31.6356659,
+            lon: 74.8787496,
+            description: "Stand in awe at the shimmering Golden Temple, where the sacred lake reflects centuries of devotion. Do not miss out on the langar that the Gurudwara offers. Later, lose yourself in the electrifying Wagah Border ceremony watching Indian and Pakistani soldiers collaborate, igniting patriotism through the air."
+        },
+        {
+            name: "Ludhiana",
+            lat: 30.9090157,
+            lon: 75.851601,
+            description: "Dive into a gastronomic adventure with buttery Amritsari kulchas and tasty lassi straight from a traditional Punjabi dhabas. Go to Ludhiana if you live to eat."
+        },
+        {
+            name: "Pathankot",
+            lat: 32.2692452,
+            lon: 75.6528858,
+            description: "Ride into history at ancient forts echoing with warrior tales, then escape into the untouched beauty of Ranjit Sagar Dam, where boating through misty waters unveils Punjab’s hidden natural charm."
+        },
+        {
+            name: "Patiala",
+            lat: 30.3301995,
+            lon: 76.4007656,
+            description: "Experience the rich cultural heritage and old-world charm, renowned for its royal palaces, distinctive Patiala style of architecture, music, and cuisine, with its streets and art narrating tales of Maharajas, and celebrate the iconic traditions like the Patiala peg, Patiala salwar, and handcrafted juttis."
+        },
+    ],
+    "Haryana": [
+        {
+            name: "Kurukshetra",
+            lat: 29.9693747,
+            lon: 76.8482787,
+            description: "Step onto the legendary battlefield where the Bhagavad Gita was spoken, explore ancient temples, and witness the mesmerizing Brahma Sarovar reflecting centuries of history and spirituality."
+        },
+        {
+            name: "Gurugram",
+            lat: 28.4646148,
+            lon: 77.0299194,
+            description: "Experience the perfect blend of futuristic skyscrapers and vibrant nightlife, from luxury shopping at Cyber Hub to rooftop bars with stunning city views."
+        },
+        {
+            name: "Murthal",
+            lat: 29.0396149,
+            lon: 77.0894535,
+            description: "Embark on the ultimate Punjabi food pilgrimage, where legendary dhabas serve piping hot parathas drenched in butter, best paired with a glass of frothy lassi under the open sky."
+        },
+    ],
+    "Uttar Pradesh": [
+        {
+            name: "Agra",
+            lat: 27.1752554,
+            lon: 78.0098161,
+            description: "Witness the ethereal beauty of the Taj Mahal at sunrise, as the ivory-white marble glows in golden hues, telling a timeless tale of love and devotion. Walk through intricate Mughal gardens, feel the cool touch of ancient marble, and stand before one of the world’s greatest wonders, a place where every whisper feels like poetry."
+        },
+        {
+            name: "Lucknow",
+            lat: 26.8381,
+            lon: 80.9346001,
+            description: "Embark on a royal feast in the city of Nawabs, where melt-in-your-mouth Galouti Kebabs and sizzling Tunday Kebabs redefine indulgence. Stroll through bustling lanes filled with the aroma of slow-cooked spices, where every bite is a masterpiece perfected over centuries of Mughal culinary artistry."
+        },
+          {
+            name: "Varanasi",
+            lat: 25.3356491,
+            lon: 83.0076292,
+            description: "Feel the divine energy of Kashi at the city of ghats, as thousands of oil lamps dance over the sacred Ganges, their golden reflections merging with the chants of priests performing the mesmerizing Ganga Aarti. Walk through ancient alleys to the revered Kashi Vishwanath Temple, where faith has thrived for over 3000 years, and watch life unfold in a mystical cycle along the timeless ghats."
+        },
+        {
+            name: "Prayagraj",
+            lat: 25.4381302,
+            lon: 81.8338005,
+            description: "Witness the celestial confluence of India’s holiest rivers, where the sacred Ganges, the tranquil Yamuna, and the mythical Saraswati unite in a breathtaking spectacle. Take a boat ride over the shimmering waters, immerse yourself in a soul-purifying dip, and feel the spiritual essence that has drawn sages, poets, and seekers for millennia."
+        },
+        {
+            name: "Kanpur",
+            lat: 26.4609135,
+            lon: 80.3217588,
+            description: "Walk through Kanpur’s colonial past, where British-era architecture stands alongside ancient temples, telling the story of a city that witnessed revolutions and resilience. Explore the legendary Bithoor, where the Ramayana’s pages come to life, and feel history breathe through every cobblestone in this once-powerful industrial hub."
+        },
+          {
+            name: "Vrindavan",
+            lat: 27.5753726,
+            lon: 77.6938045,
+            description: "Step into the magical land where Lord Krishna’s childhood tales come alive. Wander through vibrant temples where echoes of his divine mischief still linger, dance with devotees at the legendary Banke Bihari Temple, and lose yourself in the fragrance of blooming flowers in the sacred groves where Krishna once played his flute."
+        },
+        {
+            name: "Mathura",
+            lat: 27.4955539,
+            lon: 77.6855554,
+            description: "Feel your soul awaken at Shree Krishna’s birthplace, where the air resonates with the melodies of bhajans and temple bells. Visit the grand Krishna Janmabhoomi Temple, witness the electrifying energy of Holi celebrations, and let the spiritual aura of Mathura transport you to an era of divine love and cosmic play."
+        },
+        {
+            name: "Ayodhya",
+            lat: 26.7990707,
+            lon: 82.2052321,
+            description: "Stand at the very spot at the birthplace of Lord Ram, a city bathed in devotion and golden legends. Walk through grand temples, witness the mesmerizing Ram ki Paidi ghats lit up at dusk for Saryu Aarti, and experience the timeless serenity of India’s most sacred epic unfolding before your eyes."
+        },
+    ],
+    "Rajasthan": [
+        {
+            name: "Ranthambore National Park",
+            lat: 26.031249850000002,
+            lon: 76.4906652236282,
+            description: "Venture into the untamed wilderness, where majestic tigers prowl ancient ruins, leopards lurk in dense forests, and every safari ride is a thrilling chase through Rajasthan’s raw beauty."
+        },
+        {
+            name: "Jodhpur",
+            lat: 26.2967719,
+            lon: 73.0351433,
+            description: "Wander through a sea of cobalt-blue houses beneath the towering Mehrangarh Fort, where every narrow alley hums with echoes of Rajput grandeur and the aroma of sizzling street food."
+        },
+          {
+            name: "Jaipur",
+            lat: 26.9154576,
+            lon: 75.8189817,
+            description: "A world of palaces, bustling bazaars, and regal history. Explore the opulent Hawa Mahal, ride an elephant to the majestic Amber Fort, and experience Rajasthan’s royal heritage in all its splendor."
+        },
+        {
+            name: "Jaisalmer",
+            lat: 26.9116615,
+            lon: 70.9124888,
+            description: "Escape into the golden Thar Desert, where camel safaris lead to endless dunes under fiery sunsets, and the centuries-old Jaisalmer Fort rises like a mirage from a sea of sand."
+        },
+        {
+            name: "Pushkar",
+            lat: 26.4876472,
+            lon: 74.5578484,
+            description: "Find spiritual serenity by the sacred Pushkar Lake, where the world’s only Brahma Temple stands amidst vibrant ghats, camel fairs, and the hypnotic beats of Rajasthani folk music."
+        },
+          {
+            name: "Bikaner",
+            lat: 28.0159286,
+            lon: 73.3171367,
+            description: "Discover Rajasthan’s hidden gem, where grand havelis, intricate Jain temples, and the legendary Karni Mata ‘Rat Temple’ create a surreal blend of history and mystery."
+        },
+        {
+            name: "Udaipur",
+            lat: 24.578721,
+            lon: 73.6862571,
+            description: "Sail across the shimmering waters of Lake Pichola as the City Palace glows like a golden dream, then lose yourself in the charm of whitewashed lanes, floating palaces, and romantic rooftop cafés."
+        },
+        {
+            name: "Mount Abu",
+            lat: 24.592433,
+            lon: 72.7081876,
+            description: "Retreat into Rajasthan’s only hill station, where misty mountains, lush forests, and the breathtaking Dilwara Jain Temples offer a refreshing escape from the desert’s golden embrace."
+        },
+        {
+            name: "Hanumangarh",
+            lat: 29.5760254,
+            lon: 74.3342203,
+            description: "Home to the oldest standing fort of India, Bhatner Fort, believed to be 1700 years old. Unearth the secrets of the ancient past at Hanumangarh, where 5,000-year-old Indus Valley ruins whisper tales of lost civilizations and heroic battles."
+        },
+        {
+            name: "Chittorgarh",
+            lat: 24.8837157,
+            lon: 74.6244155,
+            description: "Walk through the echoes of Rajput valor at India’s largest fort, where tales of love, sacrifice, and honor live on in the towering ramparts and sun-kissed palaces."
+        },
+    ],
+    "Madhya Pradesh": [
+        {
+            name: "Ujjain",
+            lat: 23.1885131,
+            lon: 75.7716562,
+            description: "Step into the mystical city of Ujjain, where the 4am Bhasm aarti at Mahakaleshwar Temple sends divine shivers down your spine. The sacred Kshipra River carries centuries of devotion, and the Kal Bhairav Temple accepts holy offerings, poured straight from a bottle of liquor."
+        },
+        {
+            name: "Omkareshwar",
+            lat: 22.2429799,
+            lon: 76.1495705,
+            description: "Walk the sacred 7km Parikrama around Omkareshwar, feeling the divine energy of the island shaped like ‘Om,’ visit the revered .Jyotirlingas, and watch saffron-clad saints meditate by the tranquil Narmada Ghats as the river glows under the setting sun."
+        },
+          {
+            name: "Jabalpur",
+            lat: 23.1701522,
+            lon: 79.9324505,
+            description: "Glide on a boat through the surreal Marble Rocks of Bhedaghat, as the Narmada River shimmers in moonlight, then witness the thunderous Dhuandhar Falls, where mist rises like a cloud from nature’s grand spectacle."
+        },
+        {
+            name: "Gwalior",
+            lat: 26.2037247,
+            lon: 78.1573628,
+            description: "Walk through the mighty Gwalior Fort, a fortress so grand that even Babur called it “the pearl of Indian fortresses,” then lose yourself in the echoes of royal music at the opulent Jai Vilas Palace and explore the 1000-year-old rock-cut temples hidden within the fort’s walls."
+        },
+        {
+            name: "Chhatarpur",
+            lat: 24.9204657,
+            lon: 79.5839755,
+            description: "Witness the stunning artistry of the Khajuraho Temples, where intricate carvings depict divine passion, celestial dancers, and ancient Hindu legends, making every step through this UNESCO wonder a journey through time and sensuality."
+        },
+          {
+            name: "Satpura National Park",
+            lat: 22.48314715,
+            lon: 78.32172341717785,
+            description: "Swap the usual jungle safari for a thrilling canoe ride through hidden forest channels, spot elusive leopards and sloth bears, and trek deep into the untouched wilderness of one of India’s best-kept wildlife secrets."
+        },
+        {
+            name: "Bhopal",
+            lat: 23.2584857,
+            lon: 77.401989,
+            description: "Sail across the serene Upper Lake as the sun dips behind regal palaces, explore centuries-old mosques and bustling bazaars, and indulge in the city’s legendary Mughlai cuisine, where every bite is a taste of royal history."
+        },
+    ],
+    "Bihar": [
+        {
+            name: "Patna",
+            lat: 25.6093239,
+            lon: 85.1235252,
+            description: "Walk through the ancient capital of emperors and scholars, where the mighty Ganges flows past grand relics like Golghar and Patna Sahib Gurudwara, and taste the legacy of Bihar in the city’s famous Litti chokha."
+        },
+        {
+            name: "Gaya",
+            lat: 24.7964355,
+            lon: 85.0079563,
+            description: "Stand beneath the sacred Bodhi Tree in Bodh Gaya, where Buddha attained enlightenment, offer prayers at the majestic Mahabodhi Temple, and feel the energy of devotion along the ancient Vishnupad Temple’s footprint of Lord Vishnu."
+        },
+    ],
+    "West Bengal": [
+        {
+            name: "Kolkata",
+            lat: 22.5726459,
+            lon: 88.3638953,
+            description: "Considered the ‘Cultural Soul of India’, walk through colonial-era streets, ride a vintage tram, relish mouthwatering Bengali sweets, and witness the grandeur of the Howrah Bridge and Victoria Memorial as history and modernity blend seamlessly."
+        },
+        {
+            name: "Darjeeling",
+            lat: 27.0377554,
+            lon: 88.263176,
+            description: "Known as the ‘Champagne of teas’. At Darjelling, you get to sip world-famous Darjeeling tea, amidst misty plantations. Take a joyride on the UNESCO-listed Toy Train, and watch the sun paint Mt. Kanchenjunga in golden hues from Tiger Hill at sunrise."
+        },
+        {
+            name: "Siliguri",
+            lat: 26.7164127,
+            lon: 88.4309916,
+            description: "The Gateway to the Northeast. Bordering China, Nepal, Bhutan and Bangladesh. Ride through lush tea gardens, explore bustling markets, and take in the panoramic views of the Himalayas before embarking on adventures into Sikkim or interiors of Northeast India."
+        },
+        {
+            name: "Gangasagar",
+            lat: 21.6596899,
+            lon: 88.0778598,
+            description: "Where faith meets the ocean. Experience spiritual serenity at the confluence of the Ganges and the Bay of Bengal, where pilgrims gather for holy dips, vibrant rituals, and the mesmerizing Gangasagar Mela."
+        },
+        {
+            name: "Sundarbans",
+            lat: 21.89718120023509,
+            lon: 88.77502441406251,
+            description: "Cruise through the world’s largest mangrove forest into the wild. Spot the elusive Royal Bengal Tiger, and witness a mesmerizing ecosystem where land and water intertwine in an untamed symphony of nature."
+        },
+    ],
+    "Jharkhand": [
+        {
+            name: "Ranchi",
+            lat: 23.3700501,
+            lon: 85.3250387,
+            description: "The City of Waterfalls & Tribal Heritage. Chase cascading waterfalls like Hundru and Dassam, trek through the lush forests of Jonha, and witness the spiritual aura of the towering Pahari Mandir overlooking this vibrant tribal heartland."
+        },
+        {
+            name: "Deogarh",
+            lat: 24.4898318,
+            lon: 86.6990182,
+            description: "The Sacred Abode of Lord Shiva. Walk through the vibrant lanes of Baidyanath Dham, one of India’s holiest Jyotirlingas, experience the spiritual energy of thousands of devotees, and explore the nearby waterfalls and temples hidden in the rugged terrain."
+        },
+        {
+            name: "Patratu",
+            lat: 23.6668568,
+            lon: 85.3056514,
+            description: "A Hidden Gem of Serene Valleys. Drive through winding mountain roads that open up to breathtaking views of the Patratu Valley, cruise on the pristine Patratu Lake, and soak in the untouched beauty of Jharkhand’s best-kept secret."
+        },
+        {
+            name: "Betla National Park",
+            lat: 23.7163975,
+            lon: 84.19007040308273,
+            description: "Venture deep into one of India’s oldest tiger reserves, where dense Sal forests, ancient forts, and thrilling jeep safaris bring you face-to-face with elephants, leopards, and the elusive big cats."
+        },
+    ],
+    "Odisha": [
+        {
+            name: "Puri",
+            lat: 19.8076083,
+            lon: 85.8252538,
+            description: "Witness the grandeur of the Jagannath Temple and the peaceful vibes when you’re within. Walk through bustling bazaars filled with temple sweets and handicrafts, then unwind on Puri’s golden beach as the Bay of Bengal crashes against the shore. Catch the sunrise at the mesmerizing Konark Sun Temple and the tranquil Chilika Lake, where dolphins dance in the waves."
+        },
+        {
+            name: "Bhubaneswar",
+            lat: 19.8076083,
+            lon: 85.8394521,
+            description: "Known as the Temple City of India. Soak in the high frequency energies at centuries-old temples like Lingaraj and Mukteshwar, admire the intricate Kalinga architecture, and dive into Odisha’s rich tribal culture at the museums. As evening falls, relish authentic Odia cuisine and explore the caves of Khandagiri and Udayagiri for a glimpse into ancient Jain history."
+        },
+          {
+            name: "Bamur Forest",
+            lat: 21.054905,
+            lon: 84.564168,
+            description: "Dive into the heart of Odisha’s wilderness. Lose yourself in the dense teak forests of Bamur, where rare wildlife, gushing waterfalls, and hidden tribal villages create an adventure straight out of a storybook emitting the Jungle Book vibe. Trek through uncharted paths, listen to the calls of exotic birds, and breathe in the untouched beauty of Odisha’s untamed wild."
+        },
+        {
+            name: "Debrigarh",
+            lat: 21.5525031,
+            lon: 83.5877556,
+            description: "Do not miss out on the wildlife safari by the scenic Hirakud Lake. Embark on a thrilling jeep safari through Debrigarh Wildlife Sanctuary, where herds of deer, elephants, and elusive leopards roam against the backdrop of Hirakud Dam. Take a boat ride on the massive reservoir, capturing breathtaking sunsets over the tranquil waters."
+        },
+        {
+            name: "Bargarh",
+            lat: 21.3335004,
+            lon: 83.6190492,
+            description: "The land of Festivals, Forts & Folk Art. Explore the mystical Gandhamardan Hills, hike to hidden waterfalls, and witness Odisha’s vibrant folk traditions at Bargarh’s legendary Dhanu Yatra, the world’s largest open-air theater festival. Visit the ruins of ancient temples and immerse yourself in the cultural heartbeat of western Odisha."
+        },
+          {
+            name: "Tikarpada Wildlife Sanctuary",
+            lat: 20.685368606926602,
+            lon: 84.90007718460231,
+            description: "An adventure you cannot miss by the mighty Mahanadi. Paddle through the breathtaking Satkosia Gorge in a thrilling boat safari, spotting gharials sunbathing on the riverbanks and eagles soaring overhead. Camp under starlit skies, trek through dense forests, and listen to the untamed symphony of nature in Odisha’s wildest playground."
+        },
+        {
+            name: "Dasapalla Elephant Reserve",
+            lat: 20.341900812312584,
+            lon: 84.66925499705384,
+            description: "A hidden paradise for nature lovers. Drive through lush rolling hills and untouched forests of Dasapalla, where chirping hornbills and rustling leaves replace city noise. Spot wild elephants on forest trails, picnic by crystal-clear streams, and experience pure serenity in this offbeat haven."
+        },
+    ],
+    "Chhattisgarh": [
+        {
+            name: "Ambikapur Range",
+            lat: 23.04380293193345,
+            lon: 83.28805910424725,
+            description: "The Rolling Hills of Chhattisgarh. Trek through misty hills and dense Sal forests, where winding trails lead to ancient caves, hidden waterfalls, and breathtaking sunrise viewpoints. Experience the region’s rich tribal culture, savor authentic local cuisine, and witness untouched natural beauty at every turn."
+        },
+        {
+            name: "Kanger Ghati National Park",
+            lat: 18.83398355,
+            lon: 82.02010529450527,
+            description: "A wonderland of caves & forests. Venture into one of India’s most biodiverse forests, where dense canopies shelter leopards, flying squirrels, and vibrant birdlife. Explore the limestone wonderland of Kutumsar and Dandak caves, cruise along jungle rivers, and lose yourself in nature’s raw magnificence."
+        },
+        {
+            name: "Indravati National Park",
+            lat: 19.131067549999997,
+            lon: 80.50664535200065,
+            description: "Chhattisgarh’s Tiger Territory. Go on a thrilling wildlife safari through Indravati’s untouched landscapes, where tigers, leopards, and sloth bears roam free. Spot rare wild buffalo, listen to the calls of exotic birds, and witness nature in its most primal form in this secluded sanctuary."
+        },
+        {
+            name: "Bailadila Range",
+            lat: 18.76802788302059,
+            lon: 81.22986373283165,
+            description: "Also known as the Iron Mountains of the Deccan. Drive through the surreal landscapes of Bailadila, where towering iron-rich hills create Mars-like terrain. Experience the thrill of high-altitude trekking, marvel at panoramic valley views, and witness the sheer grandeur of these mineral-rich peaks."
+        },
+    ],
+    "Gujarat": [
+        {
+            name: "Gir Forest",
+            lat: 21.17634795,
+            lon: 70.58473492948318,
+            description: "Into the Land of the Asiatic Lions. Venture deep into Gir’s wild heart on a thrilling safari, where elusive Asiatic lions roam free, leopards prowl in the shadows, and vibrant birdlife fills the air with songs. Experience the untamed spirit of Gujarat’s only jungle kingdom."
+        },
+        {
+            name: "Vadodara",
+            lat: 22.2973142,
+            lon: 73.1942567,
+            description: "Home to the Statue of Unity. The Tallest Tribute to a Legend. Stand in awe before the world’s tallest statue, a colossal tribute to Sardar Vallabhbhai Patel, towering at a staggering 182 meters. Take in panoramic views of the Narmada River from the viewing gallery and explore the fascinating museum dedicated to India’s Iron Man."
+        },
+          {
+            name: "Dwarka",
+            lat: 22.2424747,
+            lon: 68.9671448,
+            description: "The Kingdom of Lord Krishna. Feel the divine energy at the Dwarkadhish Temple, watch the Arabian Sea kiss the shores of this sacred city, and drive on the newly inaugurated Sudharshan Bridge to Beyt Dwarka, where Shri Krishna and his family lived for years together."
+        },
+        {
+            name: "Kutch",
+            lat: 23.941559650000002,
+            lon: 70.90135721508334,
+            description: "A White Desert Dream. Witness the surreal beauty of the Rann of Kutch, where the vast salt flats glow under the moonlight, dance to folk tunes at the Rann Utsav, and explore tribal villages adorned with vibrant handicrafts."
+        },
+        {
+            name: "Narayan Sarovar",
+            lat: 23.6749852,
+            lon: 68.5370964,
+            description: "Where Spirituality Meets Serenity. Stand at the edge of India, the westernmost tip of the nation, where the sacred Narayan Sarovar meets the vast desert, meditate by its holy waters, and explore the ancient temples steeped in myth and devotion."
+        },
+          {
+            name: "Dholavira",
+            lat: 23.88890085,
+            lon: 70.21145074430565,
+            description: "An Echo of the Indus Valley Civilization. Walk through the well-planned ruins of Dholavira, a 5,000 year old Harappan city. Marvel at its advanced water conservation system and uncover the secrets of an ancient civilization lost in time."
+        },
+        {
+            name: "Shoolpaneshwar",
+            lat: 21.7305403,
+            lon: 73.69801734699988,
+            description: "A Hidden Green Paradise. Walk through the dense forests of Shoolpaneshwar Wildlife Sanctuary, where waterfalls tumble down mossy cliffs, tribal villages whisper ancient stories, and leopards lurk in the lush wilderness."
+        },
+    ],
+    "Maharashtra": [
+        {
+            name: "Mumbai",
+            lat: 18.9733536,
+            lon: 72.82810491917377,
+            description: "The City That Never Sleeps. Feel the pulse of India’s financial capital as you explore colonial-era architecture, bustling bazaars, and scenic Marine Drive. Take a ferry to Elephanta Caves and witness the cinematic glamour of Bollywood."
+        },
+        {
+            name: "Alibaug",
+            lat: 18.6627281,
+            lon: 72.8787677,
+            description: "A Seaside Escape Near Mumbai. Lounge on golden beaches, take a boat ride to the 17th-century Colaba Fort, and unwind in luxurious beach resorts. With pristine waters and delicious seafood, Alibaug is Mumbai’s favorite weekend getaway."
+        },
+          {
+            name: "Lonavala",
+            lat: 18.7548563,
+            lon: 73.4016729,
+            description: "The quickest escape to the Sahyadris. Breathe in the crisp mountain air as you misty valleys and indulge in the famous fudge sweets. Visit historic forts, hidden waterfalls, and panoramic viewpoints that paint a perfect monsoon retreat."
+        },
+        {
+            name: "Mahabaleshwar",
+            lat: 17.9242764,
+            lon: 73.6575799,
+            description: "Where Clouds Touch the Earth. Stroll through strawberry farms, boat across the serene Venna Lake, and witness breathtaking sunrises from Arthur’s Seat. A perfect hill station get-away. Enjoy the cool climate and lose yourself in the lush greenery of this hill paradise."
+        },
+        {
+            name: "Igatpuri",
+            lat: 19.6952545,
+            lon: 73.5651436,
+            description: "A major hotspot of the treks that the Sahayadri Range offers. Set out on thrilling treks to Kalsubai Peak, Sandhan Valley, and Bhatsa River Gorge. From sunrise treks to night camping in the mountains, everything is a must experience here. Discover ancient temples, their back stories and let the misty hills rejuvenate your soul."
+        },
+          {
+            name: "Nashik",
+            lat: 20.0112475,
+            lon: 73.7902364,
+            description: "Where wine & spirituality blends. One weekend, you’re sipping world-class wines at the Sula Vineyards. The coming week, you walk through the ancient temples of Panchavati, and seek blessings at the sacred Trimbakeshwar Jyotirlinga. Nashik is a perfect fusion of divine energy and luxurious indulgence."
+        },
+        {
+            name: "Ratnagiri",
+            lat: 16.9933521,
+            lon: 73.2954371,
+            description: "Konkan’s hidden coastal gem. Discover the virgin beaches of Ganpatipule, where golden sands meet turquoise waters, and explore mango orchards that produce the world-famous Alphonso mangoes. Visit ancient sea forts, temples, and witness stunning sunsets over the Arabian Sea."
+        },
+        {
+            name: "Aurangabad",
+            lat: 20.088091905454345,
+            lon: 75.17863991821847,
+            description: "A timeless wonder of history & spirituality. Walk through history, at the awe-inspiring Ajanta & Ellora Caves, where intricate rock-cut sculptures narrate ancient tales. Visit Grishneshwar Jyotirlinga, explore the grandeur of Bibi Ka Maqbara, and experience Maharashtra’s history."
+        },
+        {
+            name: "Matheran",
+            lat: 18.989890553276826,
+            lon: 73.27109393223262,
+            description: "A serene hill station free of vehicles, enchants travelers with its lush greenery, colonial charm, cool mountain air, and breathtaking views from scenic points along red-soil pathways."
+        },
+        {
+            name: "Tadoba National Park",
+            lat: 20.2670283,
+            lon: 79.49451925839712,
+            description: "Maharashtra’s Wild Heart. Embark on an exhilarating jungle safari through dense teak forests to spot majestic Tigers, Leopards, and Sloth Bears. Witness the untamed beauty of one of India’s finest wildlife reserves, where nature reigns supreme."
+        },
+        {
+            name: "Malvan",
+            lat: 16.06064,
+            lon: 73.4669499,
+            description: "A coastal paradise full of coral reefs. Dive into an underwater world as you snorkel through vibrant coral reefs, feast on authentic Malvani seafood, and explore the historic Sindhudurg Fort perched on a rocky island. A perfect blend of adventure and culture!"
+        },
+          {
+            name: "Sangli",
+            lat: 16.8502534,
+            lon: 74.5948885,
+            description: "Explore the turmeric city with a divine soul. Sangli offers a serene experience along the ghats Krishna River. Visit the grand Ganapati Temple, and taste some of the finest turmeric in the world. Sangli’s peaceful charm and spiritual aura make it a unique cultural retreat."
+        },
+        {
+            name: "Gadchiroli Forest",
+            lat: 20.18575923699337,
+            lon: 79.99482255912513,
+            description: "Into the Tribal Heartland. Walk through dense teak forests, encounter indigenous tribal cultures, and explore sacred groves untouched by time. A destination where adventure meets the wisdom of India’s ancient past."
+        },
+        {
+            name: "Koyna",
+            lat: 17.40227945,
+            lon: 73.75097077206127,
+            description: "The Serene Backwaters of Maharashtra. Glide across the emerald waters of Koyna Dam, surrounded by rolling hills and thick forests. Trek through Koyna Wildlife Sanctuary and experience the tranquility of Maharashtra’s hidden retreat."
+        },
+        {
+            name: "Purna Wildlife Sanctuary",
+            lat: 20.941183424954765,
+            lon: 73.53382599999402,
+            description: "A Biodiversity Hotspot. Step into a dense teak and bamboo forest, home to leopards, wild boars, and the elusive four-horned antelope. A paradise for birdwatchers and wildlife enthusiasts, offering a raw and immersive jungle experience."
+        },
+    ],
+    "Goa": [
+        {
+            name: "Arambol",
+            lat: 15.6878815,
+            lon: 73.7055986,
+            description: "Where Bohemian vibes collaborate with the beach lifestyle. Dance under the stars at Arambol’s ultimate beach parties, where fire dancers, live music, and drum circles set the rhythm of the night. By day, unwind on the golden shore, explore hidden sweet water lakes, and soak in the free-spirited energy of this backpacker’s haven."
+        },
+        {
+            name: "Vagator",
+            lat: 15.5985735,
+            lon: 73.7408126,
+            description: "Cliffside raves & sunset magic. Feel the bass drop at high-energy hilltop parties overlooking the Arabian Sea, where international DJs create an electrifying atmosphere. All the major festivals of Goa take place at Vagator.Do not miss out the sun sets from Chapora Fort, and later, lose yourself in the neon-lit madness of Goa’s clubs."
+        },
+          {
+            name: "Palolem",
+            lat: 15.012796,
+            lon: 74.0219498,
+            description: "The Perfect Blend of Party & Peace. Kayak through the shimmering blue waters by day, join a silent headphone party by night, and wake up to the sound of waves lapping at your doorstep. This crescent-shaped paradise is perfect for those who crave both vibrant nightlife and serene beachside escapes."
+        },
+        {
+            name: "Cabo De Rama",
+            lat: 15.0857902,
+            lon: 73.9119843,
+            description: "Plan a sunset date here.. Stand atop this ancient Portuguese fort, where the cliffs drop into endless blue waters, and the salty breeze carries whispers of forgotten legends. A secluded, offbeat retreat, it’s the perfect place to escape the crowds and discover Goa’s raw beauty."
+        },
+        {
+            name: "Netravali Wildlife Sanctuary",
+            lat: 15.116668703988974,
+            lon: 74.2307669205519,
+            description: "Into the Heart of Goa’s Hidden Wilderness. Experience dense forests walks, encounter rare butterflies, and discover beautiful waterfalls here. A haven for nature lovers, this untouched sanctuary is a stark contrast to Goa’s party scene. Pure, green, and full of surprises."
+        },
+          {
+            name: "Dudhsagar Waterfall",
+            lat: 15.3156176,
+            lon: 74.3142493,
+            description: "Goa’s Most Iconic Natural Marvel. Witness a four-tiered cascade of white froth crashing down the cliffs, resembling a river of milk flowing through the jungle. Reach this magnificent spectacle by an exhilarating jeep safari or a scenic train ride through the Western Ghats."
+        },
+    ],
+    "Karnataka": [
+        {
+            name: "Gokarna",
+            lat: 14.5439629,
+            lon: 74.3184418,
+            description: "The Peaceful Twin of Goa. Escape to hidden crescent-shaped beaches where yoga at sunrise sets the tone for the day. Hike across rocky cliffs while doing the extraordinary five beach trek, kayak through the waves, and end your evenings with bonfire jam sessions under a starlit sky."
+        },
+        {
+            name: "Hampi",
+            lat: 15.3358,
+            lon: 76.4610201,
+            description: "A Surreal Playground of Ruins & Boulders. This place feels like we’re on another planet. Walk through a landscape of giant boulders and ancient Vijayanagara ruins that look straight out of a fantasy novel."
+        },
+          {
+            name: "Udupi",
+            lat: 13.3419169,
+            lon: 74.7473232,
+            description: "The Spiritual and Culinary Delight of Karnataka. Seek blessings at the famous Krishna Temple before indulging in Udupi’s legendary vegetarian cuisine, known worldwide for its unique flavors. Explore unspoiled beaches, visit St. Mary’s Island with its hexagonal rock formations, and watch fishermen bring in their fresh catch at Malpe Beach."
+        },
+        {
+            name: "Chikkamagaluru",
+            lat: 13.318014,
+            lon: 75.7738743,
+            description: "The Coffee Kingdom of India. Wake up to the aroma of freshly brewed coffee in the heart of India’s oldest coffee plantations. Trek through mist-covered peaks feeling like you’re chilling in Himachal Pradesh. Visit secret waterfalls, and sip on a hot cup while gazing over the rolling green hills of this untouched paradise."
+        },
+        {
+            name: "Mysuru",
+            lat: 12.3051828,
+            lon: 76.6553609,
+            description: "A Royal City Drenched in Grandeur. Walk through the illuminated corridors of Mysore Palace, where history and art meet in a dazzling spectacle. Stroll through the vibrant Devaraja Market, smell the world-famous Mysore sandalwood, and experience the serenity of Chamundi Hills at sunrise."
+        },
+          {
+            name: "Bengaluru",
+            lat: 12.9767936,
+            lon: 77.590082,
+            description: "The Cosmopolitan Heart of India. Sip craft beer in rooftop pubs, groove to live music, and indulge in an eclectic mix of global cuisines in India’s 'Silicon Valley.' Take a break from the urban buzz by exploring botanical gardens at weekend getaways and coffee estates."
+        },
+        {
+            name: "Coorg",
+            lat: 12.9363343,
+            lon: 77.6151183,
+            description: "Where the air reminds you of Coffee & Rainforests. Kayak through the gushing waters of the Barapole River, sip fresh Coorgi coffee in the middle of chilli plantations, and hike through lush, misty forests. With hidden waterfalls and warm Kodava hospitality, Coorg is a tropical dream come to life"
+        },
+          {
+            name: "Belur",
+            lat: 13.1645671,
+            lon: 75.8634851,
+            description: "The Timeless Elegance of Karnataka’s Hoysala Temples. Admire the breathtaking stone carvings of Chennakesava Temple, Halebeedu Temple and Belur where every sculpture tells a story of devotion, art, and architectural mastery. Also unsolve the mystery of their destruction. Captured, destroyed at that time, but still standing tall and beautiful, a hidden gem for history buffs and photography lovers, Belur is a walk through the grandeur of Karnataka’s past."
+        },
+        {
+            name: "Bandipur National Park",
+            lat: 11.78668215,
+            lon: 76.42069589207,
+            description: "Go on a thrilling safari to spot Bengal tigers, leopards, and elephants, in one of India’s most well-preserved wildlife sanctuaries. A paradise for wildlife photographers and nature lovers."
+        },
+        {
+            name: "Murudeshwar",
+            lat: 14.097179350000001,
+            lon: 74.48665040801478,
+            description: "Stand in awe of the world’s second-largest Shiva statue as it watches over the roaring waves of the Arabian Sea. Scuba dive in the crystal-clear waters of Netrani Island, explore hidden sea caves, and experience the spiritual charm of this coastal wonder."
+        },
+    ],
+     "Kerala": [
+        {
+            name: "Trivandrum",
+            lat: 8.4869734,
+            lon: 76.95167996610772,
+            description: "The Royal Gateway to Kerala’s Culture & Coastline. Walk through the golden corridors of the Padmanabhaswamy Temple. It is believed that the secret vault in the temple contains treasures worth more than US $20 Billion."
+        },
+        {
+            name: "Kochi",
+            lat: 9.9679032,
+            lon: 76.2444378,
+            description: "A Melting Pot of History, Art & Coastal Charm. Stroll through the vibrant lanes of Fort Kochi, where centuries-old Chinese fishing nets sway over the waters, colorful street art tells stories, and aromatic spices fill the air."
+        },
+          {
+            name: "Munnar",
+            lat: 10.0869959,
+            lon: 77.0600915,
+            description: "A paradise wrapped in green. Hike through endless emerald tea plantations and breathe in the crisp mountain air here. Enjoy the local dance, Kathakali every evening and get awestruck when you come across the locals practicing Kalaripayattu, a form of martial arts, popular to even handle fire. This town nestled in the Western Ghats of Munnar will leave memories which you will cherish for a lifetime."
+        },
+        {
+            name: "Alleppey",
+            lat: 9.535748998133615,
+            lon: 76.33300781250001,
+            description: "Known as the Venice of the East. Drift through the serene backwaters of Kerala in a luxury houseboat, watch the palm trees reflect on the rippling waters, sip Toddy at one of the islands in the backwaters of Alleppey and savor fresh seafood as you sail into the sunset."
+        },
+        {
+            name: "Varkala",
+            lat: 8.7342288,
+            lon: 76.7257086,
+            description: "Where Cliffs Kiss the Ocean. Relax on golden beaches beneath dramatic red cliffs, in dulge in an Ayurvedic spa by the sea, and surf the warm waters of the Arabian Sea in this tropical retreat."
+        },
+          {
+            name: "Wayanad",
+            lat: 11.71512915,
+            lon: 76.12711850740615,
+            description: "Kerala’s Wild & Mystical Escape. Lose yourself in misty rainforests, explore hidden caves with prehistoric carvings, and watch herds of wild elephants roam freely in this untouched paradise."
+        },
+        {
+            name: "Periyar",
+            lat: 9.4365357,
+            lon: 77.30492081050761,
+            description: "Into the Wild Heart of Kerala. Cruise on a serene lake as herds of elephants and tigers emerge from the dense jungle, explore spice plantations, and embark on an exhilarating bamboo rafting adventure in this wildlife haven."
+        },
+        {
+            name: "Palakkad",
+            lat: 10.7681928,
+            lon: 76.6521319,
+            description: "The Land of Paddy Fields & Silent Valleys. Explore lush rice paddies, hike through the untouched Silent Valley National Park, and step into the grandeur of Palakkad Fort, a relic of Kerala’s rich history."
+        },
+          {
+            name: "Idukki",
+            lat: 9.8497872,
+            lon: 76.9797914,
+            description: "Where nature & adventure meet. Camp under starlit skies, walk across Asia’s longest arch dam, and trek through dense forests echoing with the sounds of waterfalls and wildlife."
+        },
+        {
+            name: "Neyyar Wildlife Sanctuary",
+            lat:  8.53430973141458,
+            lon:  77.15029139075007,
+            description: "An Oasis of Tranquility & Wilderness. Glide across the Neyyar Dam on a boat safari, spot exotic wildlife, and visit the peaceful ashram where seekers from around the world practice yoga and meditation."
+        },
+        {
+            name: "Vagamon",
+            lat: 9.6885988,
+            lon: 76.9068551,
+            description: "Kerala’s Hidden Hill Station. Paraglide over rolling meadows, wander through pine forests, and breathe in the fresh mountain air of this offbeat hill retreat, untouched by time."
+        },
+          {
+            name: "Anamudi",
+            lat: 10.1696357,
+            lon: 77.0611855,
+            description: "Trek to the highest peak of the Western Ghats, where clouds roll over lush valleys, rare wildlife roams free, and the views stretch beyond imagination."
+        },
+         {
+            name: "Kannur",
+            lat: 11.8763836,
+            lon: 75.3737973,
+            description: "A Land of Untamed Beaches & Ritual Mysticism. Witness the electrifying Theyyam dance rituals, walk along untouched beaches, and soak in the coastal charm of this undiscovered gem of North Kerala."
+        },
+    ],
+    "Tamil Nadu": [
+        {
+            name: "Kanyakumari",
+            lat: 8.079252,
+            lon: 77.5499338,
+            description: "Where Oceans Collide & Sunsets Mesmerize. Stand at the southernmost tip of India, where the Arabian Sea - Bay of Bengal - Indian Ocean meet, and watch the sun rise and set over endless waters in a surreal spectacle."
+        },
+        {
+            name: "Rameshwaram",
+            lat: 9.2844657,
+            lon: 79.3125553,
+            description: "The sacred island of Legends & Serenity. Walk across the mystical Pamban Bridge, take a holy dip in the 22 sacred wells of Ramanathaswamy Temple, and visit Dhanushkodi, the south easternmost tip of India. It is believed that Lord Rama from the epic Ramayana, along with his army, built the Ram Setu to reach Lanka for the Ramayana to happen."
+        },
+          {
+            name: "Chennai",
+            lat: 13.0836939,
+            lon: 80.270186,
+            description: "The Gateway to South India’s Culture & Coastline. Feel the pulse of Tamil heritage in ancient temples, stroll along Marina Beach at sunrise, and savor the world’s finest filter coffee in this vibrant coastal metropolis."
+        },
+         {
+            name: "Ooty",
+            lat: 11.0930989,
+            lon: 76.0314416,
+            description: "Ride the vintage Nilgiri Mountain Railway in a toy train through misty landscapes, breathtaking valley views from Doddabetta Peak, wander through sprawling tea gardens, and boat on the tranquil Ooty Lake. Whether it’s adventure, relaxation, or romance, this hill town offers an escape straight out of a storybook."
+        },
+        {
+            name: "Kodaikanal",
+            lat: 10.233712,
+            lon: 77.4919719,
+            description: "The Misty Escape of the Western Ghats. Row across the serene Kodaikanal Lake, hike through pine forests to Pillar Rocks, and chase clouds on the rolling meadows of the ‘Princess of Hill Stations.’"
+        },
+          {
+            name: "Madurai",
+            lat: 9.9261153,
+            lon: 78.1140983,
+            description: "The Timeless City of Temples & Traditions. Marvel at the grandeur of Meenakshi Temple’s towering gopurams, lose yourself in the bustling markets, and witness the evening aarti that fills the air with devotion and divine energy."
+        },
+        {
+            name: "Coimbatore",
+            lat: 11.0018115,
+            lon: 76.9628425,
+            description: "Where Spirituality Meets Industry. Visit the awe-inspiring Adiyogi Shiva statue for a moment of reflection, explore the lush tea plantations of Valparai, and discover the perfect blend of modernity and tradition."
+        },
+        {
+            name: "Mudumalai Tiger Reserve",
+            lat: 11.562465877301985,
+            lon: 76.53456501716511,
+            description: "Into the Wild Heart of the Nilgiris, embark on an exhilarating safari through dense forests, spot majestic tigers and wild elephants, and listen to the untamed sounds of nature in this wildlife paradise."
+        },
+          {
+            name: "Anamalai Reserve",
+            lat: 10.382601,
+            lon: 77.14132542765418,
+            description: "A Hidden Wilderness of the Western Ghats. Trek through lush rainforests, witness herds of bison grazing in misty valleys, and experience the raw beauty of nature in this lesser-known wildlife sanctuary."
+        },
+        {
+            name: "Aliyar",
+            lat: 10.48266425,
+            lon: 76.96590194545041,
+            description: "A Scenic Wonderland for Nature Lovers. Watch the sunrise over Aliyar Dam, wander through tranquil gardens, and take a rejuvenating dip in the cool waterfalls of Monkey Falls."
+        },
+    ],
+    "Puducherry": [
+        {
+            name: "Puducherry",
+            lat: 11.9340568,
+            lon: 79.8306447,
+            description: "A unique blend of French colonial architecture and Indian cultures, Indo-French fusion cuisine, beautiful beaches, and spiritual centers like Auroville and Sri Aurobindo Ashram"
+        },
+         ],
+         "Andhra Pradesh": [
+        {
+            name: "Araku Valley",
+            lat: 18.3229038,
+            lon: 82.8802164,
+            description: "A Hidden Gem of Coffee, Caves & Waterfalls. Ride a breathtaking train journey through misty mountains, explore the ancient Borra Caves glowing with mystery, and sip the finest tribal coffee amidst lush plantations."
+        },
+        {
+            name: "Visakhapatnam",
+            lat: 17.6935526,
+            lon: 83.2921297,
+            description: "Where Beaches, Cliffs & Submarines Await. Soak up the sun at Rushikonda Beach, paraglide over the Kailasagiri Hills, and step inside a real submarine museum for a deep dive into maritime history!"
+        },
+        {
+            name: "Cumbum Forest",
+            lat: 15.525060259109335,
+            lon: 79.03051109528602,
+            description: "The Wild, Untamed Heart of Andhra. Trek through dense forests echoing with birdsong, paddle across the stunning Cumbum Lake, and lose yourself in the raw beauty of one of India's oldest green sanctuaries."
+        },
+        {
+            name: "Tirupati",
+            lat: 13.6316368,
+            lon: 79.4231711,
+            description: "The Divine Stairway to the Gods. Climb the sacred Tirumala Hills for a spiritual adventure, witness the mesmerizing golden temple of Balaji, and soak in the soul-stirring chants of millions of devotees."
+        },
+    ],
+     "Sikkim": [
+        {
+            name: "Gangtok",
+            lat: 27.329046,
+            lon: 88.6122673,
+            description: "From stunning natural beauty, its picturesque views of Mount Kanchenjunga, rich Buddhist heritage, serene monasteries, unique local traditions, and vibrant culture."
+        },
+        {
+            name: "Yume Samdong",
+            lat: 27.84897065001661,
+            lon: 88.69044603375234,
+            description: "Known as Zero Point, the final tourist destination, with mesmerizing snow-covered valley located in North Sikkim. There is no motorable road after this place and the visitors are not permitted to go beyond this point due to its proximity to the vicuna China border"
+        },
+        {
+            name: "Chungthang",
+            lat: 27.8121896,
+            lon: 88.5211163430433,
+            description: "A magnificent town that falls en route to Yumthang, offers a peaceful retreat amidst lush greenery, gushing waterfalls, and stunning mountain views. Nestled beside the confluence of the rivers Lachen and Lachung where the Teesta River forms."
+        },
+        {
+            name: "Katao",
+            lat: 27.6714244,
+            lon: 88.8140893,
+            description: "Katao is often known as Switzerland of India. The stunning snow-capped mountain offering breathtaking views and the rugged landscape of Katao makes it the base ground for adventure activities in Sikkim like snowboarding, skiing, snow tubing and stone grinding."
+        },
+        {
+            name: "Yumthang",
+            lat: 27.804261,
+            lon: 88.7033191,
+            description: "Sikkim's valley of Flowers, the place blooms with rhododendrons during the spring blooms, it is a nature sanctuary with river, hot springs, yaks and grazing pasture on rolling meadows surrounded by the Himalayan mountains."
+        },
+        {
+            name: "Thangu Valley",
+            lat: 27.8924989,
+            lon: 88.5359631,
+            description: "Also known as Thangu-Chopta Valley, is a charming town nestled in the Mangan District with an approximate population of 1,000 residents, offers a picturesque drive through snow-capped mountains with charming rows of wooden and stone houses serving as eateries"
+        },
+        {
+            name: "Kanchenjunga",
+            lat: 27.70476831619738,
+            lon: 88.15356731793912,
+            description: "It is the third-highest mountain in the world and the highest peak in India, located on the border between Sikkim and Nepal. Engage in a variety of activities, trekking, exploring the national park, and experiencing the local culture and cuisine."
+        },
+        {
+            name: "Pelling",
+            lat: 27.3003722,
+            lon: 88.2356503,
+            description: "Pelling is a haven for nature lovers, adventure enthusiasts, and spiritual seekers. Visit ancient monasteries, exploring natural wonders like waterfalls and lakes, and experiencing the thrill of the Pelling Skywalk"
+        },
+        {
+            name: "Namchi",
+            lat: 27.1661262,
+            lon: 88.3651981,
+            description: "Famous for its stunning Himalayan views—including Mount Kanchenjunga—lush greenery, vibrant culture, sacred sites like Samdruptse Monastery and Char Dham temple complex, scenic tea gardens, and natural attractions like Maenam Wildlife Sanctuary and Tarey Bhir viewpoint."
+        },
+    ],
+     "Assam": [
+        {
+            name: "Guwahati",
+            lat: 26.1805978,
+            lon: 91.753943,
+            description: "The largest metropolis in northeastern India, Guwahati sprawls beside the Brahmaputra River. Renowned for its spiritual significance with the Kamakhya Temple, a major pilgrimage site, and its rich cultural heritage blending with modern development."
+        },
+        {
+            name: "Kaziranga National Park",
+            lat: 26.65810465,
+            lon: 93.39274406257059,
+            description: "Famous for being home to the world's largest population of Indian one-horned rhinoceroses. The park, established in 1974, is a UNESCO World Heritage Site."
+        },
+        {
+            name: "Sivasagar",
+            lat: 26.9834936,
+            lon: 94.6394226,
+            description: "Famous for its rich Ahom Kingdom history, sites like Rang Ghar, Talatal Ghar, evidenced by numerous monuments, palaces, and temples. Sivasagar is also an important center for the tea and oil industries."
+        },
+        {
+            name: "Haflong",
+            lat: 25.1645049,
+            lon: 93.017599,
+            description: "Haflong is the only hill station in Assam, it has one of the largest natural water bodies and is situated in the heart of the town."
+        },
+    ],
+     "Arunachal Pradesh": [
+        {
+            name: "Kaho",
+            lat: 28.30464571687186,
+            lon: 97.02704770744035,
+            description: "Kaho is the first Indian Village from the Chinese Border in Anjaw district. Known for its stunning landscapes and rich tribal heritage."
+        },
+        {
+            name: "Tawang Valley",
+            lat: 27.5879186,
+            lon: 91.863733,
+            description: "Tawang Valley is a picturesque region known for its stunning natural beauty, rich Buddhist culture, and historical significance. It is a major holy site for Tibetan Buddhists as it was the birthplace of the sixth Dalai Lama."
+        },
+        {
+            name: "Pasighat",
+            lat: 28.0589676,
+            lon: 95.3324944,
+            description: "Known as the land of the Siang River and indigenous hanging bridges, features mountain waterfalls and home to attractions like the popular Daying Ering Wildlife Sanctuary."
+        },
+        {
+            name: "Mechuka",
+            lat: 28.5987453,
+            lon: 94.1335827,
+            description: "Mechuka holds historical and religious importance with its iconic 400-year-old Samten Yangchag Monastery, Gurudwara Guru Nanak Taposthan and more spiritual sites."
+        },
+    ],
+     "Meghalaya": [
+        {
+            name: "Shillong",
+            lat: 25.5760446,
+            lon: 91.8825282,
+            description: "Shillong, a picturesque hill station in Meghalaya, captivates with its unmatched natural beauty, featuring attractions like Umiam Lake with its panoramic hill views, the stunning Elephant and Sweet Falls, the manicured gardens of Lady Hydari Park, and the serene walking trails around Ward’s Lake."
+        },
+        {
+            name: "Cherrapunji",
+            lat: 25.2777336,
+            lon: 91.7292416,
+            description: "Cherrapunji known for its mesmerizing waterfalls, living root bridges, made from rubber trees and caves."
+        },
+        {
+            name: "Dawki River",
+            lat: 25.189480873629314,
+            lon: 92.0171713846334,
+            description: "Renowned for its crystal-clear waters, enchanting surroundings, and serene ambiance, the river offers a unique boat riding experience that captivates travellers from across the globe."
+        },
+        {
+            name: "Mawphlang Sacred Forest",
+            lat: 25.44249025,
+            lon: 91.74320473376045,
+            description: "An untouched oldest and the largest sacred forest that is the soul of Khasi culture, Mawphlang is home to the most celebrated of all the 'law-kyntang' or ancient sacred groves of Meghalaya."
+        },
+    ],
+};
+
+
+        var stateMarkers = {};  
+        var cityLayer = L.layerGroup();  
+        var activeState = null;  
+
+        function addStateMarkers() {
+            stateCapitals.forEach(state => {
+                var marker = L.marker([state.lat, state.lon]).addTo(map)
+                    .bindPopup(`<b>${state.name}</b><br>${state.description || ""}`)
+                    .on('click', function() {
+                        if (activeState === state.name) return; 
+                        activeState = state.name;
+                        map.setView([state.lat, state.lon], 8);
+                        showCityMarkers(state.name);
+                    });
+
+                stateMarkers[state.name] = marker;
+            });
+        }
+
+        function showCityMarkers(stateName) {
+            cityLayer.clearLayers();
+            if (cityMarkers[stateName]) {
+                cityMarkers[stateName].forEach(city => {
+                    var marker = L.marker([city.lat, city.lon])
+                        .bindPopup(`<b>${city.name}</b><br>${city.description || "No description available."}`);
+                    cityLayer.addLayer(marker);
+                });
+                map.addLayer(cityLayer);
+            }
+        }
+
+        map.on('zoomend', function() {
+            if (map.getZoom() < 7) {
+                cityLayer.clearLayers();
+                activeState = null;
+            }
+        });
+
+        addStateMarkers();
+
+    </script>
+
+
+
+
+    <!-- <script>
         var map = L.map('map', {
             center: [22.3511, 78.6677],  // Center of India
             zoom: 5,
@@ -1193,7 +2826,14 @@ var cityMarkers = {
 
         addStateMarkers();
 
-    </script>
+    </script> -->
 </body>
 
 </html>
+
+
+
+
+
+
+
